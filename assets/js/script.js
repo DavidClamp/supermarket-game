@@ -12,7 +12,7 @@ const productArray = [
 ]
 console.log(productArray);
 
-//productArray.sort(() => 0.5 - Math.random());
+// productArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.querySelector("#grid")
 console.log(gridDisplay);
@@ -22,11 +22,11 @@ function createBoard() {
         const product = document.createElement("img");
         product.setAttribute("src", "assets/images/man.webp");
         product.setAttribute("data-id", i);
+        product.style.width= "200px";
+        product.style.height = "200px";        
      //   product.addEventListener("click", flipProduct);
         gridDisplay.appendChild(product);
-    }
-
-   
+    }   
 }
 
 createBoard()
