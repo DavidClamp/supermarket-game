@@ -22,11 +22,10 @@ function createBoard() {
         const product = document.createElement("img");
         product.setAttribute("src", "assets/images/man.webp");
         product.setAttribute("data-id", i);
-        product.style.width= "200px";
-        product.style.height = "200px";        
+        product.style.width= "300px";
+        product.style.height = "300px";        
      //   product.addEventListener("click", flipProduct);
         gridDisplay.appendChild(product);
     }   
 }
-
 createBoard()
