@@ -25,11 +25,12 @@ console.log(grid);
 function fillBoard() {
     for (let i = 0; i < productArray.length; i++) {
         const product = document.createElement("img");
-        product.setAttribute("src", "assets/images/man.webp");
-    //    product.setAttribute("data-id", i);
+        product.setAttribute("src", productArray[i].img);
+        
+    product.setAttribute("data-id", i);
     //    product.setAttribute("value", value);
-    //    product.style.width= "100px";
-      //  product.style.height = "150px";        
+       product.style.width= "100px";
+       product.style.height = "150px";        
      // product.addEventListener("click", pickProduct);
         squares[i].appendChild(product);
     }   
