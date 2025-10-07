@@ -3,65 +3,19 @@
          
 const resultDisplay = document.querySelector('#result');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Create Products array
-// const productArray = [
-//     { name: "Product One", img: "assets/images/athletes.webp" },
-//     { name: "Product Two", img: "assets/images/girls.webp" },
-//     { name: "Product Three", img: "assets/images/man.webp" },
-//  { name: "Product Four", img: "assets/images/mud-run.webp" },
-//     { name: "Product Five", img: "assets/images/reasons-image.webp" },
-//     { name: "Product Six", img: "assets/images/runner1.webp" },
-//     { name: "Product Seven", img: "assets/images/runner2.webp" },
-//     { name: "Product Eight", img: "assets/images/runner3.webp" },
-//     { name: "Product Nine", img: "assets/images/runner4.webp" },
-// ]
-// console.log(productArray);
+const productArray = [
+    { name: "Product One", img: "assets/images/athletes.webp", value: 10 },
+    { name: "Product Two", img: "assets/images/girls.webp",value: 20 },
+    { name: "Product Three", img: "assets/images/man.webp", value: 30 },
+ { name: "Product Four", img: "assets/images/mud-run.webp", value: 40 },
+    { name: "Product Five", img: "assets/images/reasons-image.webp", value: 50 },
+    { name: "Product Six", img: "assets/images/runner1.webp"    , value: 60 },
+    { name: "Product Seven", img: "assets/images/runner2.webp" , value: 70 },
+    { name: "Product Eight", img: "assets/images/runner3.webp", value: 80 },
+    { name: "Product Nine", img: "assets/images/runner4.webp", value: 90 },
+]
+console.log(productArray);
 
 // // productArray.sort(() => 0.5 - Math.random());
 
