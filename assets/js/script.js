@@ -1,5 +1,7 @@
-   
-
+  const grid = document.querySelector('.grid');
+  const squares = document.querySelectorAll('.square');
+         
+const resultDisplay = document.querySelector('#result');
 
 
 
