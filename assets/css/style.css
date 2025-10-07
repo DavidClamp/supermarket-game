@@ -2,19 +2,19 @@
     width: 306px;
     height: 456px;    
   display: flex;  
-   flex-wrap: wrap; 
+ flex-wrap: wrap; 
 }
 
    .square {
     width: 100px;
     height: 150px;
     border: 1px solid black;
-     /* box-sizing: border-box; */
+   /* box-sizing: border-box;  */
    }
       
 
 
-/* body {
+body {
     min-height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -27,4 +27,4 @@
            -ms-flex-align: center;
                align-items: center;   
 
-} */
+}
