@@ -19,21 +19,22 @@ console.log(productArray);
 
 // // productArray.sort(() => 0.5 - Math.random());
 
-// const gridDisplay = document.querySelector("#grid")
-// console.log(gridDisplay);
 
-// function createBoard() {
-//     for (let i = 0; i < productArray.length; i++) {
-//         const product = document.createElement("img");
-//         product.setAttribute("src", "assets/images/man.webp");
-//         product.setAttribute("data-id", i);
-//         product.style.width= "100px";
-//         product.style.height = "150px";        
-//       product.addEventListener("click", pickProduct);
-//         gridDisplay.appendChild(product);
-//     }   
-// }
-// createBoard()
+console.log(grid);
+
+function fillBoard() {
+    for (let i = 0; i < productArray.length; i++) {
+        const product = document.createElement("img");
+        product.setAttribute("src", "assets/images/man.webp");
+    //    product.setAttribute("data-id", i);
+    //    product.setAttribute("value", value);
+    //    product.style.width= "100px";
+      //  product.style.height = "150px";        
+     // product.addEventListener("click", pickProduct);
+        squares[i].appendChild(product);
+    }   
+}
+fillBoard()
 
 // function pickProduct() {
 //     const productId = this.getAttribute("data-id");
