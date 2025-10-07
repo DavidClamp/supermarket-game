@@ -22,10 +22,17 @@ function createBoard() {
         const product = document.createElement("img");
         product.setAttribute("src", "assets/images/man.webp");
         product.setAttribute("data-id", i);
-        product.style.width= "300px";
-        product.style.height = "300px";        
-     //   product.addEventListener("click", flipProduct);
+        product.style.width= "100px";
+        product.style.height = "150px";        
+      product.addEventListener("click", pickProduct);
         gridDisplay.appendChild(product);
     }   
 }
 createBoard()
+
+function pickProduct() {
+    const productId = this.getAttribute("data-id");
+    console.log(productArray[productId].name);
+    this.setAttribute("src", productArray[productId].img);
+   // this.style.border = "5px solid red";
+}
