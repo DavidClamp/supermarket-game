@@ -33,24 +33,14 @@ function fillBoardPhotos() {
        product.addEventListener("click", pickProductImage);
         squares[i].appendChild(product);
 
-//add product value to each square
-       const productValue = document.createElement("div");
-     //  productValue.classList.add("product-value");
-     productValue.innerText = " is the selling price = " + productArray[i].value + "?";
-   //    productValue.innerText =  productArray[i].value;
-       squares[i].appendChild(productValue);
+//place product value to each square
+       const productValue = document.createElement("h5");
+       productValue.innerText = " Correct value = " + productArray[i].value;
+        squares[i].appendChild(productValue);
 
     }   
 }
        
-
-
-
-
-
-
-
-
 
 fillBoardPhotos()
 
@@ -67,22 +57,8 @@ function pickSquare() {
     this.style.height= "150px";
 }
     
+// productValue.innerHTML =  "<h5> Is the product price higher of lower than" + <span>"randomVal"</span> +"?" </h5>"
 
-
-
-// fill board with question and responses
-// function fillBoardValue() {
-//     for (let j = 0; j < productArray.length; j++) {
-//         const productValue = document.querySelector(".square");
-//         productValue.innerText = "setAttribute("productArray[j].value")
-//         squares[j].appendChild(productValue);
-//     }   
-// }
-// fillBoardValue()
-
-createElement("div");
-productValue.classList.add("product-value");
-productValue.innerText = productArray[j].value;
-squares[j].appendChild(productValue);   
+ 
 
 
