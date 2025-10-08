@@ -1,3 +1,5 @@
+
+
 .grid {
     width: 306px;
     height: 456px;    
@@ -7,7 +9,7 @@
 
    .square {
     width: 100px;
-    height: 150px;
+    height: 200px;
     border: 1px solid black;
    /* box-sizing: border-box;  */
    }

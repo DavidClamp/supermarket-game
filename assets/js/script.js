@@ -35,7 +35,7 @@ function fillBoardPhotos() {
 // Adjusted value by 10% up or down randomly and place to each square
 
        const adjValue = document.createElement("h5");
-       adjValue.innerText= " Is this price higher or lower than selling price?" + productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1);
+       adjValue.innerText= " Is this price higher or lower than selling price?" + (productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1)).toFixed(2);
        console.log(adjValue);
        squares[i].appendChild(adjValue);
        
@@ -52,7 +52,7 @@ function fillBoardPhotos() {
 
 //place product value to each square
        const productValue = document.createElement("h5");
-       productValue.innerText = " Correct value = " + productArray[i].value;
+       productValue.innerText = " Correct value = " + (productArray[i].value).toFixed(2);
        console.log(productValue);
         squares[i].appendChild(productValue);
     }   
