@@ -31,13 +31,29 @@ function fillBoardPhotos() {
        product.style.height = "100px";        
        product.addEventListener("click", pickProductImage);
         squares[i].appendChild(product);
-// Adjusted value by 10% up or down randomly
-       adjValue = productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1);
+
+// Adjusted value by 10% up or down randomly and place to each square
+
+       const adjValue = document.createElement("h5");
+       adjValue.innerText= " Is this price higher or lower than selling price?" + productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1);
        console.log(adjValue);
+       squares[i].appendChild(adjValue);
        
+       //is the adjusted value higher or lower than the actual value?
+       
+    //    let higherLower = adjValue > productArray[i].value ? "higher" : "lower";
+    //    console.log(higherLower);
+
+    //    //place adjusted value to each square
+    //    const adjProductValue = document.createElement("h5");
+    //    adjProductValue.innerText = " Your guess is " + higherLower + " than " + adjValue.toFixed(2);
+    //     squares[i].appendChild(adjProductValue);
+
+
 //place product value to each square
        const productValue = document.createElement("h5");
        productValue.innerText = " Correct value = " + productArray[i].value;
+       console.log(productValue);
         squares[i].appendChild(productValue);
     }   
 }       
