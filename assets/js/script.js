@@ -29,23 +29,44 @@ function fillBoardPhotos() {
         console.log(productArray[i].value);
        product.setAttribute("data-id", i);
        product.style.width= "100px";
-       product.style.height = "150px";        
-       product.addEventListener("click", pickProduct);
+       product.style.height = "100px";        
+       product.addEventListener("click", pickProductImage);
         squares[i].appendChild(product);
+
+//add product value to each square
+       const productValue = document.createElement("div");
+     //  productValue.classList.add("product-value");
+     productValue.innerText = " is the selling price = " + productArray[i].value + "?";
+   //    productValue.innerText =  productArray[i].value;
+       squares[i].appendChild(productValue);
+
     }   
 }
+       
+
+
+
+
+
+
+
+
+
 fillBoardPhotos()
 
 // Pick product via click
-function pickProduct() {
+function pickProductImage() {
     const productId = this.getAttribute("data-id");
    this.style.border = "1px solid red";
 }
 // Pick square via click
 function pickSquare() {
-    const square = this.parentElement
-   this.style.border = "1px solid blue";
+    const square = this.getAttribute("data-id");
+   this.style.border = "1px solid yellow";
+    this.style.width = "100px";
+    this.style.height= "150px";
 }
+    
 
 
 
