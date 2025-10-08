@@ -26,21 +26,21 @@ function fillBoardPhotos() {
     for (let i = 0; i < productArray.length; i++) {
         const product = document.createElement("img");
         product.setAttribute("src", productArray[i].img);
-        console.log(productArray[i].value);
-       product.setAttribute("data-id", i);
+        product.setAttribute("data-id", i);
        product.style.width= "100px";
        product.style.height = "100px";        
        product.addEventListener("click", pickProductImage);
         squares[i].appendChild(product);
-
+// Adjusted value by 10% up or down randomly
+       adjValue = productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1);
+       console.log(adjValue);
+       
 //place product value to each square
        const productValue = document.createElement("h5");
        productValue.innerText = " Correct value = " + productArray[i].value;
         squares[i].appendChild(productValue);
-
     }   
-}
-       
+}       
 
 fillBoardPhotos()
 
@@ -49,15 +49,27 @@ function pickProductImage() {
     const productId = this.getAttribute("data-id");
    this.style.border = "1px solid red";
 }
-// Pick square via click
-function pickSquare() {
-    const square = this.getAttribute("data-id");
-   this.style.border = "1px solid yellow";
-    this.style.width = "100px";
-    this.style.height= "150px";
+// Function to add to each square a value that is either 10% higher or lower than the actual product value
+
+ function placeValue() {
+// const value = this.getAttribute("data-id");
+//console.log(value);
+// Adjusted value by 10% up or down randomly
+// adjValue = productArray[1].value * (Math.random() < 0.5 ? 0.9 : 1.1);
+// console.log(adjValue);
 }
+placeValue();
+
+
+// // Pick square via click
+// function pickSquare() {
+//     const square = this.getAttribute("data-id");
+//    this.style.border = "1px solid yellow";
+//     this.style.width = "100px";
+//     this.style.height= "150px";
+// }
     
-// productValue.innerHTML =  "<h5> Is the product price higher of lower than" + <span>"randomVal"</span> +"?" </h5>"
+
 
  
 
