@@ -5,12 +5,11 @@ const resultDisplay = document.querySelector("#result");
 
 // Game variables
 let productChosen = [];
-let productChosenId = [];           
+let productChosenId = [];
 
 let totalCorrect = 0;
-let totalWrong = 0; 
+let totalWrong = 0;
 const totalSquares = squares.length;
-
 
 // Create Products array
 const productArray = [
@@ -40,7 +39,7 @@ function fillBoardPhotos() {
     squares[i].appendChild(product);
 
     // Adjusted value by 10% up or down randomly and place to each square
-  
+
     const adjValue = document.createElement("h5");
     adjValue.innerText =
       " Is this price higher or lower than selling price?" +
@@ -52,48 +51,85 @@ function fillBoardPhotos() {
     const higherButton = document.createElement("button");
     higherButton.innerText = "Higher";
     higherButton.style.margin = "5px";
-    squares[i].appendChild(higherButton);       
+    squares[i].appendChild(higherButton);
 
     const lowerButton = document.createElement("button");
     lowerButton.innerText = "Lower";
     lowerButton.style.margin = "5px";
     squares[i].appendChild(lowerButton);
 
-// if user clicks on higher or lower button, indicate if they are correct or not                
-    higherButton.addEventListener("click", function() {
-        if (adjValue.innerText.includes("higher") && adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))) {
-            alert("Correct! The actual price is " + productArray[i].value.toFixed(2));  
-            totalCorrect += 1;   
-            squares[i].style.pointerEvents = "none";  // disable further clicks on this square    
-        } else {
-            alert("Incorrect. The actual price is " + productArray[i].value.toFixed(2));  
-            totalWrong += 1;    
-            squares[i].style.pointerEvents = "none";  // disable further clicks on this square   
-        }   
-            resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares + " | Total Wrong: " + totalWrong+ " / " + totalSquares;
-            
-            // Display final result when all squares have been played
-            if ((totalCorrect + totalWrong) === totalSquares) {
-                if (totalCorrect === totalSquares) {
-                    resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
-                } else {
-                    resultDisplay.innerText = "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong.";
-                }
-            }       
+    // if user clicks on higher or lower button, indicate if they are correct or not
 
-    });
-    lowerButton.addEventListener("click", function() {
-        if (adjValue.innerText.includes("lower") && adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))) {
-            alert("Correct! The actual price is " + productArray[i].value.toFixed(2));              
-        } else {
-            alert("Incorrect. The actual price is " + productArray[i].value.toFixed(2));  
-        }           
-    });
+    // Add event listeners to buttons    
+ 
+    
+  
 
-      }
-}
+    higherButton.addEventListener("click", function () {
+           if (
+               adjValue.innerText.includes("higher") &&
+                adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))
+              ) {
+        alert(
+          "Correct! The actual price is " + productArray[i].value.toFixed(2)
+        );
+        totalCorrect += 1;
+        squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+      } else {
+        alert(
+          "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
+        );
+        totalWrong += 1;
+        squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+        }
+        
+         }
+         );
 
-fillBoardPhotos();
+
+         lowerButton.addEventListener("click", function () {
+          if (
+            adjValue.innerText.includes("lower") &&
+            adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2)
+            )
+          ) {
+            alert(
+              "Correct! The actual price is " + productArray[i].value.toFixed(2)
+            );
+            totalCorrect += 1;
+            squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+          } else {
+            alert(
+              "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
+            );
+            totalWrong += 1;
+            squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+             }
+            }
+            );
+      
+    resultDisplay.innerText = "Total Correct: " + totalCorrect +  " / " + totalSquares +  " | Total Wrong: " + totalWrong +  " / " +  totalSquares;
+    //   // Update score display after each guess
+    // squares[i].appendChild(resultDisplay);
+
+      // Display final result when all squares have been played
+    //   if (totalCorrect + totalWrong === totalSquares) {
+    //     if (totalCorrect === totalSquares) {
+    //       resultDisplay.innerText =
+    //         "Perfect Score! You got all " + totalCorrect + " correct!";
+    //     } else {
+    //       resultDisplay.innerText =
+    //         "Game Over! You got " +
+    //         totalCorrect +
+    //         " correct and " +
+    //         totalWrong +
+    //         " wrong.";
+    //     }
+    //   }
+    }  
+   }
+   
+   fillBoardPhotos();
 
 // Pick product via click
 function pickProductImage() {
@@ -103,13 +139,12 @@ function pickProductImage() {
 // Function to add to each square a value that is either 10% higher or lower than the actual product value
 
 // function placeValue() {
-  // const value = this.getAttribute("data-id");
-  //console.log(value);
-  // Adjusted value by 10% up or down randomly
-  // adjValue = productArray[1].value * (Math.random() < 0.5 ? 0.9 : 1.1);
-  // console.log(adjValue);
+// const value = this.getAttribute("data-id");
+//console.log(value);
+// Adjusted value by 10% up or down randomly
+// adjValue = productArray[1].value * (Math.random() < 0.5 ? 0.9 : 1.1);
+// console.log(adjValue);
 // }
-
 
 // // Pick square via click
 // function pickSquare() {
@@ -117,4 +152,4 @@ function pickProductImage() {
 //    this.style.border = "1px solid yellow";
 //     this.style.width = "100px";
 //     this.style.height= "150px";
-// }
+//}
