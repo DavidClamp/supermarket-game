@@ -3,6 +3,15 @@ const squares = document.querySelectorAll(".square");
 
 const resultDisplay = document.querySelector("#result");
 
+// Game variables
+let productChosen = [];
+let productChosenId = [];           
+
+let totalCorrect = 0;
+let totalWrong = 0; 
+const totalSquares = squares.length;
+
+
 // Create Products array
 const productArray = [
   { name: "Product One", img: "assets/images/athletes.webp", value: 10 },
@@ -54,10 +63,15 @@ function fillBoardPhotos() {
     higherButton.addEventListener("click", function() {
         if (adjValue.innerText.includes("higher") && adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))) {
             alert("Correct! The actual price is " + productArray[i].value.toFixed(2));  
-            
+            totalCorrect += 1;
+       //   resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares;
         } else {
             alert("Incorrect. The actual price is " + productArray[i].value.toFixed(2));  
-        }               
+            totalWrong += 1;
+       //  resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares + " | Total Wrong: " + totalWrong+ " / " + totalSquares;
+        }   
+       //   resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares;
+          resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares + " | Total Wrong: " + totalWrong+ " / " + totalSquares;
     });
     lowerButton.addEventListener("click", function() {
         if (adjValue.innerText.includes("lower") && adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))) {
@@ -66,6 +80,8 @@ function fillBoardPhotos() {
             alert("Incorrect. The actual price is " + productArray[i].value.toFixed(2));  
         }           
     });
+
+    //
     
 
     //is the adjusted value higher or lower than the actual value?
@@ -79,11 +95,11 @@ function fillBoardPhotos() {
     //     squares[i].appendChild(adjProductValue);
 
     //place product value to each square
-    const productValue = document.createElement("h5");
-    productValue.innerText =
-      " Correct value = " + productArray[i].value.toFixed(2);
-    console.log(productValue);
-    squares[i].appendChild(productValue);
+    // const productValue = document.createElement("h5");
+    // productValue.innerText =
+    //   " Correct value = " + productArray[i].value.toFixed(2);
+    // console.log(productValue);
+    // squares[i].appendChild(productValue);
   }
 }
 

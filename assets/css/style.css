@@ -2,15 +2,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Macondo&display=swap'); */
 
 .grid {
-  width: 306px;
-  height: 456px;
+  width: 606px;
+  height: 906px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .square {
-  width: 100px;
-  height: 200px;
+  width: 200px;
+  height: 300px;
   border: 1px solid black;
   /* box-sizing: border-box;  */
 }
