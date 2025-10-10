@@ -31,13 +31,42 @@ function fillBoardPhotos() {
     squares[i].appendChild(product);
 
     // Adjusted value by 10% up or down randomly and place to each square
-
+  
     const adjValue = document.createElement("h5");
     adjValue.innerText =
       " Is this price higher or lower than selling price?" +
       (productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1)).toFixed(2);
     console.log(adjValue);
     squares[i].appendChild(adjValue);
+
+    // choose one of two buttons to indicate if value is higher or lower than actual value
+    const higherButton = document.createElement("button");
+    higherButton.innerText = "Higher";
+    higherButton.style.margin = "5px";
+    squares[i].appendChild(higherButton);       
+
+    const lowerButton = document.createElement("button");
+    lowerButton.innerText = "Lower";
+    lowerButton.style.margin = "5px";
+    squares[i].appendChild(lowerButton);
+
+// if user clicks on higher or lower button, indicate if they are correct or not                
+    higherButton.addEventListener("click", function() {
+        if (adjValue.innerText.includes("higher") && adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))) {
+            alert("Correct! The actual price is " + productArray[i].value.toFixed(2));  
+            
+        } else {
+            alert("Incorrect. The actual price is " + productArray[i].value.toFixed(2));  
+        }               
+    });
+    lowerButton.addEventListener("click", function() {
+        if (adjValue.innerText.includes("lower") && adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))) {
+            alert("Correct! The actual price is " + productArray[i].value.toFixed(2));              
+        } else {
+            alert("Incorrect. The actual price is " + productArray[i].value.toFixed(2));  
+        }           
+    });
+    
 
     //is the adjusted value higher or lower than the actual value?
 
@@ -67,14 +96,14 @@ function pickProductImage() {
 }
 // Function to add to each square a value that is either 10% higher or lower than the actual product value
 
-function placeValue() {
+// function placeValue() {
   // const value = this.getAttribute("data-id");
   //console.log(value);
   // Adjusted value by 10% up or down randomly
   // adjValue = productArray[1].value * (Math.random() < 0.5 ? 0.9 : 1.1);
   // console.log(adjValue);
-}
-placeValue();
+// }
+
 
 // // Pick square via click
 // function pickSquare() {
