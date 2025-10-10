@@ -63,15 +63,24 @@ function fillBoardPhotos() {
     higherButton.addEventListener("click", function() {
         if (adjValue.innerText.includes("higher") && adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))) {
             alert("Correct! The actual price is " + productArray[i].value.toFixed(2));  
-            totalCorrect += 1;
-       //   resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares;
+            totalCorrect += 1;   
+            squares[i].style.pointerEvents = "none";  // disable further clicks on this square    
         } else {
             alert("Incorrect. The actual price is " + productArray[i].value.toFixed(2));  
-            totalWrong += 1;
-       //  resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares + " | Total Wrong: " + totalWrong+ " / " + totalSquares;
+            totalWrong += 1;    
+            squares[i].style.pointerEvents = "none";  // disable further clicks on this square   
         }   
-       //   resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares;
-          resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares + " | Total Wrong: " + totalWrong+ " / " + totalSquares;
+            resultDisplay.innerText = "Total Correct: " + totalCorrect + " / " + totalSquares + " | Total Wrong: " + totalWrong+ " / " + totalSquares;
+            
+            // Display final result when all squares have been played
+            if ((totalCorrect + totalWrong) === totalSquares) {
+                if (totalCorrect === totalSquares) {
+                    resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
+                } else {
+                    resultDisplay.innerText = "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong.";
+                }
+            }       
+
     });
     lowerButton.addEventListener("click", function() {
         if (adjValue.innerText.includes("lower") && adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))) {
@@ -81,26 +90,7 @@ function fillBoardPhotos() {
         }           
     });
 
-    //
-    
-
-    //is the adjusted value higher or lower than the actual value?
-
-    //    let higherLower = adjValue > productArray[i].value ? "higher" : "lower";
-    //    console.log(higherLower);
-
-    //    //place adjusted value to each square
-    //    const adjProductValue = document.createElement("h5");
-    //    adjProductValue.innerText = " Your guess is " + higherLower + " than " + adjValue.toFixed(2);
-    //     squares[i].appendChild(adjProductValue);
-
-    //place product value to each square
-    // const productValue = document.createElement("h5");
-    // productValue.innerText =
-    //   " Correct value = " + productArray[i].value.toFixed(2);
-    // console.log(productValue);
-    // squares[i].appendChild(productValue);
-  }
+      }
 }
 
 fillBoardPhotos();
