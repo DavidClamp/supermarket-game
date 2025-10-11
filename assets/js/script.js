@@ -36,7 +36,7 @@ function fillBoardPhotos() {
     product.setAttribute("data-id", i);
     product.style.width = "100px";
     product.style.height = "100px";
-    product.addEventListener("click", pickProductImage);
+    // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
     // Adjusted value by 10% up or down randomly and place to each square
@@ -86,8 +86,34 @@ function fillBoardPhotos() {
         //display result after each guess
              resultDisplay.innerText = "Total Correct: " + totalCorrect +
                " / " + totalSquares +  " | Total Wrong: " + totalWrong +
-                 " / " +  totalSquares;     
-         }
+                 " / " +  totalSquares;   
+                 
+         //Display final result when all squares have been played
+
+
+      if (totalCorrect + totalWrong === totalSquares) {
+        if (totalCorrect === totalSquares) {
+          resultDisplay.innerText =
+            "Perfect Score! You got all " + totalCorrect + " correct!";
+        } else {
+          resultDisplay.innerText =
+            "Game Over! You got " +
+            totalCorrect +
+            " correct and " +
+            totalWrong +
+            " wrong.";
+        }
+      }        
+
+
+
+
+
+
+
+
+
+         }        
          );
 
 
@@ -114,6 +140,24 @@ function fillBoardPhotos() {
                " / " + totalSquares +  " | Total Wrong: " + totalWrong +
                  " / " +  totalSquares;
 
+                 //Display final result when all squares have been played
+
+
+      if (totalCorrect + totalWrong === totalSquares) {
+        if (totalCorrect === totalSquares) {
+          resultDisplay.innerText =
+            "Perfect Score! You got all " + totalCorrect + " correct!";
+        } else {
+          resultDisplay.innerText =
+            "Game Over! You got " +
+            totalCorrect +
+            " correct and " +
+            totalWrong +
+            " wrong.";
+        }
+      }
+
+
 
             }
             );
@@ -122,7 +166,9 @@ function fillBoardPhotos() {
     //   // Update score display after each guess
     // squares[i].appendChild(resultDisplay);
 
-      // Display final result when all squares have been played
+      //Display final result when all squares have been played
+
+
     //   if (totalCorrect + totalWrong === totalSquares) {
     //     if (totalCorrect === totalSquares) {
     //       resultDisplay.innerText =
