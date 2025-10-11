@@ -5,8 +5,44 @@ const resultDisplay = document.querySelector("#result");
 
 const timeDisplay = document.querySelector("#time-left");
 
-//Set up timer
+// // Get start and reset buttons
+// const startButton = document.querySelector("#start");
+// const resetButton = document.querySelector("#reset");
 
+// // Start button event listener
+// startButton.addEventListener("click", function() {
+//   // Reset game variables 
+//   totalCorrect = 0;
+//   totalWrong = 0;
+//   currentTime = 60;
+//   resultDisplay.innerText = ""; 
+//   squares.forEach((square) => {
+//     square.style.pointerEvents = "auto";  
+//     square.innerHTML = ""; // Clear previous content
+//   });
+//   fillBoardPhotos();  
+//   countdown(); // Start the countdown
+// });
+
+// // Reset button event listener  
+// resetButton.addEventListener("click", function() {
+//   // Reset game variables 
+//   totalCorrect = 0; 
+//   totalWrong = 0;
+//   currentTime = 60;
+//   resultDisplay.innerText = "";   
+//   squares.forEach((square) => {
+//     square.style.pointerEvents = "auto";  
+//     square.innerHTML = ""; // Clear previous content
+//   });
+//   fillBoardPhotos();  
+//   countdown(); // Start the countdown
+// }); 
+
+
+//Set up timer
+let currentTime = 60;
+let timerId= setInterval(countdown, 1000); 
 function countdown() {    
   if (currentTime <= 0) {
     clearInterval(timerId);
@@ -29,9 +65,9 @@ function countdown() {
   currentTime--;
   timeDisplay.innerHTML = currentTime;
 }
-let currentTime = 60;
-let timerId= setInterval(countdown, 1000); 
+// Start the countdown immediately
 countdown();
+
 
 
 
