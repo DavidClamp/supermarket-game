@@ -77,9 +77,8 @@ function fillBoardPhotos() {
         // Adjusted value by 10% up or down randomly and place to each square
 
         const adjValue = document.createElement("h5");
-        adjValue.innerText =
-            " Is this price higher or lower than selling price?" +
-            (productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1)).toFixed(2);
+        adjValue.innerText =         
+            (productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1)).toFixed(2) + " Is this price higher or lower than selling price?";
         console.log(adjValue);
         squares[i].appendChild(adjValue);
 
@@ -107,13 +106,22 @@ function fillBoardPhotos() {
             ) {
                 alert(
                     "Correct! The actual price is " + productArray[i].value.toFixed(2)
-                );
+                    );
+
+//place product value below the image after guess
+                const actualValue = document.createElement("h4");
+                actualValue.innerText = "Correct! The actual price is " + productArray[i].value.toFixed(2);
+                squares[i].appendChild(actualValue);
                 totalCorrect += 1;
                 squares[i].style.pointerEvents = "none"; // disable further clicks on this square
             } else {
                 alert(
                     "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
                 );
+//place product value below the image after guess
+                const actualValue = document.createElement("h4");
+                actualValue.innerText = "Incorrect. The actual price is " + productArray[i].value.toFixed(2);
+                squares[i].appendChild(actualValue);
                 totalWrong += 1;
                 squares[i].style.pointerEvents = "none"; // disable further clicks on this square
             }
@@ -148,6 +156,11 @@ function fillBoardPhotos() {
                 alert(
                     "Correct! The actual price is " + productArray[i].value.toFixed(2)
                 );
+
+//place product value below the image after guess
+                const actualValue = document.createElement("h4");
+                actualValue.innerText = "Correct! The actual price is " + productArray[i].value.toFixed(2);
+                squares[i].appendChild(actualValue);
                 totalCorrect += 1;
                 squares[i].style.pointerEvents = "none"; // disable further clicks on this square
             } else {
@@ -155,12 +168,19 @@ function fillBoardPhotos() {
                     "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
                 );
                 totalWrong += 1;
+//place product value below the image after guess
+                const actualValue = document.createElement("h4");
+                actualValue.innerText = "Incorrect. The actual price is " + productArray[i].value.toFixed(2);
+                squares[i].appendChild(actualValue);
                 squares[i].style.pointerEvents = "none"; // disable further clicks on this square
             }
             //display result after each guess
             resultDisplay.innerText = "Total Correct: " + totalCorrect +
                 " / " + totalSquares + " | Total Wrong: " + totalWrong +
                 " / " + totalSquares;
+
+
+                
 
             //Display final result when all squares have been played
 
