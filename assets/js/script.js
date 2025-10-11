@@ -14,7 +14,6 @@ startButton.addEventListener("click", function() {
   // Reset game variables 
   totalCorrect = 0;
   totalWrong = 0;
-  currentTime = 60;
   resultDisplay.innerText = ""; 
   squares.forEach((square) => {
     square.style.pointerEvents = "auto";  
@@ -32,8 +31,7 @@ resetButton.addEventListener("click", function() {
   // Reset game variables 
   totalCorrect = 0; 
   totalWrong = 0;
-  currentTime = 60;
-  resultDisplay.innerText = "";   
+    resultDisplay.innerText = "";   
   squares.forEach((square) => {
     square.style.pointerEvents = "auto";  
     square.innerHTML = ""; // Clear previous content
@@ -50,14 +48,19 @@ resetButton.addEventListener("click", function() {
 //Set up timer
 // let currentTime = 60;
 // let timerId= setInterval(countdown, 1000); 
-function countdown() {    
-  if (currentTime <= 0) {
+function countdown() {  
+  
+     if (currentTime <= 0) {
     clearInterval(timerId);
     alert("Time's up! Game over."); 
     // Disable all buttons when time is up
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
     }); 
+    // Display result when time is up
+    resultDisplay.innerText =
+      "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong.";  
+
     // Display final result
     if (totalCorrect === totalSquares) {
       resultDisplay.innerText =
@@ -72,19 +75,6 @@ function countdown() {
   currentTime--;
   timeDisplay.innerHTML = currentTime;
 }
-// Start the countdown immediately
-// countdown();
-
-
-
-
-
-  
-
-
-
-
-
 
 // Game variables
 let productChosen = [];
@@ -200,10 +190,16 @@ function fillBoardPhotos() {
         squares[i].appendChild(actualValue);
         totalCorrect += 1;
         squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+        // highlight square border to indicate correct guess
+        squares[i].style.border = "2px solid green";
       } else {
         alert(
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
+          
         );
+        //highlight square border to indicate wrong guess
+          squares[i].style.border = "2px solid red";
+
         //place product value below the image after guess
         const actualValue = document.createElement("h4");
         actualValue.innerText =
@@ -211,6 +207,8 @@ function fillBoardPhotos() {
         squares[i].appendChild(actualValue);
         totalWrong += 1;
         squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+        // highlight square border to indicate wrong guess
+        squares[i].style.border = "2px solid red";
       }
       //display result after each guess
       resultDisplay.innerText =
@@ -256,7 +254,11 @@ function fillBoardPhotos() {
           "Correct! The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
         totalCorrect += 1;
-        squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+        // disable further clicks on this square
+        squares[i].style.pointerEvents = "none"; 
+        
+        //highlight square border to indicate correct guess
+        squares[i].style.border = "2px solid green";
       } else {
         alert(
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
@@ -267,7 +269,10 @@ function fillBoardPhotos() {
         actualValue.innerText =
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
-        squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+// disable further clicks on this square
+        squares[i].style.pointerEvents = "none";
+        //highlight square border to indicate wrong guess
+        squares[i].style.border = "2px solid red";
       }
       //display result after each guess
       resultDisplay.innerText =
