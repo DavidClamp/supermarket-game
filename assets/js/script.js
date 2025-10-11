@@ -23,8 +23,9 @@ const productArray = [
   { name: "Product Eight", img: "assets/images/runner3.webp", value: 80 },
   { name: "Product Nine", img: "assets/images/runner4.webp", value: 90 },
 ];
+// Shuffle the products array
 
-//  productArray.sort(() => 0.5 - Math.random());
+productArray.sort(() => 0.5 - Math.random());
 
 //console.log(grid);
 // Fill the board with photos
