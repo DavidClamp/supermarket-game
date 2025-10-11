@@ -2,17 +2,17 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Macondo&display=swap'); */
 
 .grid {
-    width: 606px;
-    height: 906px;
-    display: flex;
-    flex-wrap: wrap;
+  width: 606px;
+  height: 906px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .square {
-    width: 200px;
-    height: 300px;
-    border: 1px solid black;
-    /* box-sizing: border-box;  */
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  /* box-sizing: border-box;  */
 }
 
 /* used code from my milestone 1 project to style body of game */
