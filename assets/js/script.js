@@ -60,8 +60,8 @@ function fillBoardPhotos() {
 
     // if user clicks on higher or lower button, indicate if they are correct or not
 
-    // Add event listeners to buttons    
- 
+    // disable event listener to buttons after one click
+    
     
   
 
@@ -81,8 +81,11 @@ function fillBoardPhotos() {
         );
         totalWrong += 1;
         squares[i].style.pointerEvents = "none"; // disable further clicks on this square
-        }
-        
+        }   
+        //display result after each guess
+             resultDisplay.innerText = "Total Correct: " + totalCorrect +
+               " / " + totalSquares +  " | Total Wrong: " + totalWrong +
+                 " / " +  totalSquares;     
          }
          );
 
@@ -105,10 +108,16 @@ function fillBoardPhotos() {
             totalWrong += 1;
             squares[i].style.pointerEvents = "none"; // disable further clicks on this square
              }
+             //display result after each guess
+             resultDisplay.innerText = "Total Correct: " + totalCorrect +
+               " / " + totalSquares +  " | Total Wrong: " + totalWrong +
+                 " / " +  totalSquares;
+
+
             }
             );
       
-    resultDisplay.innerText = "Total Correct: " + totalCorrect +  " / " + totalSquares +  " | Total Wrong: " + totalWrong +  " / " +  totalSquares;
+    
     //   // Update score display after each guess
     // squares[i].appendChild(resultDisplay);
 
