@@ -3,6 +3,46 @@ const squares = document.querySelectorAll(".square");
 
 const resultDisplay = document.querySelector("#result");
 
+const timeDisplay = document.querySelector("#time-left");
+
+//Set up timer
+
+function countdown() {    
+  if (currentTime <= 0) {
+    clearInterval(timerId);
+    alert("Time's up! Game over."); 
+    // Disable all buttons when time is up
+    squares.forEach((square) => {
+      square.style.pointerEvents = "none";
+    }); 
+    // Display final result
+    if (totalCorrect === totalSquares) {
+      resultDisplay.innerText =
+        "Perfect Score! You got all " + totalCorrect + " correct!";
+    } else {
+      resultDisplay.innerText =
+        "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong.";
+    } 
+    
+    return;
+  }
+  currentTime--;
+  timeDisplay.innerHTML = currentTime;
+}
+let currentTime = 60;
+let timerId= setInterval(countdown, 1000); 
+countdown();
+
+
+
+
+  
+
+
+
+
+
+
 // Game variables
 let productChosen = [];
 let productChosenId = [];
@@ -197,22 +237,7 @@ function fillBoardPhotos() {
         " / " +
         totalSquares;
 
-      //Display final result when all squares have been played
-
-      if (totalCorrect + totalWrong === totalSquares) {
-        if (totalCorrect === totalSquares) {
-          resultDisplay.innerText =
-            "Perfect Score! You got all " + totalCorrect + " correct!";
-        } else {
-          resultDisplay.innerText =
-            "Game Over! You got " +
-            totalCorrect +
-            " correct and " +
-            totalWrong +
-            " wrong.";
-        }
-      }
-    });
+        });
   }
 }
 
