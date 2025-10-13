@@ -68,13 +68,17 @@ const productArray = [{
 
 productArray.sort(() => 0.5 - Math.random());
 
-// Fill the board with photos function
+// Fill the board squares
 
-fillBoardPhotos();
+fillBoard();
+
+
 
 // Set up timer variables
  let currentTime = 60;
 let timerId = null;
+
+
 // Start button event listener
 startButton.addEventListener("click", function () {
   // Reset game variables 
@@ -93,9 +97,9 @@ startButton.addEventListener("click", function () {
   timerId = setInterval(countdown, 1000);
   countdown(); // Start the countdown
 
-  //fill the board with photos again
+  //fill the board squares again
 
-  fillBoardPhotos();
+  fillBoard();
 });
 
 // Reset button event listener  
@@ -116,9 +120,9 @@ resetButton.addEventListener("click", function () {
   timerId = setInterval(countdown, 1000);
   countdown(); // Start the countdown
 
-  //fill the board with photos again
+  //fill the board squares again
 
-  fillBoardPhotos();
+  fillBoard();
 
 });
 
@@ -126,40 +130,40 @@ resetButton.addEventListener("click", function () {
 //Set up timer
 // let currentTime = 60;
 // let timerId= setInterval(countdown, 1000); 
-function countdown() {
+// function countdown() {
 
-  if (currentTime <= 0) {
-    clearInterval(timerId);
-    //  alert("Time's up! Game over."); 
-    // Disable all buttons when time is up
-    squares.forEach((square) => {
-      square.style.pointerEvents = "none";
-
-
-    });
-    // Display result when time is up
-    resultDisplay.innerText =
-      "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products. ";
+//   if (currentTime <= 0) {
+//     clearInterval(timerId);
+//     //  alert("Time's up! Game over."); 
+//     // Disable all buttons when time is up
+//     squares.forEach((square) => {
+//       square.style.pointerEvents = "none";
 
 
+//     });
+//     // Display result when time is up
+//     resultDisplay.innerText =
+//       "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products. ";
 
-    // Display final result
-    if (totalCorrect === totalSquares) {
-      resultDisplay.innerText =
-        "Perfect Score! You got all " + totalCorrect + " correct!";
-    } else {
-      resultDisplay.innerText =
-        "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
-    }
 
-    return;
-  }
-  currentTime--;
-  timeDisplay.innerHTML = currentTime;
-}
 
-// Fill the board with photos function
-function fillBoardPhotos() {
+//     // Display final result
+//     if (totalCorrect === totalSquares) {
+//       resultDisplay.innerText =
+//         "Perfect Score! You got all " + totalCorrect + " correct!";
+//     } else {
+//       resultDisplay.innerText =
+//         "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
+//     }
+
+//     return;
+//   }
+//   currentTime--;
+//   timeDisplay.innerHTML = currentTime;
+// }
+
+// Fill the board squares function
+function fillBoard() {
   for (let i = 0; i < productArray.length; i++) {
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
@@ -257,33 +261,9 @@ function fillBoardPhotos() {
         }
       }
     });
+//end of fillboard function
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     //lower button event listener
     lowerButton.addEventListener("click", function () {
       if (
@@ -335,7 +315,7 @@ function fillBoardPhotos() {
   }
 }
 
-// fillBoardPhotos();
+
 
 // Pick product via click
 function pickProductImage() {
@@ -350,3 +330,36 @@ function pickSquare() {
   this.style.width = "100px";
   this.style.height = "150px";
 }
+
+function countdown() {
+
+  if (currentTime <= 0) {
+    clearInterval(timerId);
+    //  alert("Time's up! Game over."); 
+    // Disable all buttons when time is up
+    squares.forEach((square) => {
+      square.style.pointerEvents = "none";
+
+
+    });
+    // Display result when time is up
+    resultDisplay.innerText =
+      "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products. ";
+
+
+
+    // Display final result
+    if (totalCorrect === totalSquares) {
+      resultDisplay.innerText =
+        "Perfect Score! You got all " + totalCorrect + " correct!";
+    } else {
+      resultDisplay.innerText =
+        "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
+    }
+
+    return;
+  }
+  currentTime--;
+  timeDisplay.innerHTML = currentTime;
+}
+
