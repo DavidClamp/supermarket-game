@@ -92,6 +92,8 @@ startButton.addEventListener("click", function() {
   squares.forEach((square) => {
     square.style.pointerEvents = "auto";  
     square.innerHTML = ""; // Clear previous content
+    //reset square border style
+    square.style.border = "1px solid black";
   });
   //set currentTime back to 60 and restart countdown
   currentTime = 60;
@@ -109,6 +111,8 @@ resetButton.addEventListener("click", function() {
   squares.forEach((square) => {
     square.style.pointerEvents = "auto";  
     square.innerHTML = ""; // Clear previous content
+    //reset square border style
+    square.style.border = "1px solid black";
   });
   //set currentTime back to 60 and restart countdown
   currentTime = 60;
