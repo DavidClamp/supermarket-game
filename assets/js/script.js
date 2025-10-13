@@ -78,7 +78,7 @@ fillBoardPhotos();
 
 // Set up timer variables
 let currentTime = 60;
-let timerId = null;
+let timerId = setInterval(countdown, 1000);
 
 
 
@@ -139,7 +139,7 @@ function countdown() {
     }); 
     // Display result when time is up
     resultDisplay.innerText =
-      "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong.";  
+      "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products. ";  
 
       
 
@@ -149,7 +149,7 @@ function countdown() {
         "Perfect Score! You got all " + totalCorrect + " correct!";
     } else {
       resultDisplay.innerText =
-        "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong.";
+        "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products." ;
     } 
     
     return;
@@ -247,14 +247,14 @@ function fillBoardPhotos() {
       if (totalCorrect + totalWrong === totalSquares) {
         if (totalCorrect === totalSquares) {
           resultDisplay.innerText =
-            "Perfect Score! You got all " + totalCorrect + " correct!";
+            "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products.";
         } else {
           resultDisplay.innerText =
             "Game Over! You got " +
             totalCorrect +
             " correct and " +
             totalWrong +
-            " wrong.";
+            " wrong out of " + totalSquares + " products.";
         }
       }
     });
