@@ -9,6 +9,60 @@ const timeDisplay = document.querySelector("#time-left");
 const startButton = document.querySelector("#start");
 const resetButton = document.querySelector("#reset");
 
+// Create Products array
+const productArray = [
+  {
+    name: "Product One",
+    img: "assets/images/athletes.webp",
+    value: 10,
+  },
+  {
+    name: "Product Two",
+    img: "assets/images/girls.webp",
+    value: 20,
+  },
+  {
+    name: "Product Three",
+    img: "assets/images/man.webp",
+    value: 30,
+  },
+  {
+    name: "Product Four",
+    img: "assets/images/mud-run.webp",
+    value: 40,
+  },
+  {
+    name: "Product Five",
+    img: "assets/images/reasons-image.webp",
+    value: 50,
+  },
+  {
+    name: "Product Six",
+    img: "assets/images/runner1.webp",
+    value: 60,
+  },
+  {
+    name: "Product Seven",
+    img: "assets/images/runner2.webp",
+    value: 70,
+  },
+  {
+    name: "Product Eight",
+    img: "assets/images/runner3.webp",
+    value: 80,
+  },
+  {
+    name: "Product Nine",
+    img: "assets/images/runner4.webp",
+    value: 90,
+  },
+];
+// Shuffle the products array
+
+productArray.sort(() => 0.5 - Math.random());
+
+
+
 // Start button event listener
 startButton.addEventListener("click", function() {
   // Reset game variables 
@@ -84,60 +138,8 @@ let totalCorrect = 0;
 let totalWrong = 0;
 const totalSquares = squares.length;
 
-// Create Products array
-const productArray = [
-  {
-    name: "Product One",
-    img: "assets/images/athletes.webp",
-    value: 10,
-  },
-  {
-    name: "Product Two",
-    img: "assets/images/girls.webp",
-    value: 20,
-  },
-  {
-    name: "Product Three",
-    img: "assets/images/man.webp",
-    value: 30,
-  },
-  {
-    name: "Product Four",
-    img: "assets/images/mud-run.webp",
-    value: 40,
-  },
-  {
-    name: "Product Five",
-    img: "assets/images/reasons-image.webp",
-    value: 50,
-  },
-  {
-    name: "Product Six",
-    img: "assets/images/runner1.webp",
-    value: 60,
-  },
-  {
-    name: "Product Seven",
-    img: "assets/images/runner2.webp",
-    value: 70,
-  },
-  {
-    name: "Product Eight",
-    img: "assets/images/runner3.webp",
-    value: 80,
-  },
-  {
-    name: "Product Nine",
-    img: "assets/images/runner4.webp",
-    value: 90,
-  },
-];
-// Shuffle the products array
 
-productArray.sort(() => 0.5 - Math.random());
-
-//console.log(grid);
-// Fill the board with photos
+// Fill the board with photos function
 function fillBoardPhotos() {
   for (let i = 0; i < productArray.length; i++) {
     const product = document.createElement("img");
@@ -237,6 +239,32 @@ function fillBoardPhotos() {
         }
       }
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //lower button event listener
     lowerButton.addEventListener("click", function () {
