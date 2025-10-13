@@ -9,6 +9,14 @@ const timeDisplay = document.querySelector("#time-left");
 const startButton = document.querySelector("#start");
 const resetButton = document.querySelector("#reset");
 
+// Game variables
+let productChosen = [];
+let productChosenId = [];
+
+let totalCorrect = 0;
+let totalWrong = 0;
+const totalSquares = squares.length;
+
 // Create Products array
 const productArray = [
   {
@@ -61,6 +69,18 @@ const productArray = [
 
 productArray.sort(() => 0.5 - Math.random());
 
+// Fill the board with photos function
+
+fillBoardPhotos();
+
+
+
+
+// Set up timer variables
+let currentTime = 60;
+let timerId = null;
+
+
 
 
 // Start button event listener
@@ -77,7 +97,7 @@ startButton.addEventListener("click", function() {
   currentTime = 60;
   timerId= setInterval(countdown, 1000); 
   countdown(); // Start the countdown
-  fillBoardPhotos(); 
+fillBoardPhotos(); 
   });
 
 // Reset button event listener  
@@ -94,7 +114,7 @@ resetButton.addEventListener("click", function() {
   currentTime = 60;
   timerId= setInterval(countdown, 1000);  
   countdown(); // Start the countdown
-  fillBoardPhotos();  
+ fillBoardPhotos();  
   
 }); 
 
@@ -106,14 +126,18 @@ function countdown() {
   
      if (currentTime <= 0) {
     clearInterval(timerId);
-    alert("Time's up! Game over."); 
+  //  alert("Time's up! Game over."); 
     // Disable all buttons when time is up
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
+
+    
     }); 
     // Display result when time is up
     resultDisplay.innerText =
       "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong.";  
+
+      
 
     // Display final result
     if (totalCorrect === totalSquares) {
@@ -129,15 +153,6 @@ function countdown() {
   currentTime--;
   timeDisplay.innerHTML = currentTime;
 }
-
-// Game variables
-let productChosen = [];
-let productChosenId = [];
-
-let totalCorrect = 0;
-let totalWrong = 0;
-const totalSquares = squares.length;
-
 
 // Fill the board with photos function
 function fillBoardPhotos() {
