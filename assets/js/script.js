@@ -72,16 +72,9 @@ productArray.sort(() => 0.5 - Math.random());
 
 fillBoardPhotos();
 
-
-
-
 // Set up timer variables
-let currentTime = 60;
-let timerId = setInterval(countdown, 1000);
-
-
-
-
+ let currentTime = 60;
+let timerId = null;
 // Start button event listener
 startButton.addEventListener("click", function () {
   // Reset game variables 
