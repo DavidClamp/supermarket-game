@@ -74,13 +74,6 @@ fillBoard();
 
 
 
-// Set up timer variables
-
-//   let currentTime = 60;
-//  let timerId = null;
-
-
-
 // Start button event listener
 startButton.addEventListener("click", function () {
   // Set game variables 
@@ -143,26 +136,22 @@ function fillBoard() {
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
- //hover effect to show product name
-    product.title = productArray[i].name; 
+    //hover effect to show product name
+    product.title = productArray[i].name;
     product.addEventListener("mouseover", function () {
       const productName = document.createElement("h4");
       productName.innerText = productArray[i].name;
       squares[i].appendChild(productName);
 
-    }); 
-    
+    });
+
     //hover out to remove product name
     product.addEventListener("mouseout", function () {
-      const productName = squares[i].querySelector("h4"); 
+      const productName = squares[i].querySelector("h4");
       if (productName) {
         squares[i].removeChild(productName);
       }
     });
-
-
-
-
 
     // Adjusted value by 10% up or down randomly and place to each square
 
@@ -170,9 +159,8 @@ function fillBoard() {
     adjValue.innerText =
       (productArray[i].value * (Math.random() < 0.5 ? 0.9 : 1.1)).toFixed(2) +
       " Is this price higher or lower than selling price?";
-   
-    squares[i].appendChild(adjValue);
 
+    squares[i].appendChild(adjValue);
 
     // choose one of two buttons to indicate if value is higher or lower than actual value
 
@@ -237,26 +225,26 @@ function fillBoard() {
         " / " +
         totalSquares;
 
-     // Display final result when all squares have been played
+      // // Display final result when all squares have been played
 
-      if (totalCorrect + totalWrong === totalSquares) {
-        if (totalCorrect === totalSquares) {
-          resultDisplay.innerText =
-            "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products.";
-        } else {
-          resultDisplay.innerText =
-            "Game Over! You got " +
-            totalCorrect +
-            " correct and " +
-            totalWrong +
-            " wrong out of " + totalSquares + " products.";
-        }
-      }
-     
+      // if (totalCorrect + totalWrong === totalSquares) {
+      //   if (totalCorrect === totalSquares) {
+      //     resultDisplay.innerText =
+      //       "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products.";
+      //   } else {
+      //     resultDisplay.innerText =
+      //       "Game Over! You got " +
+      //       totalCorrect +
+      //       " correct and " +
+      //       totalWrong +
+      //       " wrong out of " + totalSquares + " products.";
+      //   }
+      // }
+
     });
-//end of fillboard function
+    //end of fillboard function
 
-    
+
     //lower button event listener
     lowerButton.addEventListener("click", function () {
       if (
@@ -304,7 +292,7 @@ function fillBoard() {
         " / " +
         totalSquares;
 
-         // Display final result when all squares have been played
+      // Display final result when all squares have been played
 
       if (totalCorrect + totalWrong === totalSquares) {
         if (totalCorrect === totalSquares) {
@@ -341,23 +329,23 @@ function pickSquare() {
 }
 
 function countdown() {
- // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played 
-   
+  // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played 
 
- if (currentTime > 0 && totalCorrect + totalWrong === totalSquares) {
-  // Stop the timer
-      clearInterval(timerId); 
 
-//alert("You have completed the game before time is up!");
-// Disable all buttons when game is completed
-   squares.forEach((square) => {
+  if (currentTime > 0 && totalCorrect + totalWrong === totalSquares) {
+    // Stop the timer
+    clearInterval(timerId);
+
+    //alert("You have completed the game before time is up!");
+    // Disable all buttons when game is completed
+    squares.forEach((square) => {
       square.style.pointerEvents = "none";
     });
-  
-// Display final result
+
+    // Display final result
     if (totalCorrect === totalSquares) {
       resultDisplay.innerText =
-        "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products."<br> "You win a prize!";
+        "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products." < br > "You win a prize!";
     } else {
       resultDisplay.innerText =
         "End game,You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
@@ -367,11 +355,11 @@ function countdown() {
 
   }
 
-    if (currentTime <= 0) {
-  // Stop the timer
+  if (currentTime <= 0) {
+    // Stop the timer
     clearInterval(timerId);
-  // Time's up Game over  
-      // Disable all buttons when time is up
+    // Time's up Game over  
+    // Disable all buttons when time is up
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
 
@@ -380,14 +368,13 @@ function countdown() {
     // Display result when time is up
     resultDisplay.innerText =
       "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
-      return;
+    return;
   }
   // Decrease time by 1 second  
-    currentTime--;
+  currentTime--;
   timeDisplay.innerHTML = currentTime;
 
- 
 
-// End of countdown function
+
+  // End of countdown function
 }
-
