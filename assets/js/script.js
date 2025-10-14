@@ -127,40 +127,6 @@ resetButton.addEventListener("click", function () {
 });
 
 
-//Set up timer
-// let currentTime = 60;
-// let timerId= setInterval(countdown, 1000); 
-// function countdown() {
-
-//   if (currentTime <= 0) {
-//     clearInterval(timerId);
-//     //  alert("Time's up! Game over."); 
-//     // Disable all buttons when time is up
-//     squares.forEach((square) => {
-//       square.style.pointerEvents = "none";
-
-
-//     });
-//     // Display result when time is up
-//     resultDisplay.innerText =
-//       "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products. ";
-
-
-
-//     // Display final result
-//     if (totalCorrect === totalSquares) {
-//       resultDisplay.innerText =
-//         "Perfect Score! You got all " + totalCorrect + " correct!";
-//     } else {
-//       resultDisplay.innerText =
-//         "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
-//     }
-
-//     return;
-//   }
-//   currentTime--;
-//   timeDisplay.innerHTML = currentTime;
-// }
 
 // Fill the board squares function
 function fillBoard() {
@@ -173,6 +139,27 @@ function fillBoard() {
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
+ //hover effect to show product name
+    product.title = productArray[i].name; 
+    product.addEventListener("mouseover", function () {
+      const productName = document.createElement("h4");
+      productName.innerText = productArray[i].name;
+      squares[i].appendChild(productName);
+
+    }); 
+    
+    //hover out to remove product name
+    product.addEventListener("mouseout", function () {
+      const productName = squares[i].querySelector("h4"); 
+      if (productName) {
+        squares[i].removeChild(productName);
+      }
+    });
+
+    
+
+
+
     // Adjusted value by 10% up or down randomly and place to each square
 
     const adjValue = document.createElement("h5");
@@ -181,6 +168,7 @@ function fillBoard() {
       " Is this price higher or lower than selling price?";
     console.log(adjValue);
     squares[i].appendChild(adjValue);
+
 
     // choose one of two buttons to indicate if value is higher or lower than actual value
 
