@@ -348,37 +348,29 @@ function countdown() {
   // Stop the timer
       clearInterval(timerId); 
 
-alert("You have completed the game before time is up!");
+//alert("You have completed the game before time is up!");
 // Disable all buttons when game is completed
    squares.forEach((square) => {
       square.style.pointerEvents = "none";
     });
+  
+// Display final result
+    if (totalCorrect === totalSquares) {
+      resultDisplay.innerText =
+        "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products."<br> "You win a prize!";
+    } else {
+      resultDisplay.innerText =
+        "End game,You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
+    }
+
+    return;
+
   }
 
-//     resultDisplay.innerText =
-//       "You have completed the game before time is up!"; 
-
-//       // Display final result
-//     if (totalCorrect === totalSquares) {
-//       resultDisplay.innerText =
-//         "Before !Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products." <br> You win a prize!";
-//     } else {
-//       resultDisplay.innerText =
-//         "Before !Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
-//     }   
-
-//     return;
-//   } 
-  
-  // Check if time has run out
-
-
-if (currentTime <= 0) {
+    if (currentTime <= 0) {
   // Stop the timer
     clearInterval(timerId);
-  // Time's up Game over
-   alert("Time's up! Game over.");
-  
+  // Time's up Game over  
       // Disable all buttons when time is up
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
@@ -388,19 +380,7 @@ if (currentTime <= 0) {
     // Display result when time is up
     resultDisplay.innerText =
       "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
-
-
-
-    // Display final result
-    if (totalCorrect === totalSquares) {
-      resultDisplay.innerText =
-        "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products."<br> "You win a prize!";
-    } else {
-      resultDisplay.innerText =
-        "Game Over! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
-    }
-
-    return;
+      return;
   }
   // Decrease time by 1 second  
     currentTime--;
