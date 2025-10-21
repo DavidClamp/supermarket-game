@@ -99,28 +99,55 @@ var productArray = [
 
 //Try API like Fake Store API or others for product data
 const productAPI =[]
+// fetch("https://fakestoreapi.com/products?limit=9")
+//   .then((res) => res.json())
+//   .then(data =>  productAPI.push(...data.map((item) => ({  
+//     img: item.image,
+//      name: item.title,
+//      value: item.price,
+//      }))));
+
+ //try to log productAPI after fetch
 fetch("https://fakestoreapi.com/products?limit=9")
   .then((res) => res.json())
-  .then(data =>  productAPI.push(...data.map((item) => ({  
-    img: item.image,
-     name: item.title,
-     value: item.price,
-     }))));
+  .then((data) => { 
+    data.forEach((item) => {
+      productAPI.push({...{ 
+                img: item.image,  
+        name: item.title,
+        value: item.price,
+      }});
+    });
 
-     console.log(productAPI);     
+    // Now you can use productAPI here or call fillBoard() if needed
+    //if (productAPI.length === totalSquares) { 
+      
+    console.log(productAPI);  
+    productArray = productAPI;
+  });
+ 
+ 
 
- //use productAPI instead of productArray if needed
 
- //console.log(productAPI);  
+ console.log(productArray);  
+ console.log(productAPI);
 
 
 //Shuffle the products array
 
 productArray.sort(() => 0.5 - Math.random());
-console.log(productArray);
-// Fill the board squares
 
+// Fill the board squares
 fillBoard();
+
+//use productAPI if available
+
+
+// if (productAPI.length === totalSquares) {
+//   productArray = productAPI; 
+//   fillBoard();
+
+
 
 // Start button event listener
 startButton.addEventListener("click", function () {
