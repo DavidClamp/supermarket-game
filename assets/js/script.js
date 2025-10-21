@@ -98,22 +98,20 @@ var productArray = [
 //API integration can be added later
 
 //Try API like Fake Store API or others for product data
-let productAPI =[]
+const productAPI =[]
 fetch("https://fakestoreapi.com/products?limit=9")
   .then((res) => res.json())
-  .then((data) => { 
-    // You can replace the static productArray with data from the API here 
-    // for example, map the data to your productArray format
-    productAPI = data.map(item => ({
+  .then(data =>  productAPI.push(...data.map((item) => ({  
     img: item.image,
      name: item.title,
      value: item.price,
-     }))  
+     }))));
+
      console.log(productAPI);     
-  });
+
  //use productAPI instead of productArray if needed
 
- console.log(productAPI);  
+ //console.log(productAPI);  
 
 
 //Shuffle the products array
