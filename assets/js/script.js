@@ -18,7 +18,25 @@ let totalWrong = 0;
 let totalSquares = squares.length;
 
 // Create Products array
-const productArray = [
+
+// Each product has an image, name, and value
+
+// Values are arbitrary for demonstration purposes
+
+// In a real game, these would be the actual selling prices
+// of the products
+// Product images are placeholders and should be replaced with actual product images
+// in a real game
+// Product names are also placeholders
+// and should be replaced with actual product names in a real game
+// Product values are arbitrary and should be replaced with actual selling prices
+// in a real game
+// Example product array
+// Shuffle the products array before filling the board
+// to ensure random placement each game
+// Product array
+
+var productArray = [
   {
     img: "assets/images/athletes.webp",
     name: "Product One",
@@ -73,10 +91,35 @@ const productArray = [
     value: 90,
   },
 ];
-// Shuffle the products array
+
+//use API to get product data in real game
+// For demonstration, using static data
+
+//API integration can be added later
+
+//Try API like Fake Store API or others for product data
+let productAPI =[]
+fetch("https://fakestoreapi.com/products?limit=9")
+  .then((res) => res.json())
+  .then((data) => { 
+    // You can replace the static productArray with data from the API here 
+    // for example, map the data to your productArray format
+    productAPI = data.map(item => ({
+    img: item.image,
+     name: item.title,
+     value: item.price,
+     }))  
+     console.log(productAPI);     
+  });
+ //use productAPI instead of productArray if needed
+
+ console.log(productAPI);  
+
+
+//Shuffle the products array
 
 productArray.sort(() => 0.5 - Math.random());
-
+console.log(productArray);
 // Fill the board squares
 
 fillBoard();
