@@ -15,52 +15,61 @@ let productChosenId = [];
 
 let totalCorrect = 0;
 let totalWrong = 0;
-const totalSquares = squares.length;
+let totalSquares = squares.length;
 
 // Create Products array
-const productArray = [{
-    name: "Product One",
+const productArray = [
+  {
     img: "assets/images/athletes.webp",
+    name: "Product One",
+
     value: 10,
   },
   {
-    name: "Product Two",
     img: "assets/images/girls.webp",
+    name: "Product Two",
+
     value: 20,
   },
   {
-    name: "Product Three",
     img: "assets/images/man.webp",
+    name: "Product Three",
+
     value: 30,
   },
   {
-    name: "Product Four",
     img: "assets/images/mud-run.webp",
+    name: "Product Four",
+
     value: 40,
   },
   {
-    name: "Product Five",
     img: "assets/images/reasons-image.webp",
+    name: "Product Five",
+
     value: 50,
   },
   {
-    name: "Product Six",
     img: "assets/images/runner1.webp",
+    name: "Product Six",
     value: 60,
   },
   {
-    name: "Product Seven",
     img: "assets/images/runner2.webp",
+    name: "Product Seven",
+
     value: 70,
   },
   {
-    name: "Product Eight",
     img: "assets/images/runner3.webp",
+    name: "Product Eight",
+
     value: 80,
   },
   {
-    name: "Product Nine",
     img: "assets/images/runner4.webp",
+    name: "Product Nine",
+
     value: 90,
   },
 ];
@@ -72,43 +81,39 @@ productArray.sort(() => 0.5 - Math.random());
 
 fillBoard();
 
-
-
 // Start button event listener
 startButton.addEventListener("click", function () {
-  // Set game variables 
+  // Set game variables to initial values
   totalCorrect = 0;
   totalWrong = 0;
 
   resultDisplay.innerText = "";
-  squares.forEach((square) => {
-    square.style.pointerEvents = "auto";
 
+  squares.forEach(function (square) {
+    square.style.pointerEvents = "auto";
     // Clear previous content reset square border style
     square.innerHTML = "";
     square.style.border = "1px solid black";
   });
-  //set currentTime to 60 and start countdown
-
+  //set currentTime back to 60 and restart countdown
   currentTime = 60;
   timerId = setInterval(countdown, 1000);
-  countdown(); // Start the countdown
+  countdown();
 
   //fill the board squares again
 
   fillBoard();
 });
 
-// Reset button event listener  
+// Reset button event listener
 resetButton.addEventListener("click", function () {
-  // Reset game variables 
+  // Reset game variables to initial values
   totalCorrect = 0;
   totalWrong = 0;
   resultDisplay.innerText = "";
-  squares.forEach((square) => {
+  squares.forEach(function (square) {
     square.style.pointerEvents = "auto";
-
-    //  Clear previous content reset square border style
+    // Clear previous content reset square border style
     square.innerHTML = "";
     square.style.border = "1px solid black";
   });
@@ -120,14 +125,11 @@ resetButton.addEventListener("click", function () {
   //fill the board squares again
 
   fillBoard();
-
 });
-
-
 
 // Fill the board squares function
 function fillBoard() {
-  for (let i = 0; i < productArray.length; i++) {
+  for (let i = 0; i < totalSquares; i++) {
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
     product.setAttribute("data-id", i);
@@ -142,7 +144,6 @@ function fillBoard() {
       const productName = document.createElement("h4");
       productName.innerText = productArray[i].name;
       squares[i].appendChild(productName);
-
     });
 
     //hover out to remove product name
@@ -177,8 +178,11 @@ function fillBoard() {
     // if user clicks on higher or lower button, indicate if they are correct or not
     // disable event listener to buttons after one click
 
+
+
+    
     //higher button event listener
-    higherButton.addEventListener("click", function () {
+     higherButton.addEventListener("click", function () {
       if (
         adjValue.innerText.includes("higher") &&
         adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))
@@ -193,13 +197,13 @@ function fillBoard() {
           "Correct! The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
         totalCorrect += 1;
-        squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+        // disable further clicks on this square
+        squares[i].style.pointerEvents = "none";
         // highlight square border to indicate correct guess
         squares[i].style.border = "2px solid green";
       } else {
         alert(
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
-
         );
         //highlight square border to indicate wrong guess
         squares[i].style.border = "2px solid red";
@@ -210,7 +214,8 @@ function fillBoard() {
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
         totalWrong += 1;
-        squares[i].style.pointerEvents = "none"; // disable further clicks on this square
+        // disable further clicks on this square
+        squares[i].style.pointerEvents = "none";
         // highlight square border to indicate wrong guess
         squares[i].style.border = "2px solid red";
       }
@@ -224,30 +229,11 @@ function fillBoard() {
         totalWrong +
         " / " +
         totalSquares;
-
-      // // Display final result when all squares have been played
-
-      // if (totalCorrect + totalWrong === totalSquares) {
-      //   if (totalCorrect === totalSquares) {
-      //     resultDisplay.innerText =
-      //       "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products.";
-      //   } else {
-      //     resultDisplay.innerText =
-      //       "Game Over! You got " +
-      //       totalCorrect +
-      //       " correct and " +
-      //       totalWrong +
-      //       " wrong out of " + totalSquares + " products.";
-      //   }
-      // }
-
     });
-    //end of fillboard function
 
-
-    //lower button event listener
-    lowerButton.addEventListener("click", function () {
-      if (
+            //lower button event listener
+      lowerButton.addEventListener("click", function () {
+       if (
         adjValue.innerText.includes("lower") &&
         adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))
       ) {
@@ -294,25 +280,24 @@ function fillBoard() {
 
       // Display final result when all squares have been played
 
-      if (totalCorrect + totalWrong === totalSquares) {
-        if (totalCorrect === totalSquares) {
+             if (totalCorrect + totalWrong === totalSquares) {
+           if (totalCorrect === totalSquares) {
           resultDisplay.innerText =
-            "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products.";
-        } else {
+            "Perfect Score! You got all " + totalCorrect + " correct!";
+            } else {
           resultDisplay.innerText =
             "Game Over! You got " +
             totalCorrect +
             " correct and " +
             totalWrong +
-            " wrong out of " + totalSquares + " products.";
-        }
-      }
-
+            " wrong out of " +
+            totalSquares +
+            " products.";
+           }
+            }
     });
   }
 }
-
-
 
 // Pick product via click
 function pickProductImage() {
@@ -329,8 +314,7 @@ function pickSquare() {
 }
 
 function countdown() {
-  // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played 
-
+  // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played
 
   if (currentTime > 0 && totalCorrect + totalWrong === totalSquares) {
     // Stop the timer
@@ -345,36 +329,43 @@ function countdown() {
     // Display final result
     if (totalCorrect === totalSquares) {
       resultDisplay.innerText =
-        "Perfect Score! You got all " + totalCorrect + " correct! out of " + totalSquares + " products." < br > "You win a prize!";
+        "Perfect Score! You got all " + totalCorrect + " correct!";
     } else {
       resultDisplay.innerText =
-        "End game,You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
+        "End game,You got " +
+        totalCorrect +
+        " correct and " +
+        totalWrong +
+        " wrong out of " +
+        totalSquares +
+        " products.";
     }
 
     return;
-
   }
 
   if (currentTime <= 0) {
     // Stop the timer
     clearInterval(timerId);
-    // Time's up Game over  
+    // Time's up Game over
     // Disable all buttons when time is up
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
-
-
     });
     // Display result when time is up
     resultDisplay.innerText =
-      "Time's up! You got " + totalCorrect + " correct and " + totalWrong + " wrong out of " + totalSquares + " products.";
+      "Time's up! You got " +
+      totalCorrect +
+      " correct and " +
+      totalWrong +
+      " wrong out of " +
+      totalSquares +
+      " products.";
     return;
   }
-  // Decrease time by 1 second  
+  // Decrease time by 1 second
   currentTime--;
   timeDisplay.innerHTML = currentTime;
-
-
 
   // End of countdown function
 }
