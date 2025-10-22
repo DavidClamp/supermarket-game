@@ -17,27 +17,20 @@ let totalCorrect = 0;
 let totalWrong = 0;
 let totalSquares = squares.length;
 
+// Timer variables
+let currentTime = 60;
+let timerId = null;
+
+
+
+
+
 // Create Products array
 
 // Each product has an image, name, and value
 
-// Values are arbitrary for demonstration purposes
 
-// In a real game, these would be the actual selling prices
-// of the products
-// Product images are placeholders and should be replaced with actual product images
-// in a real game
-// Product names are also placeholders
-// and should be replaced with actual product names in a real game
-// Product values are arbitrary and should be replaced with actual selling prices
-// in a real game
-// Example product array
-// Shuffle the products array before filling the board
-// to ensure random placement each game
-// Product array
-
-var productArray = [
-  {
+var productArray = [{
     img: "assets/images/athletes.webp",
     name: "Product One",
 
@@ -92,62 +85,47 @@ var productArray = [
   },
 ];
 
-//use API to get product data in real game
-// For demonstration, using static data
 
-//API integration can be added later
 
 //Try API like Fake Store API or others for product data
-const productAPI =[]
-// fetch("https://fakestoreapi.com/products?limit=9")
-//   .then((res) => res.json())
-//   .then(data =>  productAPI.push(...data.map((item) => ({  
-//     img: item.image,
-//      name: item.title,
-//      value: item.price,
-//      }))));
+const productAPI = []
 
- //try to log productAPI after fetch
+//try to log productAPI after fetch
 fetch("https://fakestoreapi.com/products?limit=9")
   .then((res) => res.json())
-  .then((data) => { 
+  .then((data) => {
     data.forEach((item) => {
-      productAPI.push({...{ 
-                img: item.image,  
-        name: item.title,
-        value: item.price,
-      }});
+      productAPI.push({
+        ...{
+          img: item.image,
+          name: item.title,
+          value: item.price,
+        }
+      });
     });
 
-    // Now you can use productAPI here or call fillBoard() if needed
-    //if (productAPI.length === totalSquares) { 
-      
-    
- productArray = productAPI;
- //shuffle the productArray
+    // Now you can use productAPI array
 
- productArray.sort(() => 0.5 - Math.random());
- //fill the board with products from API
 
-  fillBoard();
+    productArray = productAPI;
+    //shuffle the productArray
+
+    productArray.sort(() => 0.5 - Math.random());
+    //fill the board with products from API
+
+    fillBoard();
   });
- 
+
 // Start button event listener
 startButton.addEventListener("click", function () {
-  
+
   // Set game variables to initial values
   totalCorrect = 0;
   totalWrong = 0;
 
   resultDisplay.innerText = "";
 
-  squares.forEach(function (square) {
-    square.style.pointerEvents = "auto";
-    // Clear previous content reset square border style
-    square.innerHTML = "";
-    square.style.border = "1px solid black";
-  });
-  //set currentTime back to 60 and restart countdown
+  
   currentTime = 60;
   timerId = setInterval(countdown, 1000);
 
@@ -158,45 +136,29 @@ startButton.addEventListener("click", function () {
   fillBoard();
 });
 
-// Reset button event listener
-// resetButton.addEventListener("click", function () {
-//   // Reset game variables to initial values
-//   totalCorrect = 0;
-//   totalWrong = 0;
-//   resultDisplay.innerText = "";
-// //pointer events to auto to enable clicks again
-
-
-
-//   squares.forEach(function (square) {
-//     square.style.pointerEvents = "auto";
-//     // Clear previous content reset square border style
-//     square.innerHTML = "";
-//     square.style.border = "1px solid black";
-//   });
-//   //set currentTime back to 60 and restart countdown
-//   currentTime = 60;
-//   timerId = setInterval(countdown, 1000);
-//   countdown(); // Start the countdown
-
-//   //fill the board squares again
-
-//   fillBoard();
-// });
-
 // Fill the board squares function
 function fillBoard() {
   for (let i = 0; i < totalSquares; i++) {
+
+//clear previous content and reset square border style
+squares[i].style.border = "1px solid black";
+    squares[i].innerHTML = ""; 
     
+  //set pointer events to auto to enable clicks again
+    squares[i].style.pointerEvents = "auto";
+
+    // Create product image element and place to each square
+    
+
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
-    
+
     product.setAttribute("data-id", i);
     product.style.width = "100px";
     product.style.height = "100px";
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
-   
+
 
     //hover effect to show product name
 
@@ -242,9 +204,9 @@ function fillBoard() {
 
 
 
-    
+
     //higher button event listener
-     higherButton.addEventListener("click", function () {
+    higherButton.addEventListener("click", function () {
       if (
         adjValue.innerText.includes("higher") &&
         adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))
@@ -293,9 +255,9 @@ function fillBoard() {
         totalSquares;
     });
 
-            //lower button event listener
-      lowerButton.addEventListener("click", function () {
-       if (
+    //lower button event listener
+    lowerButton.addEventListener("click", function () {
+      if (
         adjValue.innerText.includes("lower") &&
         adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))
       ) {
@@ -342,12 +304,12 @@ function fillBoard() {
 
       // Display final result when all squares have been played
 
-             if (totalCorrect + totalWrong === totalSquares) {
-           if (totalCorrect === totalSquares) {
-            
+      if (totalCorrect + totalWrong === totalSquares) {
+        if (totalCorrect === totalSquares) {
+
           resultDisplay.innerText =
             "Perfect Score! You got all " + totalCorrect + " correct!";
-            } else {
+        } else {
           resultDisplay.innerText =
             "Game Over! You got " +
             totalCorrect +
@@ -356,12 +318,13 @@ function fillBoard() {
             " wrong out of " +
             totalSquares +
             " products.";
-           }
-            }
+        }
+      }
     });
   }
- 
+
 }
+//  End of fillBoard function
 
 // Pick product via click
 function pickProductImage() {
