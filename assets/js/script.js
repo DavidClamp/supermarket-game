@@ -122,35 +122,19 @@ fetch("https://fakestoreapi.com/products?limit=9")
     // Now you can use productAPI here or call fillBoard() if needed
     //if (productAPI.length === totalSquares) { 
       
-    console.log(productAPI);  
-    productArray = productAPI;
+    
+ productArray = productAPI;
+ //shuffle the productArray
+
+ productArray.sort(() => 0.5 - Math.random());
+ //fill the board with products from API
+
+  fillBoard();
   });
  
- 
-
-
- console.log(productArray);  
- console.log(productAPI);
-
-
-//Shuffle the products array
-
-productArray.sort(() => 0.5 - Math.random());
-
-// Fill the board squares
-fillBoard();
-
-//use productAPI if available
-
-
-// if (productAPI.length === totalSquares) {
-//   productArray = productAPI; 
-//   fillBoard();
-
-
-
 // Start button event listener
 startButton.addEventListener("click", function () {
+  
   // Set game variables to initial values
   totalCorrect = 0;
   totalWrong = 0;
@@ -166,6 +150,7 @@ startButton.addEventListener("click", function () {
   //set currentTime back to 60 and restart countdown
   currentTime = 60;
   timerId = setInterval(countdown, 1000);
+
   countdown();
 
   //fill the board squares again
@@ -179,6 +164,10 @@ resetButton.addEventListener("click", function () {
   totalCorrect = 0;
   totalWrong = 0;
   resultDisplay.innerText = "";
+//pointer events to auto to enable clicks again
+
+
+
   squares.forEach(function (square) {
     square.style.pointerEvents = "auto";
     // Clear previous content reset square border style
@@ -198,15 +187,19 @@ resetButton.addEventListener("click", function () {
 // Fill the board squares function
 function fillBoard() {
   for (let i = 0; i < totalSquares; i++) {
+    
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
+    
     product.setAttribute("data-id", i);
     product.style.width = "100px";
     product.style.height = "100px";
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
+   
 
     //hover effect to show product name
+
     product.title = productArray[i].name;
     product.addEventListener("mouseover", function () {
       const productName = document.createElement("h4");
@@ -365,6 +358,7 @@ function fillBoard() {
             }
     });
   }
+ 
 }
 
 // Pick product via click
