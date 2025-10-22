@@ -200,6 +200,7 @@ function fillBoard() {
 
     //hover effect to show product name
 
+
     product.title = productArray[i].name;
     product.addEventListener("mouseover", function () {
       const productName = document.createElement("h4");
@@ -343,6 +344,7 @@ function fillBoard() {
 
              if (totalCorrect + totalWrong === totalSquares) {
            if (totalCorrect === totalSquares) {
+            
           resultDisplay.innerText =
             "Perfect Score! You got all " + totalCorrect + " correct!";
             } else {
