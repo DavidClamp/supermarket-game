@@ -159,30 +159,30 @@ startButton.addEventListener("click", function () {
 });
 
 // Reset button event listener
-resetButton.addEventListener("click", function () {
-  // Reset game variables to initial values
-  totalCorrect = 0;
-  totalWrong = 0;
-  resultDisplay.innerText = "";
-//pointer events to auto to enable clicks again
+// resetButton.addEventListener("click", function () {
+//   // Reset game variables to initial values
+//   totalCorrect = 0;
+//   totalWrong = 0;
+//   resultDisplay.innerText = "";
+// //pointer events to auto to enable clicks again
 
 
 
-  squares.forEach(function (square) {
-    square.style.pointerEvents = "auto";
-    // Clear previous content reset square border style
-    square.innerHTML = "";
-    square.style.border = "1px solid black";
-  });
-  //set currentTime back to 60 and restart countdown
-  currentTime = 60;
-  timerId = setInterval(countdown, 1000);
-  countdown(); // Start the countdown
+//   squares.forEach(function (square) {
+//     square.style.pointerEvents = "auto";
+//     // Clear previous content reset square border style
+//     square.innerHTML = "";
+//     square.style.border = "1px solid black";
+//   });
+//   //set currentTime back to 60 and restart countdown
+//   currentTime = 60;
+//   timerId = setInterval(countdown, 1000);
+//   countdown(); // Start the countdown
 
-  //fill the board squares again
+//   //fill the board squares again
 
-  fillBoard();
-});
+//   fillBoard();
+// });
 
 // Fill the board squares function
 function fillBoard() {
