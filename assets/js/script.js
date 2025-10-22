@@ -203,14 +203,14 @@ function fillBoard() {
 
     product.title = productArray[i].name;
     product.addEventListener("mouseover", function () {
-      const productName = document.createElement("h4");
+      const productName = document.createElement("h6");
       productName.innerText = productArray[i].name;
       squares[i].appendChild(productName);
     });
 
     //hover out to remove product name
     product.addEventListener("mouseout", function () {
-      const productName = squares[i].querySelector("h4");
+      const productName = squares[i].querySelector("h6");
       if (productName) {
         squares[i].removeChild(productName);
       }
@@ -254,7 +254,7 @@ function fillBoard() {
         );
 
         //place product value below the image after guess
-        const actualValue = document.createElement("h4");
+        const actualValue = document.createElement("h5");
         actualValue.innerText =
           "Correct! The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
@@ -270,8 +270,8 @@ function fillBoard() {
         //highlight square border to indicate wrong guess
         squares[i].style.border = "2px solid red";
 
-        //place product value below the image after guess
-        const actualValue = document.createElement("h4");
+        //place product value below the image after wrong guess
+        const actualValue = document.createElement("h5");
         actualValue.innerText =
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
@@ -304,7 +304,7 @@ function fillBoard() {
         );
 
         //place product value below the image after guess
-        const actualValue = document.createElement("h4");
+        const actualValue = document.createElement("h5");
         actualValue.innerText =
           "Correct! The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
@@ -319,8 +319,8 @@ function fillBoard() {
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
         );
         totalWrong += 1;
-        //place product value below the image after guess
-        const actualValue = document.createElement("h4");
+        //place product value below the image after wrong guess
+        const actualValue = document.createElement("h5");
         actualValue.innerText =
           "Incorrect. The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
