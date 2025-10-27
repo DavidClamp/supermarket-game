@@ -22,6 +22,19 @@ let currentTime = 60;
 let timerId = null;
 
 
+// responsive grid adjustment
+// function adjustGrid() {
+//   if (window.innerWidth < 600) {
+//     grid.style.gridTemplateColumns = "repeat(3, 1fr)";
+//   } else if (window.innerWidth < 900) {
+//     grid.style.gridTemplateColumns = "repeat(4, 1fr)";
+//   } else {
+//     grid.style.gridTemplateColumns = "repeat(6, 1fr)";
+//   }
+// }
+// window.addEventListener("resize", adjustGrid);
+// adjustGrid();
+
 
 
 

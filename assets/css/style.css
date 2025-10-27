@@ -3,21 +3,27 @@
 
 /* Grid and square styles */
 
-
+/* grid container */
 
 .grid {
+  display : flex;
+  flex-wrap: wrap;
+  grid-template-columns: auto auto auto;
   width: 606px;
   height: 906px;
-  display: flex;
-  flex-wrap: wrap;
+
 }
 
 .square {
+
+  text-align: center;
   width: 200px;
   height: 300px;
   border: 1px solid black;
   /* box-sizing: border-box;  */
 }
+
+
 
 /* used code from my milestone 1 project to style body of game */
 * body {
