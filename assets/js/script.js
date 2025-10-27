@@ -126,7 +126,7 @@ startButton.addEventListener("click", function () {
 
   resultDisplay.innerText = "";
 
-  
+
   currentTime = 60;
   timerId = setInterval(countdown, 1000);
 
@@ -141,20 +141,23 @@ startButton.addEventListener("click", function () {
 function fillBoard() {
   for (let i = 0; i < totalSquares; i++) {
 
-//clear previous content and reset square border style
-squares[i].style.border = "1px solid black";
-    squares[i].innerHTML = ""; 
-    
-  //set pointer events to auto to enable clicks again
+    //clear previous content and reset square border style
+    squares[i].style.border = "1px solid black";
+    squares[i].innerHTML = "";
+
+    //set pointer events to auto to enable clicks again
     squares[i].style.pointerEvents = "auto";
 
-    // Create product image element and place to each square
-    
+    // Create product image element and place to each square  
+
 
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
 
     product.setAttribute("data-id", i);
+
+
+
 
 
     product.style.width = "100px";

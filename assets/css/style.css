@@ -32,7 +32,7 @@
 @media (max-width: 650px) {
   .grid {
     width: 406px;
-    height: 600px;
+    height: 606px;
   }
 
   .square {
@@ -43,7 +43,7 @@
 @media (max-width: 400px) {
   .grid {
     width: 306px;
-    height: 450px;
+    height: 456px;
   }
 
   .square {
