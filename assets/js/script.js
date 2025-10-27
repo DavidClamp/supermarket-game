@@ -105,7 +105,7 @@ fetch("https://fakestoreapi.com/products?limit=9")
       });
     });
 
-    // Now you can use productAPI array
+    // Use productAPI array
 
 
     productArray = productAPI;
@@ -126,13 +126,16 @@ startButton.addEventListener("click", function () {
 
   resultDisplay.innerText = "";
 
-
   currentTime = 60;
   timerId = setInterval(countdown, 1000);
+
+  // set 
 
   countdown();
 
   //fill the board squares again
+
+
 
   fillBoard();
 });
@@ -144,24 +147,40 @@ function fillBoard() {
     //clear previous content and reset square border style
     squares[i].style.border = "1px solid black";
     squares[i].innerHTML = "";
+    
 
     //set pointer events to auto to enable clicks again
     squares[i].style.pointerEvents = "auto";
 
 
-   // Create product image element and place to each square 
+   
 
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
-
-    
+  
 
     product.setAttribute("data-id", i);
 
+// resize image for different window widths
+console.log(window.innerWidth)
+  if (window.innerWidth < 450) {  
+    
+    product.style.width = "50px";
+    product.style.height = "50px";
+   
+  }
+  else if (window.innerWidth < 650){
+
+    product.style.width = "75px";
+    product.style.height = "75px";
+   
+}
+ else {
+
     product.style.width = "100px";
     product.style.height = "100px";
- 
-
+    
+}
 
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
