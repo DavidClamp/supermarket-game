@@ -148,23 +148,23 @@ function fillBoard() {
     //set pointer events to auto to enable clicks again
     squares[i].style.pointerEvents = "auto";
 
-    // Create product image element and place to each square  
 
+   // Create product image element and place to each square 
 
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
 
+    
+
     product.setAttribute("data-id", i);
-
-
-
-
 
     product.style.width = "100px";
     product.style.height = "100px";
+ 
+
+
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
-
 
     //hover effect to show product name
 
