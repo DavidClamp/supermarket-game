@@ -3,12 +3,15 @@
 
 /* Grid and square styles */
 
-/* grid container */
+
+
+
+
 
 .grid {
   display : flex;
   flex-wrap: wrap;
-  grid-template-columns: auto auto auto;
+
   width: 606px;
   height: 906px;
 
@@ -21,12 +24,39 @@
   height: 300px;
   border: 1px solid black;
   /* box-sizing: border-box;  */
+ }
+
+/* responsive design for grid and squares */
+
+
+@media (max-width: 650px) {
+  .grid {
+    width: 406px;
+    height: 600px;
+  }
+
+  .square {
+    width: 133px;
+    height: 200px;
+  }
 }
+@media (max-width: 400px) {
+  .grid {
+    width: 306px;
+    height: 450px;
+  }
+
+  .square {
+    width: 100px;
+    height: 150px;
+  }
+}
+ 
 
 
 
 /* used code from my milestone 1 project to style body of game */
-* body {
+body {
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
