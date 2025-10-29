@@ -172,6 +172,7 @@ console.log(window.innerWidth)
     
     product.style.width = "50px";
     product.style.height = "50px";
+    
    
   }
   else if (window.innerWidth < 650){
@@ -250,7 +251,7 @@ console.log(window.innerWidth)
         actualValue.innerText =
           "Correct! The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
-        totalCorrect += 1;
+        totalCorrect += 1; 
         // disable further clicks on this square
         squares[i].style.pointerEvents = "none";
         // highlight square border to indicate correct guess
@@ -436,19 +437,20 @@ console.log(window.innerWidth)
     
     product.style.width = "50px";
     product.style.height = "50px";
-   
+
+    
   }
   else if (window.innerWidth < 650){
 
     product.style.width = "75px";
     product.style.height = "75px";
-   
+
 }
  else {
 
     product.style.width = "100px";
     product.style.height = "100px";
-    
+  
 }
 
     // product.addEventListener("click", pickProductImage);
@@ -467,9 +469,7 @@ console.log(window.innerWidth)
   
     const adjValue = document.createElement("h5");
     adjValue.innerText =" Guess 10 % higher or lower?";
-
     squares[i].appendChild(adjValue);
-
    
 }
 
