@@ -5,13 +5,13 @@ const resultDisplay = document.querySelector("#result");
 
 const timeDisplay = document.querySelector("#time-left");
 
-// Get start and reset buttons
+// Get start button
 const startButton = document.querySelector("#start");
-const resetButton = document.querySelector("#reset");
 
-// Game variables
-let productChosen = [];
-let productChosenId = [];
+
+
+
+// Score variables
 
 let totalCorrect = 0;
 let totalWrong = 0;
