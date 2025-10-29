@@ -356,19 +356,7 @@ console.log(window.innerWidth)
 }
 //  End of fillBoard function
 
-// Pick product via click
-function pickProductImage() {
-  const productId = this.getAttribute("data-id");
-  this.style.border = "1px solid red";
-}
 
-// // Pick square via click
-function pickSquare() {
-  const square = this.getAttribute("data-id");
-  this.style.border = "1px solid yellow";
-  this.style.width = "100px";
-  this.style.height = "150px";
-}
 
 function countdown() {
   // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played
@@ -466,48 +454,23 @@ console.log(window.innerWidth)
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
-    //hover effect to show product name
+    //  show product name and description
 
 
     product.title = productArray[i].name;
-    product.addEventListener("mouseover", function () {
+    
       const productName = document.createElement("h6");
       productName.innerText = productArray[i].name;
       squares[i].appendChild(productName);
-    });
-
-    //hover out to remove product name
-    product.addEventListener("mouseout", function () {
-      const productName = squares[i].querySelector("h6");
-      if (productName) {
-        squares[i].removeChild(productName);
-      }
-    });
-
+    
+// show game question
   
     const adjValue = document.createElement("h5");
-    adjValue.innerText =" 10 % higher or lower than selling price?";
+    adjValue.innerText =" Guess 10 % higher or lower?";
 
     squares[i].appendChild(adjValue);
 
-    // choose one of two buttons to indicate if value is higher or lower than actual value
-
-    const higherButton = document.createElement("button");
-    higherButton.innerText = "Higher";
-    higherButton.style.margin = "5px";
-    squares[i].appendChild(higherButton);
-
-    const lowerButton = document.createElement("button");
-    lowerButton.innerText = "Lower";
-    lowerButton.style.margin = "5px";
-    squares[i].appendChild(lowerButton);
-
-    // if user clicks on higher or lower button, indicate if they are correct or not
-    // disable event listener to buttons after one click
-
-
-        // disable further clicks on this square
-        // squares[i].style.pointerEvents = "none";
+   
 }
 
 }
