@@ -1,14 +1,6 @@
 /* Google fonts import */
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Macondo&display=swap'); */
 
-/* Game info styles */
-
-#start {  
-  margin : "5px";
-   
-}
-
-
 
 
 /* Grid and square styles */
@@ -23,7 +15,7 @@
 }
 
 .square {
-
+ 
   text-align: center;
   width: 200px;
   height: 300px;
@@ -62,7 +54,7 @@
 
 
 /* used code from my milestone 1 project to style body of game */
- /* body {
+ body {
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,4 +66,4 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-} */
+}

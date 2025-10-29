@@ -114,7 +114,9 @@ fetch("https://fakestoreapi.com/products?limit=9")
     productArray.sort(() => 0.5 - Math.random());
     //fill the board with products from API
 
-    fillBoard();
+    arrayBoard();
+
+    
   });
 
 // Start button event listener
@@ -129,15 +131,18 @@ startButton.addEventListener("click", function () {
   currentTime = 60;
   timerId = setInterval(countdown, 1000);
 
-  // set 
+  
 
   countdown();
 
-  //fill the board squares again
+  //fill the board squares wih content
+
 
 
 
   fillBoard();
+
+
 });
 
 // Fill the board squares function
@@ -420,4 +425,89 @@ function countdown() {
   timeDisplay.innerHTML = currentTime;
 
   // End of countdown function
+}
+
+
+function arrayBoard() { 
+ for (let i = 0; i < totalSquares; i++) {
+
+    //clear previous content and reset square border style
+    squares[i].style.border = "1px solid black";
+    squares[i].innerHTML = "";
+     
+
+    const product = document.createElement("img");
+    product.setAttribute("src", productArray[i].img);
+  
+
+    product.setAttribute("data-id", i);
+
+// resize image for different window widths
+console.log(window.innerWidth)
+  if (window.innerWidth < 450) {  
+    
+    product.style.width = "50px";
+    product.style.height = "50px";
+   
+  }
+  else if (window.innerWidth < 650){
+
+    product.style.width = "75px";
+    product.style.height = "75px";
+   
+}
+ else {
+
+    product.style.width = "100px";
+    product.style.height = "100px";
+    
+}
+
+    // product.addEventListener("click", pickProductImage);
+    squares[i].appendChild(product);
+
+    //hover effect to show product name
+
+
+    product.title = productArray[i].name;
+    product.addEventListener("mouseover", function () {
+      const productName = document.createElement("h6");
+      productName.innerText = productArray[i].name;
+      squares[i].appendChild(productName);
+    });
+
+    //hover out to remove product name
+    product.addEventListener("mouseout", function () {
+      const productName = squares[i].querySelector("h6");
+      if (productName) {
+        squares[i].removeChild(productName);
+      }
+    });
+
+  
+    const adjValue = document.createElement("h5");
+    adjValue.innerText =" 10 % higher or lower than selling price?";
+
+    squares[i].appendChild(adjValue);
+
+    // choose one of two buttons to indicate if value is higher or lower than actual value
+
+    const higherButton = document.createElement("button");
+    higherButton.innerText = "Higher";
+    higherButton.style.margin = "5px";
+    squares[i].appendChild(higherButton);
+
+    const lowerButton = document.createElement("button");
+    lowerButton.innerText = "Lower";
+    lowerButton.style.margin = "5px";
+    squares[i].appendChild(lowerButton);
+
+    // if user clicks on higher or lower button, indicate if they are correct or not
+    // disable event listener to buttons after one click
+
+
+        // disable further clicks on this square
+        // squares[i].style.pointerEvents = "none";
+}
+
 }
