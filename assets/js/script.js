@@ -170,8 +170,8 @@ function fillBoard() {
 console.log(window.innerWidth)
   if (window.innerWidth < 450) {  
     
-    product.style.width = "50px";
-    product.style.height = "50px";
+    product.style.width = "35px";
+    product.style.height = "35px";
     
    
   }
@@ -222,12 +222,13 @@ console.log(window.innerWidth)
 
     const higherButton = document.createElement("button");
     higherButton.innerText = "Higher";
-    higherButton.style.margin = "5px";
+       
+    higherButton.style.margin = "2.5px";
     squares[i].appendChild(higherButton);
 
     const lowerButton = document.createElement("button");
     lowerButton.innerText = "Lower";
-    lowerButton.style.margin = "5px";
+       lowerButton.style.margin = "2.5px";
     squares[i].appendChild(lowerButton);
 
     // if user clicks on higher or lower button, indicate if they are correct or not
