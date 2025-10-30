@@ -16,7 +16,7 @@ h6 { font: 20px sans-serif}
   flex-wrap: wrap;
 
   width: 606px;
-  height: 846px;
+  height: 806px;
 
 }
 
@@ -24,7 +24,7 @@ h6 { font: 20px sans-serif}
  
   text-align: center;
   width: 200px;
-  height: 280px;
+  height: 266px;
   border: 1px solid black;
   /* box-sizing: border-box;  */
  }
@@ -37,13 +37,13 @@ h6 { font: 20px sans-serif}
 @media (max-width: 820px) {
   .grid {
     width: 606px;
-    height: 846px;
+    height: 806px;
     background-color: rgb(228, 243, 15);
   }
 
   .square {
     width: 200px;
-    height: 280px;
+    height: 266px;
   }
 /* Transform text  */
 h5  {font-size: 15px;}
@@ -55,19 +55,17 @@ height: 30px;
 
 }
 
-
-
 }
 @media (max-width: 610px) {
   .grid {
     width: 306px;
-    height: 426px;
+    height: 406px;
     background-color: rgb(243, 15, 15);
   }
 
   .square {
     width: 100px;
-    height: 140px;
+    height: 133px;
     
   }
 
