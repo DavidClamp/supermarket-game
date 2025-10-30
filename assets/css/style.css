@@ -5,6 +5,12 @@
 
 /* Grid and square styles */
 
+/* game text styles */
+
+h5 { font: 20px sans-serif}
+h6 { font: 20px sans-serif}
+
+
 .grid {
   display : flex;
   flex-wrap: wrap;
@@ -39,6 +45,13 @@
     width: 200px;
     height: 300px;
   }
+/* Transform text  */
+h5  {font: 15px sans-serif;}
+h6  {font: 15px sans-serif;}
+
+
+
+
 }
 @media (max-width: 610px) {
   .grid {
@@ -51,6 +64,11 @@
     width: 100px;
     height: 150px;
   }
+
+/* Transform text  */
+h5  {font: 10px sans-serif;}
+h6  {font: 10px sans-serif;}
+
 }
  
 
