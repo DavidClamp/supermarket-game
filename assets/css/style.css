@@ -82,12 +82,12 @@ height: 15px;
 
 }
  
-
+/* <body class="d-flex flex-column min-vh-100"> */
 
 
 /* used code from my milestone 1 project to style body of game */
- body {
-  min-height: 100vh;
+ /* body {
+  /* min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,6 +96,17 @@ height: 15px;
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
+  -ms-flex-align: center; */
+  /* align-items: center; */
+/* }
+
+
+/* background image */
+/* 
+body {
+
+background-image: url("../images/lidl.jpg") 
+
+} */
+
+
