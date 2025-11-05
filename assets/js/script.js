@@ -8,9 +8,6 @@ const timeDisplay = document.querySelector("#time-left");
 // Get start button
 const startButton = document.querySelector("#start");
 
-
-
-
 // Score variables
 
 let totalCorrect = 0;
@@ -21,15 +18,9 @@ let totalSquares = squares.length;
 let currentTime = 60;
 let timerId = null;
 
-
-
-
-
-
 // Create Products array
 
 // Each product has an image, name, and value
-
 
 var productArray = [{
     img: "assets/images/athletes.webp",
@@ -86,8 +77,6 @@ var productArray = [{
   },
 ];
 
-
-
 //Try API like Fake Store API or others for product data
 const productAPI = []
 
@@ -107,7 +96,6 @@ fetch("https://fakestoreapi.com/products?limit=9")
 
     // Use productAPI array
 
-
     productArray = productAPI;
     //shuffle the productArray
 
@@ -116,7 +104,6 @@ fetch("https://fakestoreapi.com/products?limit=9")
 
     arrayBoard();
 
-    
   });
 
 // Start button event listener
@@ -131,17 +118,11 @@ startButton.addEventListener("click", function () {
   currentTime = 30;
   timerId = setInterval(countdown, 1000);
 
-  
-
   countdown();
 
   //fill the board squares wih content
 
-
-
-
   fillBoard();
-
 
 });
 
@@ -152,47 +133,37 @@ function fillBoard() {
     //clear previous content and reset square border style
     squares[i].style.border = "1px solid black";
     squares[i].innerHTML = "";
-    
 
-    //set pointer events to auto to enable clicks again
+    //set pointer events to auto to enable clicks
     squares[i].style.pointerEvents = "auto";
-
-
-   
 
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
-  
 
     product.setAttribute("data-id", i);
 
-// resize image for different window widths
-console.log(window.innerWidth)
-  if (window.innerWidth < 450) {  
-    
-    product.style.width = "35px";
-    product.style.height = "35px";
-    
-   
-  }
-  else if (window.innerWidth < 650){
+    // resize image for different window widths
+    console.log(window.innerWidth)
+    if (window.innerWidth < 450) {
 
-    product.style.width = "75px";
-    product.style.height = "75px";
-   
-}
- else {
+      product.style.width = "35px";
+      product.style.height = "35px";
 
-    product.style.width = "100px";
-    product.style.height = "100px";
-    
-}
+    } else if (window.innerWidth < 650) {
+
+      product.style.width = "75px";
+      product.style.height = "75px";
+
+    } else {
+
+      product.style.width = "100px";
+      product.style.height = "100px";
+    }
 
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
     //hover effect to show product name
-
 
     product.title = productArray[i].name;
     product.addEventListener("mouseover", function () {
@@ -219,23 +190,21 @@ console.log(window.innerWidth)
     squares[i].appendChild(adjValue);
 
     // choose one of two buttons to indicate if value is higher or lower than actual value
-
+ 
     const higherButton = document.createElement("button");
-    higherButton.innerText = "Higher";
-       
+    higherButton.innerHTML = "<h5>Higher</h5>";
     higherButton.style.margin = "2.5px";
     squares[i].appendChild(higherButton);
 
+
+
     const lowerButton = document.createElement("button");
-    lowerButton.innerText = "Lower";
-       lowerButton.style.margin = "2.5px";
+    lowerButton.innerHTML = "<h5>Lower</h5>";
+    lowerButton.style.margin = "2.5px";
     squares[i].appendChild(lowerButton);
 
     // if user clicks on higher or lower button, indicate if they are correct or not
     // disable event listener to buttons after one click
-
-
-
 
     //higher button event listener
     higherButton.addEventListener("click", function () {
@@ -243,18 +212,18 @@ console.log(window.innerWidth)
         adjValue.innerText.includes("higher") &&
         adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))
       ) {
-               //place product value below the image after guess
+        //place product value below the image after guess
         const actualValue = document.createElement("h5");
         actualValue.innerText =
           "Correct! The actual price is " + productArray[i].value.toFixed(2);
         squares[i].appendChild(actualValue);
-        totalCorrect += 1; 
+        totalCorrect += 1;
         // disable further clicks on this square
         squares[i].style.pointerEvents = "none";
         // highlight square border to indicate correct guess
         squares[i].style.border = "2px solid green";
       } else {
-       
+
         //highlight square border to indicate wrong guess
         squares[i].style.border = "2px solid red";
 
@@ -287,7 +256,7 @@ console.log(window.innerWidth)
         adjValue.innerText.includes("lower") &&
         adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))
       ) {
-       
+
         //place product value below the image after guess
         const actualValue = document.createElement("h5");
         actualValue.innerText =
@@ -300,7 +269,7 @@ console.log(window.innerWidth)
         //highlight square border to indicate correct guess
         squares[i].style.border = "2px solid green";
       } else {
-       
+
         totalWrong += 1;
         //place product value below the image after wrong guess
         const actualValue = document.createElement("h5");
@@ -346,8 +315,6 @@ console.log(window.innerWidth)
 
 }
 //  End of fillBoard function
-
-
 
 function countdown() {
   // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played
@@ -406,61 +373,54 @@ function countdown() {
   // End of countdown function
 }
 
-
-function arrayBoard() { 
- for (let i = 0; i < totalSquares; i++) {
+function arrayBoard() {
+  for (let i = 0; i < totalSquares; i++) {
 
     //clear previous content and reset square border style
     squares[i].style.border = "1px solid black";
     squares[i].innerHTML = "";
-     
 
     const product = document.createElement("img");
     product.setAttribute("src", productArray[i].img);
-  
 
     product.setAttribute("data-id", i);
 
-// resize image for different window widths
-console.log(window.innerWidth)
-  if (window.innerWidth < 450) {  
-    
-    product.style.width = "50px";
-    product.style.height = "50px";
+    // resize image for different window widths
+    console.log(window.innerWidth)
+    if (window.innerWidth < 450) {
 
-    
-  }
-  else if (window.innerWidth < 650){
+      product.style.width = "50px";
+      product.style.height = "50px";
 
-    product.style.width = "75px";
-    product.style.height = "75px";
+    } else if (window.innerWidth < 650) {
 
-}
- else {
+      product.style.width = "75px";
+      product.style.height = "75px";
 
-    product.style.width = "100px";
-    product.style.height = "100px";
-  
-}
+    } else {
+
+      product.style.width = "100px";
+      product.style.height = "100px";
+
+    }
 
     // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
     //  show product name and description
 
-
     product.title = productArray[i].name;
-    
-      const productName = document.createElement("h6");
-      productName.innerText = productArray[i].name;
-      squares[i].appendChild(productName);
-    
-// show game question
-  
+
+    const productName = document.createElement("h6");
+    productName.innerText = productArray[i].name;
+    squares[i].appendChild(productName);
+
+    // show game question
+
     const adjValue = document.createElement("h5");
-    adjValue.innerText =" Guess 10 % higher or lower?";
+    adjValue.innerText = " Guess 10 % higher or lower?";
     squares[i].appendChild(adjValue);
-   
-}
+
+  }
 
 }
