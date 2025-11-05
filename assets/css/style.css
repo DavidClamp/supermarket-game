@@ -103,10 +103,18 @@ height: 15px;
 
 /* background image */
 
-* body {
+ /* body {
 
-background-image: url("../images/lidl.jpg") 
+background-image: url("../images/lidl-logo-white.svg");
+background-repeat: no-repeat;
+background-size: center;
 
-}
+
+/* backdrop-filter: grayscale(100%); */
+
+
+
+
+/* 
 
 

@@ -128,7 +128,7 @@ startButton.addEventListener("click", function () {
 
   resultDisplay.innerText = "";
 
-  currentTime = 60;
+  currentTime = 30;
   timerId = setInterval(countdown, 1000);
 
   
@@ -243,11 +243,7 @@ console.log(window.innerWidth)
         adjValue.innerText.includes("higher") &&
         adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))
       ) {
-        alert(
-          "Correct! The actual price is " + productArray[i].value.toFixed(2)
-        );
-
-        //place product value below the image after guess
+               //place product value below the image after guess
         const actualValue = document.createElement("h5");
         actualValue.innerText =
           "Correct! The actual price is " + productArray[i].value.toFixed(2);
@@ -258,9 +254,7 @@ console.log(window.innerWidth)
         // highlight square border to indicate correct guess
         squares[i].style.border = "2px solid green";
       } else {
-        alert(
-          "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
-        );
+       
         //highlight square border to indicate wrong guess
         squares[i].style.border = "2px solid red";
 
@@ -293,10 +287,7 @@ console.log(window.innerWidth)
         adjValue.innerText.includes("lower") &&
         adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))
       ) {
-        alert(
-          "Correct! The actual price is " + productArray[i].value.toFixed(2)
-        );
-
+       
         //place product value below the image after guess
         const actualValue = document.createElement("h5");
         actualValue.innerText =
@@ -309,9 +300,7 @@ console.log(window.innerWidth)
         //highlight square border to indicate correct guess
         squares[i].style.border = "2px solid green";
       } else {
-        alert(
-          "Incorrect. The actual price is " + productArray[i].value.toFixed(2)
-        );
+       
         totalWrong += 1;
         //place product value below the image after wrong guess
         const actualValue = document.createElement("h5");
