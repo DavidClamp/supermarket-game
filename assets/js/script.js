@@ -196,8 +196,6 @@ function fillBoard() {
     higherButton.style.margin = "2.5px";
     squares[i].appendChild(higherButton);
 
-
-
     const lowerButton = document.createElement("button");
     lowerButton.innerHTML = "<h5>Lower</h5>";
     lowerButton.style.margin = "2.5px";
