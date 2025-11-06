@@ -202,8 +202,7 @@ function fillBoard() {
     squares[i].appendChild(lowerButton);
 
     // if user clicks on higher or lower button, indicate if they are correct or not
-    // disable event listener to buttons after one click
-
+    
     //higher button event listener
     higherButton.addEventListener("click", function () {
       if (
@@ -219,7 +218,7 @@ function fillBoard() {
         // disable further clicks on this square
         squares[i].style.pointerEvents = "none";
         // highlight square border to indicate correct guess
-        squares[i].style.border = "2px solid green";
+        squares[i].style.border = "10px solid green";
       } else {
 
         //highlight square border to indicate wrong guess
@@ -234,7 +233,7 @@ function fillBoard() {
         // disable further clicks on this square
         squares[i].style.pointerEvents = "none";
         // highlight square border to indicate wrong guess
-        squares[i].style.border = "2px solid red";
+        squares[i].style.border = "10px solid red";
       }
       //display result after each guess
       resultDisplay.innerText =
@@ -265,7 +264,7 @@ function fillBoard() {
         squares[i].style.pointerEvents = "none";
 
         //highlight square border to indicate correct guess
-        squares[i].style.border = "2px solid green";
+        squares[i].style.border = "10px solid green";
       } else {
 
         totalWrong += 1;
@@ -277,7 +276,7 @@ function fillBoard() {
         // disable further clicks on this square
         squares[i].style.pointerEvents = "none";
         //highlight square border to indicate wrong guess
-        squares[i].style.border = "2px solid red";
+        squares[i].style.border = "10px solid red";
       }
       //display result after each guess
       resultDisplay.innerText =
@@ -310,9 +309,8 @@ function fillBoard() {
       }
     });
   }
-
-}
 //  End of fillBoard function
+}
 
 function countdown() {
   // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played
@@ -420,5 +418,5 @@ function arrayBoard() {
     squares[i].appendChild(adjValue);
 
   }
-
+// End of initial fill grid function
 }
