@@ -97,15 +97,17 @@ height: 15px;
  */
 
 /* background image */
-/* 
+
 body {
 
-background: url(../images/chess-board-solid-full.svg);
-background-repeat: no-repeat;
-background-size:auto;
+background-Image: url(../images/question_marks_background.jpg);
+/* background-Image: url("/assets/images/question_marks_background.jpg"); */
+background-size: auto;
+backdrop-filter: grayscale(100%);
+background-repeat: no-repeat;  
+background-position: center;
 
+}
 
-} */
-/* backdrop-filter: grayscale(100%); */
 
 
