@@ -190,7 +190,7 @@ function fillBoard() {
     squares[i].appendChild(adjValue);
 
     // choose one of two buttons to indicate if value is higher or lower than actual value
- 
+
     const higherButton = document.createElement("button");
     higherButton.innerHTML = "<h5>Higher</h5>";
     higherButton.style.margin = "2.5px";
@@ -202,7 +202,7 @@ function fillBoard() {
     squares[i].appendChild(lowerButton);
 
     // if user clicks on higher or lower button, indicate if they are correct or not
-    
+
     //higher button event listener
     higherButton.addEventListener("click", function () {
       if (
@@ -309,7 +309,7 @@ function fillBoard() {
       }
     });
   }
-//  End of fillBoard function
+  //  End of fillBoard function
 }
 
 function countdown() {
@@ -418,5 +418,5 @@ function arrayBoard() {
     squares[i].appendChild(adjValue);
 
   }
-// End of initial fill grid function
+  // End of initial fill grid function
 }

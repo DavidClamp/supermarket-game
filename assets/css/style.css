@@ -3,14 +3,17 @@
 
 /* Grid and square styles */
 
-/* game text styles */
+h5 {
+  font: 15px sans-serif
+}
 
-h5 { font: 15px sans-serif}
-h6 { font: 15px sans-serif}
+h6 {
+  font: 15px sans-serif
+}
 
 
 .grid {
-  display : flex;
+  display: flex;
   flex-wrap: wrap;
 
   width: 606px;
@@ -19,13 +22,13 @@ h6 { font: 15px sans-serif}
 }
 
 .square {
- 
+
   text-align: center;
   width: 200px;
   height: 253px;
   border: 1px solid black;
   /* box-sizing: border-box;  */
- }
+}
 
 /* responsive design for grid and squares */
 
@@ -40,74 +43,68 @@ h6 { font: 15px sans-serif}
     width: 200px;
     height: 256px;
   }
-/* Transform text  */
-h5  {font-size: 15px;}
-h6  {font-size: 15px;}
-/* Transform button size */
 
-button {width: 60px;
-height: 25px;
+  /* Transform text  */
+  h5 {
+    font-size: 15px;
+  }
+
+  h6 {
+    font-size: 15px;
+  }
+
+  /* Transform button size */
+  button {
+    width: 60px;
+    height: 25px;
+
+  }
 
 }
 
-}
 @media (max-width: 610px) {
   .grid {
     width: 306px;
     height: 372px;
-    /* background-color: rgb(243, 15, 15); */
+
   }
 
   .square {
     width: 100px;
     height: 122px;
-    
+
   }
 
-/* Transform text  */
-h5  {font-size: 7px;}
-h6  {font-size: 7px;}
+  /* Transform text  */
+  h5 {
+    font-size: 7px;
+  }
 
-/* Transform button size */
+  h6 {
+    font-size: 7px;
+  }
 
-button {width: 30px;
-height: 15px;
+  /* Transform button size */
+
+  button {
+    width: 30px;
+    height: 15px;
+
+  }
 
 }
-
-}
- 
-/* <body class="d-flex flex-column min-vh-100"> */
-
-
-/* used code from my milestone 1 project to style body of game */
- /* body {
-   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center; 
-  align-items: center; 
- }
- */
 
 /* background image */
 
-body {
+* body {
 
-background-Image: url(../images/question_marks_background.jpg);
-/* background-Image: url("/assets/images/question_marks_background.jpg"); */
-background-size: 700px 800px;
-backdrop-filter: grayscale(200%);
-background-repeat: no-repeat;  
-background-position: center;
+  background-image: url("../images/question_marks_background.jpg");
+  /* CHECK load image from root directory
+/* background-image: url("/assets/images/question_marks_background.jpg"); */
+  background-size: 700px 800px;
+  backdrop-filter: grayscale(100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  
 
 }
-
-
-
