@@ -102,8 +102,8 @@ body {
 
 background-Image: url(../images/question_marks_background.jpg);
 /* background-Image: url("/assets/images/question_marks_background.jpg"); */
-background-size: auto;
-backdrop-filter: grayscale(100%);
+background-size: 700px 800px;
+backdrop-filter: grayscale(200%);
 background-repeat: no-repeat;  
 background-position: center;
 
