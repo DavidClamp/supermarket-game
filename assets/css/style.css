@@ -4,11 +4,11 @@
 /* Grid and square styles */
 
 h5 {
-  font: 15px sans-serif
+  font: 15px 
 }
 
 h6 {
-  font: 15px sans-serif
+  font: 15px 
 }
 
 
@@ -105,6 +105,8 @@ h6 {
   backdrop-filter: grayscale(100%);
   background-repeat: no-repeat;
   background-position: center;
+ font-family:  Sans-serif, Arial;
+
   
 
 }

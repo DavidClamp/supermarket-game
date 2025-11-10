@@ -77,7 +77,7 @@ var productArray = [{
   },
 ];
 
-//Try API like Fake Store API or others for product data
+// Fake Store API
 const productAPI = []
 
 //try to log productAPI after fetch
