@@ -5,10 +5,8 @@
 body {
 
   background-image: url("../images/questionmarksbackground.jpg");
-  /* CHECK load image from root directory
-/* background-image: url("/assets/images/question_marks_background.jpg"); */
-  background-size: 700px 800px;
-  /* backdrop-filter: grayscale(100%); */
+   background-size: cover;
+ background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
  font-family:  Sans-serif, Arial;  
@@ -31,8 +29,8 @@ body {
 .square {
 
   text-align: center;
-  width: 200px;
-  height: 253px;
+  /* width: 200px;
+  height: 253px; */
   border: 1px solid black;
   /* box-sizing: border-box;  */
 }
@@ -46,10 +44,10 @@ body {
     /* background-color: rgb(228, 243, 15); */
   }
 
-  .square {
+  /* .square {
     width: 200px;
     height: 256px;
-  }
+  } */
 
 
   /* Transform button size */
@@ -67,12 +65,12 @@ body {
     height: 372px;
 
   }
-
+/* 
   .square {
     width: 100px;
     height: 122px;
 
-  }
+  } */
 
  
   /* Transform button size */
