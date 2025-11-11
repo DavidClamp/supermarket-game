@@ -16,13 +16,7 @@ body {
 }
 /* Grid and square styles */
 
-h5 {
-  font: 15px 
-}
 
-h6 {
-  font: 15px 
-}
 
 
 .grid {
@@ -57,14 +51,6 @@ h6 {
     height: 256px;
   }
 
-  /* Transform text  */
-  h5 {
-    font-size: 15px;
-  }
-
-  h6 {
-    font-size: 15px;
-  }
 
   /* Transform button size */
   button {
@@ -88,15 +74,7 @@ h6 {
 
   }
 
-  /* Transform text  */
-  h5 {
-    font-size: 7px;
-  }
-
-  h6 {
-    font-size: 7px;
-  }
-
+ 
   /* Transform button size */
 
   button {
