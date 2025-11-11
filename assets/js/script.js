@@ -192,13 +192,13 @@ function fillBoard() {
     // choose one of two buttons to indicate if value is higher or lower than actual value
 
     const higherButton = document.createElement("button");
-    higherButton.innerHTML = "<h5>Higher</h5>";
-    higherButton.style.margin = "2.5px";
+    higherButton.innerHTML = "Higher";
+    higherButton.classList.add("btn", "btn-success", "m-2");
     squares[i].appendChild(higherButton);
 
     const lowerButton = document.createElement("button");
-    lowerButton.innerHTML = "<h5>Lower</h5>";
-    lowerButton.style.margin = "2.5px";
+    lowerButton.innerHTML = "Lower";
+    lowerButton.classList.add("btn", "btn-danger", "m-2");
     squares[i].appendChild(lowerButton);
 
     // if user clicks on higher or lower button, indicate if they are correct or not
