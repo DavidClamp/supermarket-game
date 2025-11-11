@@ -113,10 +113,16 @@ startButton.addEventListener("click", function () {
   totalCorrect = 0;
   totalWrong = 0;
 
+  // Stop the timer
+    clearInterval(timerId);
+  // Timer variables
+currentTime = 60;
+timerId = null;
+
   resultDisplay.innerText = "";
 
-  currentTime = 30;
   timerId = setInterval(countdown, 1000);
+  
 
   countdown();
 
@@ -142,23 +148,7 @@ function fillBoard() {
 
     product.setAttribute("data-id", i);
 
-    // resize image for different window widths
-    
-    // if (window.innerWidth < 450) {
 
-    //   product.style.width = "35px";
-    //   product.style.height = "35px";
-
-    // } else if (window.innerWidth < 650) {
-
-    //   product.style.width = "75px";
-    //   product.style.height = "75px";
-
-    // } else {
-
-    //   product.style.width = "100px";
-    //   product.style.height = "100px";
-    // }
 product.classList.add("img-fluid");
 
     squares[i].appendChild(product);
@@ -313,7 +303,7 @@ product.classList.add("img-fluid");
 }
 
 function countdown() {
-  // Check if total time is greater than 0 and less than 60 seconds and if all squares have been played
+  // Check if total time is greater than 0 and less than the time allowed and if all squares have been played
 
   if (currentTime > 0 && totalCorrect + totalWrong === totalSquares) {
     // Stop the timer
@@ -381,25 +371,7 @@ function arrayBoard() {
 
     product.setAttribute("data-id", i);
 
-    // resize image for different window widths
-    
-    // if (window.innerWidth < 450) {
-
-    //    product.style.width = "50px";
-    // //   product.style.height = "50px";
-
-    // } else if (window.innerWidth < 650) {
-
-    //    product.style.width = "75px";
-    // //   product.style.height = "75px";
-
-    // } else {
-
-    //   // product.style.width = "100px";
-    //   product.style.height = "100px";
-
-    // }
-    
+        
 product.classList.add("img-fluid");
 
     squares[i].appendChild(product);
