@@ -8,7 +8,7 @@ body {
   /* CHECK load image from root directory
 /* background-image: url("/assets/images/question_marks_background.jpg"); */
   background-size: 700px 800px;
-  backdrop-filter: grayscale(100%);
+  /* backdrop-filter: grayscale(100%); */
   background-repeat: no-repeat;
   background-position: center;
  font-family:  Sans-serif, Arial;  
