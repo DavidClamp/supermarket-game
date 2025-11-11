@@ -81,9 +81,27 @@ var productArray = [{
 const productAPI = []
 
 //try to log productAPI after fetch
-fetch("https://fakestoreapi.com/products?limit=9")
-  .then((res) => res.json())
-  .then((data) => {
+// fetch("https://fakestoreapi.com/products?limit=9")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     data.forEach((item) => {
+//       productAPI.push({
+//         ...{
+//           img: item.image,
+//           name: item.title,
+//           value: item.price,
+//         }
+//       });
+//     });
+//if error in fetch then use back-up array
+fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
+    if (res.ok) {
+      return res.json(); // res ok
+    }
+    // otherwise error to catch
+     throw new Error("Something went wrong, so using back-up array");
+  })
+    .then((data) => {
     data.forEach((item) => {
       productAPI.push({
         ...{
@@ -95,9 +113,24 @@ fetch("https://fakestoreapi.com/products?limit=9")
     });
 
     // Use productAPI array
-
+if (productAPI && productAPI.length > 0) {
     productArray = productAPI;
+}
+
+
+
     //shuffle the productArray
+
+    productArray.sort(() => 0.5 - Math.random());
+    //fill the board with products from API
+
+    arrayBoard();
+
+  })
+  .catch((error) => {
+    console.log(error.message)
+
+ //else use and shuffle product back up array
 
     productArray.sort(() => 0.5 - Math.random());
     //fill the board with products from API
