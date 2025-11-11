@@ -1,4 +1,4 @@
-const grid = document.querySelector(".grid");
+// const grid = document.querySelector(".grid");
 const squares = document.querySelectorAll(".square");
 
 const resultDisplay = document.getElementById("result");
@@ -143,24 +143,24 @@ function fillBoard() {
     product.setAttribute("data-id", i);
 
     // resize image for different window widths
-    console.log(window.innerWidth)
-    if (window.innerWidth < 450) {
+    
+    // if (window.innerWidth < 450) {
 
-      product.style.width = "35px";
-      product.style.height = "35px";
+    //   product.style.width = "35px";
+    //   product.style.height = "35px";
 
-    } else if (window.innerWidth < 650) {
+    // } else if (window.innerWidth < 650) {
 
-      product.style.width = "75px";
-      product.style.height = "75px";
+    //   product.style.width = "75px";
+    //   product.style.height = "75px";
 
-    } else {
+    // } else {
 
-      product.style.width = "100px";
-      product.style.height = "100px";
-    }
+    //   product.style.width = "100px";
+    //   product.style.height = "100px";
+    // }
+product.classList.add("img-fluid");
 
-    // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
     //hover effect to show product name
@@ -192,12 +192,12 @@ function fillBoard() {
     // choose one of two buttons to indicate if value is higher or lower than actual value
 
     const higherButton = document.createElement("button");
-    higherButton.innerHTML = "Higher";
+    higherButton.innerText = "Higher";
     higherButton.classList.add("btn", "btn-success", "m-2");
     squares[i].appendChild(higherButton);
 
     const lowerButton = document.createElement("button");
-    lowerButton.innerHTML = "Lower";
+    lowerButton.innerText = "Lower";
     lowerButton.classList.add("btn", "btn-danger", "m-2");
     squares[i].appendChild(lowerButton);
 
@@ -383,24 +383,25 @@ function arrayBoard() {
 
     // resize image for different window widths
     
-    if (window.innerWidth < 450) {
+    // if (window.innerWidth < 450) {
 
-      product.style.width = "50px";
-      product.style.height = "50px";
+    //    product.style.width = "50px";
+    // //   product.style.height = "50px";
 
-    } else if (window.innerWidth < 650) {
+    // } else if (window.innerWidth < 650) {
 
-      product.style.width = "75px";
-      product.style.height = "75px";
+    //    product.style.width = "75px";
+    // //   product.style.height = "75px";
 
-    } else {
+    // } else {
 
-      product.style.width = "100px";
-      product.style.height = "100px";
+    //   // product.style.width = "100px";
+    //   product.style.height = "100px";
 
-    }
+    // }
+    
+product.classList.add("img-fluid");
 
-    // product.addEventListener("click", pickProductImage);
     squares[i].appendChild(product);
 
     //  show product name and description

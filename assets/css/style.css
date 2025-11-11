@@ -16,17 +16,18 @@ body {
 
 img {
     object-fit: contain;
+    
 }
 
 
-.grid {
+/* .grid {
   display: flex;
   flex-wrap: wrap;
 
   width: 606px;
-  height: 747px;
+  height: 900px;
 
-}
+} */
 
 .square {
 
@@ -81,7 +82,7 @@ img {
     width: 30px;
     height: 15px;
 
-  }
+  } */
 
-} */
+
 
