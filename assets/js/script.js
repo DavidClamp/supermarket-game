@@ -1,12 +1,12 @@
 const grid = document.querySelector(".grid");
 const squares = document.querySelectorAll(".square");
 
-const resultDisplay = document.querySelector("#result");
+const resultDisplay = document.getElementById("result");
 
-const timeDisplay = document.querySelector("#time-left");
+const timeDisplay = document.getElementById("time-left");
 
 // Get start button
-const startButton = document.querySelector("#start");
+const startButton = document.getElementById("start");
 
 // Score variables
 
@@ -382,7 +382,7 @@ function arrayBoard() {
     product.setAttribute("data-id", i);
 
     // resize image for different window widths
-    console.log(window.innerWidth)
+    
     if (window.innerWidth < 450) {
 
       product.style.width = "50px";
