@@ -4,7 +4,7 @@
 
 body {
 
-  background-image: url(../images/questionmarksbackground.jpg);
+  background-image: url("../images/questionmarksbackground.jpg");
   /* CHECK load image from root directory
 /* background-image: url("/assets/images/question_marks_background.jpg"); */
   background-size: 700px 800px;

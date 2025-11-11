@@ -184,12 +184,6 @@ All Projects:
 - Users must enter valid field types (ensure the correct input `type=""` is used)
 - Users cannot brute-force a URL to navigate to a restricted pages
 
-Python Projects:
-
-- Users cannot perform CRUD functionality if not authenticated (if login functionality exists)
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers/admins
 
 You'll want to test all functionality on your application, whether it's a standard form, or CRUD functionality, for data manipulation on a database. Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser). You should include any manual tests performed, and the expected results/outcome.
 
@@ -210,135 +204,65 @@ Consider using the following format for manual test cases:
 Use the table below as a basic start, and expand on it using the logic above.
 
 ⚠️ --- END --- ⚠️
+| Feature | Expectation | Test | Result | Screenshot |
+| --- | --- | --- | --- | --- |
+
+| Start Button | The Start button is easily identified and once pressed ("clicked")a 30-second countdown begins. | | || ![screenshot](documentation/features/operators.png) |
+| Higher or Lower Buttons | These buttons let the user choose whether the displayed product price is higher or lower than the correct value. |||| ![screenshot](documentation/features/equation.png) |
+| Header Section | Displays the Start button, timer, current score, and final score. |||| ![screenshot](documentation/features/submit-answer.png) |
+| Scores | Shows the total number of correct and incorrect answers the user has given.  |||| ![screenshot](documentation/features/scores.png) |
+| Game Grid | Displays a 3×3 grid of squares. Each square contains a product image, product description, and game buttons. ||||![screenshot](documentation/features/alerts.png) |
+|Product Description | When hovering over a product image in the grid, a description of the product appears. |||| ![screenshot](documentation/features/alerts.png) |
+ Grid Colours | Square boundaries turn green for correct answers and red for incorrect answers. |||| ![screenshot](documentation/features/scores.png) |
+| Game Outcomes| Displays whether the user’s latest answer was correct or incorrect. |||| ![screenshot](documentation/features/alerts.png) |
+| 404 Error Page | A custom 404 error page appears when the user navigates to a non-existent page, replacing the default GitHub Pages version. |||| ![screenshot](documentation/features/404.png) |
+
+
 
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page/Feature | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-| Calculator UI | Feature is expected to allow the user to input two numbers and select an operator (`+`, `-`, `*`, `/`). | Entered two numbers and selected each operator to perform calculations. | Calculations for all operators worked as expected. | ![screenshot](documentation/defensive/input-output.png) |
-| | Feature is expected to show an error message if inputs are empty (`NaN`). | Tried submitting calculations with empty input fields. | Error message displayed as expected. | ![screenshot](documentation/defensive/empty-inputs.png) |
 | | Feature is expected to display buttons that are clear, large, and easy to select on all devices. | Verified button sizes and usability across multiple devices (mobile, tablet, desktop). | Buttons were accessible and easy to use on all tested devices. | ![screenshot](documentation/defensive/responsive.png) |
 | | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colors and fonts met accessibility standards. | ![screenshot](documentation/defensive/accessibility.png) |
 | | Feature is expected to have clear labels and instructions for user guidance. | Reviewed labels and instructions for clarity and ease of use. | Labels and instructions were clear and intuitive. | ![screenshot](documentation/defensive/labels-instructions.png) |
-| Instant Calculation | Feature is expected to calculate and display results instantly after selecting an operator. | Selected operators after entering two numbers. | Results were displayed instantly. | ![screenshot](documentation/defensive/calc-speed.png) |
-| Error Handling | Feature is expected to display correct results even if an equation was input incorrectly. | Entered various incorrect equations and verified the results. | Correct results were displayed for all tested cases. | ![screenshot](documentation/defensive/error-handling.png) |
 | Score Tracker | Feature is expected to track the number of correct and incorrect equations. | Performed multiple calculations (correct and incorrect) and checked the score tracker. | Score tracker updated correctly for all tested scenarios. | ![screenshot](documentation/defensive/score-tracker.png) |
 | 404 Error Page | Feature is expected to display a 404 error page for non-existent pages. | Navigated to an invalid URL (e.g., `/test`) to test error handling. | A custom 404 error page was displayed as expected. | ![screenshot](documentation/defensive/404.png) |
 
 ## User Story Testing
 
-⚠️ INSTRUCTIONS ⚠️
-
-Testing User Stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **Features** should already align with the **User Stories**, so this should be as simple as creating a table with the User Story, matching with the re-used screenshot from the respective Feature.
-
-⚠️ --- END --- ⚠️
-
-| Target | Expectation | Outcome | Screenshot |
-| --- | --- | --- | --- |
-| As a user | I would like to input two numbers and select an operator (`+`, `-`, `*`, `/`) | so that I can calculate a result. | ![screenshot](documentation/features/feature01.png) |
-| As a user | I would like the application to show me an error message if I enter empty input (`NaN`) | so that I understand what went wrong. | ![screenshot](documentation/features/feature02.png) |
-| As a user | I would like the calculation to happen instantly after I select an operator | so that I get my result quickly without waiting. | ![screenshot](documentation/features/feature03.png) |
-| As a user | I would like the application to have clear and large buttons for each operator | so that I can easily select the correct one on any device. | ![screenshot](documentation/features/feature04.png) |
-| As a user | I would like the application to have high-contrast colors and accessible fonts | so that I can easily read and interact with it. | ![screenshot](documentation/features/feature05.png) |
-| As a user | I would like clear labels and instructions | so that I understand how to use the app without confusion. | ![screenshot](documentation/features/feature06.png) |
-| As a user | I would like the app to show me the correct result if my equation was incorrect | so that I understand how the answer was calculated. | ![screenshot](documentation/features/feature07.png) |
-| As a user | I would like to see how many equations I get correct or incorrect | so I can push myself to improve my math skills. | ![screenshot](documentation/features/feature08.png) |
-| As a user | I would like to see a 404 error page if I get lost | so that it's obvious that I've stumbled upon a page that doesn't exist. | ![screenshot](documentation/features/feature09.png) |
-
-## Automated Testing
-
-I have conducted a series of automated tests on my application.
-
-> [!NOTE]  
-> I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
-
-### JavaScript (Jest Testing)
-
-⚠️ INSTRUCTIONS ⚠️
-
-Adjust the code below (file names, function names, etc.) to match your own project files/folders. Use these notes loosely when documenting your own Jest procedures, and remove/adjust where applicable.
-
-- Installing Node.js (**Windows**)
-  - https://codeinstitute.s3.eu-west-1.amazonaws.com/nodejs-installation-guides/Installing+and+maintaining+NodeJS+(Windows).pdf
-- Installing Node.js (**MacOS**)
-  - https://codeinstitute.s3.eu-west-1.amazonaws.com/nodejs-installation-guides/Installing+and+maintaining+NodeJS+(MacOS).pdf
-
-⚠️ SAMPLE ⚠️
-
-I have used the [Jest](https://jestjs.io) JavaScript testing framework to test the application functionality. In order to work with Jest, I first had to initialize NPM.
-
-- `npm init`
-- Hit `<enter>` for all options, except for **test command:**, just type `jest`.
-
-Add Jest to a list called **Dev Dependencies** in a dev environment:
-
-- `npm install --save-dev jest`
-
-**IMPORTANT**: Initial configurations
-
-When creating test files, the name of the file needs to be `file-name.test.js` in order for Jest to properly work. Without the following, Jest won't properly run the tests:
-
-- `npm install -D jest-environment-jsdom`
-
-Due to a change in Jest's default configuration, you'll need to add the following code to the top of the `.test.js` file:
-
-```js
-/**
- * @jest-environment jsdom
- */
-
-/* jshint esversion: 11, jquery: true */
-/* global jest, require, describe, beforeEach, afterEach, test, expect, global */
-
-const { test, expect } = require("@jest/globals");
-const { function1, function2, function3, etc. } = require("../script-name");
-
-beforeAll(() => {
-    let fs = require("fs");
-    let fileContents = fs.readFileSync("index.html", "utf-8");
-    document.open();
-    document.write(fileContents);
-    document.close();
-});
-```
-
-Remember to adjust the `fs.readFileSync()` to the specific file you'd like you test. The example above is testing the `index.html` file.
-
-Finally, at the bottom of the script file where your primary scripts are written, include the following at the very bottom of the file. Make sure to include the name of all of your functions that are being tested in the `.test.js` file.
-
-```js
-/* jshint esversion: 11, jquery: true */
-/* global module */
-if (typeof module !== "undefined") module.exports = {
-    function1, function2, function3, etc
-};
-```
-
-Now that these steps have been undertaken, further tests can be written, and be expected to fail initially. Write JS code that can get the tests to pass as part of the Red-Green refactor process. Once ready, to run the tests, use this command:
-
-- `npm test`
-
-**NOTE**: To obtain a coverage report, use the following command:
-
-- `npm test --coverage`
-
-Below are the results from the tests that I've written for this application:
-
-| Test Suites | Tests | Screenshot |
+| Target | Expectation | Outcome | Screenshot|
 | --- | --- | --- |
-| 1 passed | 16 passed | ![screenshot](documentation/automation/jest-coverage.png) |
+| As a user | I would like to hover over products | so that I can see a short product description. |
+| As a user | I would like the game to show me how to begin | so that I can start playing easily. |
+| As a user | I would like the game to show me the outcome instantly after selecting "higher" or "lower". | so that I see my progress in real time without waiting. |
+| As a user | I would like the game to challenge my knowledge of product prices. | so that I can test how well I know product values. |
+| As a user | I would like to see a list of current products available for sale. | so that I can decide if I'm interested to buy any. |
+| As a user | I would like the game to use high-contrast colors and accessible fonts | so that I can easily read and interact with it. |
+| As a user | I would like clear labels and instructions | so that I understand how to use the game without confusion. |
+| As a user | I would like the game to show me the final result. | so that I see how well I did and if I won anything. |
+| As a user | I would like to see a friendly 404 error page if I visit a non-existant page. | so that it's obvious that I've not reached the correct site. |
 
-#### Jest Test Issues
 
-⚠️ INSTRUCTIONS ⚠️
+## Automated and Manual Testing
 
-Use this section to list any known issues you ran into while writing your Jest tests. Remember to include screenshots (where possible), and a solution to the issue (if known). This can be used for both "fixed" and "unresolved" issues. Remove this sub-section entirely if you somehow didn't run into any issues while working with Jest.
+There are two primary types of testing used to validate that a deployed website is fully functional: Behaviour-Driven Development (BDD) and Test-Driven Development (TDD). Each approach has its own advantages and disadvantages. However, it is widely recognised in practice that the most effective testing methodology combines elements of both, balancing comprehensive coverage with efficiency.
 
-⚠️ --- END --- ⚠️
+Due to time constraints, my focus has primarily been on manual testing. Nonetheless, I have explored the use of Jest for automated testing and can appreciate the advantages of such a paradigm, particularly in improving consistency, speed, and regression detection.
+
+My BDD approach centered on testing the defined user stories to ensure that they delivered the expected outcomes. This involved manually verifying the functionality of the game buttons and cross-checking the calculated results for accuracy. The interactive buttons were tested to confirm that clicking them correctly revealed the intended results. Additionally, a key feature of the game—the display of a product description when hovering the mouse over a product—was thoroughly tested across all grid squares and over multiple game sessions to ensure consistent behavior.
+
+I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
 
 ## Bugs
+
+- I encountered a coding bug when trying to link my background image in CSS using a root-relative path while testing in Chrome Developer Tools. The image displayed correctly in Visual Studio Code but did not appear in Chrome. 
+
+The issue was resolved by....
+
+- The CSS hover function stopped working in Chrome Developer Tools after the software had been running for some time. This is a widely known problem in Chrome, where pseudo-classes such as :hover, :active, or :focus occasionally fail to work after prolonged sessions or multiple reloads.
+
 
 ⚠️ INSTRUCTIONS ⚠️
 
