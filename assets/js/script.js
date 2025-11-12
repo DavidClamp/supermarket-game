@@ -91,11 +91,11 @@ fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
   .then((data) => {
     data.forEach((item) => {
       productAPI.push({
-        ...{
-          img: item.image,
-          name: item.title,
-          value: item.price,
-        }
+
+        img: item.image,
+        name: item.title,
+        value: item.price,
+
       });
     });
 
