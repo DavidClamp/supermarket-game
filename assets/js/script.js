@@ -80,28 +80,15 @@ var productArray = [{
 // Fake Store API
 const productAPI = []
 
-//try to log productAPI after fetch
-// fetch("https://fakestoreapi.com/products?limit=9")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     data.forEach((item) => {
-//       productAPI.push({
-//         ...{
-//           img: item.image,
-//           name: item.title,
-//           value: item.price,
-//         }
-//       });
-//     });
 //if error in fetch then use back-up array
 fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
     if (res.ok) {
       return res.json(); // res ok
     }
     // otherwise error to catch
-     throw new Error("Something went wrong, so using back-up array");
+    throw new Error("Something went wrong, so using back-up array");
   })
-    .then((data) => {
+  .then((data) => {
     data.forEach((item) => {
       productAPI.push({
         ...{
@@ -113,11 +100,9 @@ fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
     });
 
     // Use productAPI array
-if (productAPI && productAPI.length > 0) {
-    productArray = productAPI;
-}
-
-
+    if (productAPI && productAPI.length > 0) {
+      productArray = productAPI;
+    }
 
     //shuffle the productArray
 
@@ -130,7 +115,7 @@ if (productAPI && productAPI.length > 0) {
   .catch((error) => {
     console.log(error.message)
 
- //else use and shuffle product back up array
+    //else use and shuffle product back up array
 
     productArray.sort(() => 0.5 - Math.random());
     //fill the board with products from API
@@ -147,15 +132,14 @@ startButton.addEventListener("click", function () {
   totalWrong = 0;
 
   // Stop the timer
-    clearInterval(timerId);
+  clearInterval(timerId);
   // Timer variables
-currentTime = 60;
-timerId = null;
+  currentTime = 60;
+  timerId = null;
 
   resultDisplay.innerText = "";
 
   timerId = setInterval(countdown, 1000);
-  
 
   countdown();
 
@@ -181,8 +165,7 @@ function fillBoard() {
 
     product.setAttribute("data-id", i);
 
-
-product.classList.add("img-fluid");
+    product.classList.add("img-fluid");
 
     squares[i].appendChild(product);
 
@@ -404,8 +387,7 @@ function arrayBoard() {
 
     product.setAttribute("data-id", i);
 
-        
-product.classList.add("img-fluid");
+    product.classList.add("img-fluid");
 
     squares[i].appendChild(product);
 
