@@ -74,7 +74,7 @@ let productArray = [{
     name: "R-2 D-2",
 
     value: 50
-  },
+  }
 ];
 
 // Fake Store API
@@ -94,7 +94,7 @@ fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
 
         img: item.image,
         name: item.title,
-        value: item.price,
+        value: item.price
 
       });
     });
@@ -113,7 +113,7 @@ fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
 
   })
   .catch((error) => {
-    console.log(error.message)
+    console.log(error.message);
 
     //else use and shuffle product back up array
 
@@ -320,7 +320,8 @@ function fillBoard() {
 }
 
 function countdown() {
-  // Check if total time is greater than 0 and less than the time allowed and if all squares have been played
+  // Check if total time is greater than 0 and less than the time allowed//
+  //  and if all squares have been played //
 
   if (currentTime > 0 && totalCorrect + totalWrong === totalSquares) {
     // Stop the timer
