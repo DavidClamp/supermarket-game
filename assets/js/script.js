@@ -23,57 +23,57 @@ let timerId = null;
 // Each product has an image, name, and value
 
 var productArray = [{
-    img: "assets/images/athletes.webp",
-    name: "Product One",
+    img: "assets/images/minion.jpg",
+    name: "Minion",
 
-    value: 10,
+    value: 15,
   },
   {
-    img: "assets/images/girls.webp",
-    name: "Product Two",
+    img: "assets/images/policecar.png",
+    name: "Police Car",
 
-    value: 20,
+    value: 25,
   },
   {
-    img: "assets/images/man.webp",
-    name: "Product Three",
+    img: "assets/images/minivw.jpg",
+    name: "Miniture Beetle",
 
-    value: 30,
+    value: 15,
   },
   {
-    img: "assets/images/mud-run.webp",
-    name: "Product Four",
-
-    value: 40,
-  },
-  {
-    img: "assets/images/reasons-image.webp",
-    name: "Product Five",
+    img: "assets/images/robot.jpg",
+    name: "Robot",
 
     value: 50,
   },
   {
-    img: "assets/images/runner1.webp",
-    name: "Product Six",
+    img: "assets/images/teddy.jpg",
+    name: "Teddy Bear",
+
     value: 60,
   },
   {
-    img: "assets/images/runner2.webp",
-    name: "Product Seven",
-
-    value: 70,
+    img: "assets/images/toyhammer.png",
+    name: "Toy Hammer",
+    value: 10,
   },
   {
-    img: "assets/images/runner3.webp",
-    name: "Product Eight",
+    img: "assets/images/truck.jpg",
+    name: "Toy Truck",
 
-    value: 80,
+    value: 30,
   },
   {
-    img: "assets/images/runner4.webp",
-    name: "Product Nine",
+    img: "assets/images/rockinghorse.jpg",
+    name: "Rocking Horse",
 
-    value: 90,
+    value: 150,
+  },
+  {
+    img: "assets/images/starwars.jpg",
+    name: "R-2 D-2",
+
+    value: 50,
   },
 ];
 
