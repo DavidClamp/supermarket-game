@@ -216,12 +216,12 @@ product.classList.add("img-fluid");
 
     const higherButton = document.createElement("button");
     higherButton.innerText = "Higher";
-    higherButton.classList.add("btn", "btn-success", "m-2");
+    higherButton.classList.add("btn", "btn-primary", "m-2");
     squares[i].appendChild(higherButton);
 
     const lowerButton = document.createElement("button");
     lowerButton.innerText = "Lower";
-    lowerButton.classList.add("btn", "btn-danger", "m-2");
+    lowerButton.classList.add("btn", "btn-success", "m-2");
     squares[i].appendChild(lowerButton);
 
     // if user clicks on higher or lower button, indicate if they are correct or not
@@ -241,7 +241,7 @@ product.classList.add("img-fluid");
         // disable further clicks on this square
         squares[i].style.pointerEvents = "none";
         // highlight square border to indicate correct guess
-        squares[i].style.border = "10px solid green";
+        squares[i].style.border = "10px solid yellow";
       } else {
 
         //highlight square border to indicate wrong guess
@@ -287,7 +287,7 @@ product.classList.add("img-fluid");
         squares[i].style.pointerEvents = "none";
 
         //highlight square border to indicate correct guess
-        squares[i].style.border = "10px solid green";
+        squares[i].style.border = "10px solid yellow";
       } else {
 
         totalWrong += 1;
