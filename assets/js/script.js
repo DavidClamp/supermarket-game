@@ -22,63 +22,63 @@ let timerId = null;
 
 // Each product has an image, name, and value
 
-var productArray = [{
+let productArray = [{
     img: "assets/images/minion.jpg",
     name: "Minion",
 
-    value: 15,
+    value: 15
   },
   {
     img: "assets/images/policecar.png",
     name: "Police Car",
 
-    value: 25,
+    value: 25
   },
   {
     img: "assets/images/minivw.jpg",
     name: "Miniture Beetle",
 
-    value: 15,
+    value: 15
   },
   {
     img: "assets/images/robot.jpg",
     name: "Robot",
 
-    value: 50,
+    value: 50
   },
   {
     img: "assets/images/teddy.jpg",
     name: "Teddy Bear",
 
-    value: 60,
+    value: 60
   },
   {
     img: "assets/images/toyhammer.png",
     name: "Toy Hammer",
-    value: 10,
+    value: 10
   },
   {
     img: "assets/images/truck.jpg",
     name: "Toy Truck",
 
-    value: 30,
+    value: 30
   },
   {
     img: "assets/images/rockinghorse.jpg",
     name: "Rocking Horse",
 
-    value: 150,
+    value: 150
   },
   {
     img: "assets/images/starwars.jpg",
     name: "R-2 D-2",
 
-    value: 50,
+    value: 50
   },
 ];
 
 // Fake Store API
-const productAPI = []
+const productAPI = [];
 
 //if error in fetch then use back-up array
 fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
@@ -195,7 +195,8 @@ function fillBoard() {
 
     squares[i].appendChild(adjValue);
 
-    // choose one of two buttons to indicate if value is higher or lower than actual value
+    // choose one of two buttons to indicate if value is higher or lower
+
 
     const higherButton = document.createElement("button");
     higherButton.innerText = "Higher";
@@ -207,9 +208,9 @@ function fillBoard() {
     lowerButton.classList.add("btn", "btn-success", "m-2");
     squares[i].appendChild(lowerButton);
 
-    // if user clicks on higher or lower button, indicate if they are correct or not
+    // indicate if they are correct or not
 
-    //higher button event listener
+    // higher button event listener
     higherButton.addEventListener("click", function () {
       if (
         adjValue.innerText.includes("higher") &&
