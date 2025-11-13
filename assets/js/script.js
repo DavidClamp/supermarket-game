@@ -174,16 +174,16 @@ function fillBoard() {
 
     product.title = productArray[i].name;
     product.addEventListener("mouseover", function () {
-      const productName = document.createElement("h6");
+      const productName = product.querySelector(".prod-name");
       productName.innerText = productArray[i].name;
-      squares[i].appendChild(productName);
+      squares[i].classList.add(productName);
     });
 
     //hover out to remove product name
     product.addEventListener("mouseout", function () {
-      const productName = squares[i].querySelector("h6");
+      const productName = squares[i].querySelector(".prod-name");
       if (productName) {
-        squares[i].removeChild(productName);
+        squares[i].classList.remove(productName);
       }
     });
 
