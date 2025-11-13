@@ -1,4 +1,4 @@
-`/* jshint esversion: 11 */`
+/* jshint esversion: 11 */
 
 const squares = document.querySelectorAll(".square");
 
