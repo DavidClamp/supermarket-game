@@ -143,10 +143,10 @@ startButton.addEventListener("click", function () {
   timerId = null;
 
   // clear result elements
-   
-            
-   resultDiv.innerText = "";
-   resultDiv.className = "";
+
+
+  resultDiv.innerText = "";
+  resultDiv.className = "";
   resultDisplay.innerText = "";
 
   timerId = setInterval(countdown, 1000);
@@ -308,46 +308,46 @@ function fillBoard() {
 
       //all final result alert using bootstrap nodal
 
-//       if (totalCorrect + totalWrong === totalSquares) {
-//         if (totalCorrect === totalSquares) {
+      //       if (totalCorrect + totalWrong === totalSquares) {
+      //         if (totalCorrect === totalSquares) {
 
-//           resultDiv = document.createElement("div");
-//           resultDiv.className= "alert alert-success";
-//           resultDiv.role = "alert";
+      //           resultDiv = document.createElement("div");
+      //           resultDiv.className= "alert alert-success";
+      //           resultDiv.role = "alert";
 
-//           resultDiv.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
-//           document.body.appendChild(resultDiv);
+      //           resultDiv.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
+      //           document.body.appendChild(resultDiv);
 
-//           resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
-     
-
-//         } else {
-
-//           resultDiv = document.createElement("div");
-//           resultDiv.className = "alert alert-warning";
-//           resultDiv.role = "alert";
-
-//           resultDiv.innerText ="Game Over! You got " + totalCorrect +
-//             " correct and " +
-//             totalWrong +
-//             " wrong out of " +
-//             totalSquares +
-//             " products.";
-
-// document.body.appendChild(resultDiv);
+      //           resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
 
 
-//              resultDisplay.innerText ="Game Over! You got " + totalCorrect +
-//             " correct and " +
-//             totalWrong +
-//             " wrong out of " +
-//             totalSquares +
-//             " products.";
+      //         } else {
+
+      //           resultDiv = document.createElement("div");
+      //           resultDiv.className = "alert alert-warning";
+      //           resultDiv.role = "alert";
+
+      //           resultDiv.innerText ="Game Over! You got " + totalCorrect +
+      //             " correct and " +
+      //             totalWrong +
+      //             " wrong out of " +
+      //             totalSquares +
+      //             " products.";
+
+      // document.body.appendChild(resultDiv);
+
+
+      //              resultDisplay.innerText ="Game Over! You got " + totalCorrect +
+      //             " correct and " +
+      //             totalWrong +
+      //             " wrong out of " +
+      //             totalSquares +
+      //             " products.";
 
 
 
-//         }
-//       }
+      //         }
+      //       }
     });
   }
   //  End of fillBoard function
@@ -369,24 +369,25 @@ function countdown() {
 
     // Display final result
     if (totalCorrect === totalSquares) {
-      
-          // resultDiv = document.createElement("div");
-          resultDiv.className = "alert alert-success";
-          resultDiv.role = "alert";
-  resultDiv.innerText =
+
+      // resultDiv = document.createElement("div");
+      resultDiv.className = "alert alert-success";
+      resultDiv.role = "alert";
+      resultDiv.innerText =
         "Perfect Score! You got all " + totalCorrect + " correct!";
-document.body.appendChild(resultDiv);
-          
+
+      document.body.appendChild(resultDiv);
+
 
       resultDisplay.innerText =
         "Perfect Score! You got all " + totalCorrect + " correct!";
     } else {
 
-//  resultDiv = document.createElement("div");
-          resultDiv.className = "alert alert-warning";
-          resultDiv.role = "alert";
+      //  resultDiv = document.createElement("div");
+      resultDiv.className = "alert alert-warning";
+      resultDiv.role = "alert";
 
-  resultDiv.innerText =
+      resultDiv.innerText =
         "You got " +
         totalCorrect +
         " correct and " +
@@ -395,11 +396,19 @@ document.body.appendChild(resultDiv);
         totalSquares +
         " products.";
 
-document.body.appendChild(resultDiv);      
+      alert("You got " +
+        totalCorrect +
+        " correct and " +
+        totalWrong +
+        " wrong out of " +
+        totalSquares +
+        " products.");
 
-      
+      document.body.appendChild(resultDiv);
+
+
       resultDisplay.innerText =
-        "End game,You got " +
+        "End of game,you got " +
         totalCorrect +
         " correct and " +
         totalWrong +
@@ -414,56 +423,49 @@ document.body.appendChild(resultDiv);
 
 
   if (totalCorrect + totalWrong === totalSquares) {
-        if (totalCorrect === totalSquares) {
+    if (totalCorrect === totalSquares) {
 
-          // resultDiv = document.createElement("div");
-          resultDiv.className= "alert alert-success";
-          resultDiv.role = "alert";
+      // resultDiv = document.createElement("div");
+      resultDiv.className = "alert alert-success";
+      resultDiv.role = "alert";
 
-          resultDiv.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
-          document.body.appendChild(resultDiv);
+      resultDiv.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
+      alert("Perfect Score! You got all " + totalCorrect + " correct!")
+      document.body.appendChild(resultDiv);
 
-          resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
-     
-
-        } else {
-
-          // resultDiv = document.createElement("div");
-          resultDiv.className = "alert alert-warning";
-          resultDiv.role = "alert";
-
-          resultDiv.innerText ="Game Over! You got " + totalCorrect +
-            " correct and " +
-            totalWrong +
-            " wrong out of " +
-            totalSquares +
-            " products.";
-
-document.body.appendChild(resultDiv);
+      resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
 
 
-             resultDisplay.innerText ="Game Over! You got " + totalCorrect +
-            " correct and " +
-            totalWrong +
-            " wrong out of " +
-            totalSquares +
-            " products.";
+    } else {
+
+      // resultDiv = document.createElement("div");
+      resultDiv.className = "alert alert-warning";
+      resultDiv.role = "alert";
+
+      resultDiv.innerText = "Game Over! You got " + totalCorrect +
+        " correct and " +
+        totalWrong +
+        " wrong out of " +
+        totalSquares +
+        " products.";
+      alert("Game Over! You got " + totalCorrect +
+        " correct and " +
+        totalWrong +
+        " wrong out of " +
+        totalSquares +
+        " products.")
+      document.body.appendChild(resultDiv);
 
 
+      resultDisplay.innerText = "Game Over! You got " + totalCorrect +
+        " correct and " +
+        totalWrong +
+        " wrong out of " +
+        totalSquares +
+        " products.";
 
-        }
-      }
-
-
-
-
-
-
-
-
-
-
-  
+    }
+  }
 
   if (currentTime <= 0) {
     // Stop the timer
@@ -474,6 +476,25 @@ document.body.appendChild(resultDiv);
       square.style.pointerEvents = "none";
     });
     // Display result when time is up
+    resultDiv.className = "alert alert-warning";
+    resultDiv.role = "alert";
+
+    resultDiv.innerText = "Time's up! You got " +
+      totalCorrect +
+      " correct and " +
+      totalWrong +
+      " wrong out of " +
+      totalSquares +
+      " products.";
+
+    alert("Time's up! You got " +
+      totalCorrect +
+      " correct and " +
+      totalWrong +
+      " wrong out of " +
+      totalSquares +
+      " products.")
+    document.body.appendChild(resultDiv);
 
     resultDisplay.innerText =
       "Time's up! You got " +
