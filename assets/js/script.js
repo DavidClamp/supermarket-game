@@ -307,7 +307,7 @@ function fillBoard() {
           resultDiv.role = "alert";
 
           resultDiv.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
- document.body.appendChild(resultDiv);
+          document.body.appendChild(resultDiv);
 
           resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
      
@@ -315,7 +315,7 @@ function fillBoard() {
         } else {
 
           resultDiv = document.createElement("div");
-          resultDiv.className = "alert alert-success";
+          resultDiv.className = "alert alert-warning";
           resultDiv.role = "alert";
 
           resultDiv.innerText ="Game Over! You got " + totalCorrect +
@@ -352,7 +352,7 @@ function countdown() {
     // Stop the timer
     clearInterval(timerId);
 
-    //alert("You have completed the game before time is up!");
+    alert("You have completed the game before time is up!");
     // Disable all buttons when game is completed
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
@@ -360,9 +360,35 @@ function countdown() {
 
     // Display final result
     if (totalCorrect === totalSquares) {
+      
+          resultDiv = document.createElement("div");
+          resultDiv.className = "alert alert-success";
+          resultDiv.role = "alert";
+  resultDiv.innerText =
+        "Perfect Score! You got all " + totalCorrect + " correct!";
+document.body.appendChild(resultDiv);
+          
+
       resultDisplay.innerText =
         "Perfect Score! You got all " + totalCorrect + " correct!";
     } else {
+
+ resultDiv = document.createElement("div");
+          resultDiv.className = "alert alert-warning";
+          resultDiv.role = "alert";
+
+  resultDiv.innerText =
+        "You got " +
+        totalCorrect +
+        " correct and " +
+        totalWrong +
+        " wrong out of " +
+        totalSquares +
+        " products.";
+
+document.body.appendChild(resultDiv);      
+
+      
       resultDisplay.innerText =
         "End game,You got " +
         totalCorrect +
@@ -385,6 +411,7 @@ function countdown() {
       square.style.pointerEvents = "none";
     });
     // Display result when time is up
+
     resultDisplay.innerText =
       "Time's up! You got " +
       totalCorrect +
