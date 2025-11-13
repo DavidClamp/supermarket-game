@@ -1,4 +1,4 @@
-// const grid = document.querySelector(".grid");
+`/* jshint esversion: 11 */`;
 const squares = document.querySelectorAll(".square");
 
 const resultDisplay = document.getElementById("result");

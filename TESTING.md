@@ -36,10 +36,13 @@ It's recommended to validate the live pages (all of them) using the deployed URL
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
+
+
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | [index.html](https://github.com/DavidClamp/supermarket-game/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/index.html) | ![screenshot](documentation/validation/html--index.png) | ⚠️ Notes (if applicable) |
-
+|  | [index.html](https://github.com/DavidClamp/supermarket-game/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/index.html) | ![screenshot](documentation/validation/html--index.png) | |
+| | [404.html](https://github.com/DavidClamp/supermarket-game/blob/main/404.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/404.html) | ![HTML Validator results for the project's 404.html showing the checked URL https://davidclamp.github.io/supermarket-game/404.html and a summary panel reporting 0 errors and 0 warnings with a green success indicator; the validator header and results table are visible; neutral informative tone](documentation/validation/html--index.png) | |
+| | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/style.css) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/assets/style.css) | ![screenshot](documentation/validation/html--index.png) | |
 
 ### CSS
 
@@ -64,7 +67,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| assets | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/css/style.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://davidclamp.github.io/supermarket-game) | ![screenshot](documentation/validation/css-assets-style.png) | ⚠️ Notes (if applicable) |
+| assets | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/css/style.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://davidclamp.github.io/supermarket-game) | ![screenshot](documentation/validation/css-assets-style.png) |  |
 
 
 ### JavaScript
