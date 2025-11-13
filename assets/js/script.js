@@ -86,7 +86,7 @@ let productArray = [{
 const productAPI = [];
 
 //if error in fetch then use back-up array
-fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
+fetch("https://fakestoreapi.com/products").then((res) => {
     if (res.ok) {
       return res.json(); // res ok
     }
@@ -108,10 +108,14 @@ fetch("https://fakestoreapi.com/products?limit=9").then((res) => {
     if (productAPI && productAPI.length > 0) {
       productArray = productAPI;
     }
-
+    
     //shuffle the productArray
 
     productArray.sort(() => 0.5 - Math.random());
+
+    // slice out products
+
+    productArray= productArray.slice(0,9)
     //fill the board with products from API
 
     arrayBoard();
