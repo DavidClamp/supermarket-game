@@ -297,22 +297,46 @@ function fillBoard() {
         " / " +
         totalSquares;
 
-      // Display final result when all squares have been played
+      //all final result alert using bootstrap nodal
 
       if (totalCorrect + totalWrong === totalSquares) {
         if (totalCorrect === totalSquares) {
 
-          resultDisplay.innerText =
-            "Perfect Score! You got all " + totalCorrect + " correct!";
+          resultDiv = document.createElement("div");
+          resultDiv.className= "alert alert-success";
+          resultDiv.role = "alert";
+
+          resultDiv.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
+ document.body.appendChild(resultDiv);
+
+          resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
+     
+
         } else {
-          resultDisplay.innerText =
-            "Game Over! You got " +
-            totalCorrect +
+
+          resultDiv = document.createElement("div");
+          resultDiv.className = "alert alert-success";
+          resultDiv.role = "alert";
+
+          resultDiv.innerText ="Game Over! You got " + totalCorrect +
             " correct and " +
             totalWrong +
             " wrong out of " +
             totalSquares +
             " products.";
+
+document.body.appendChild(resultDiv);
+
+
+             resultDisplay.innerText ="Game Over! You got " + totalCorrect +
+            " correct and " +
+            totalWrong +
+            " wrong out of " +
+            totalSquares +
+            " products.";
+
+
+
         }
       }
     });
