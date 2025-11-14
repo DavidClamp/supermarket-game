@@ -15,6 +15,10 @@ const startButton = document.getElementById("start");
 
 const resultDiv = document.createElement("div");
 
+// put results into a dialog
+
+const resultDialog = document.createElement("dialog");
+
 let totalCorrect = 0;
 let totalWrong = 0;
 let totalSquares = squares.length;
@@ -386,7 +390,17 @@ function countdown() {
       resultDisplay.innerText =
         "Perfect Score! You got all " + totalCorrect + " correct!";
     } else {
-
+const resultDialog = document.createElement("dialog")
+resultDialog.classList.add("dialog"); 
+resultDialog.innerText = "your results are.....";
+ document.body.appendChild(resultDialog);
+      resultDialog.showModal();
+    
+    //   const higherButton = document.createElement("button");
+    // higherButton.innerText = "Higher";
+    // higherButton.classList.add("btn", "btn-primary", "m-2");    // squares[i].appendChild(higherButton);
+      
+     
       //  resultDiv = document.createElement("div");
       resultDiv.className = "alert alert-warning";
       resultDiv.role = "alert";
@@ -442,6 +456,7 @@ function countdown() {
 
     } else {
 
+    
       // resultDiv = document.createElement("div");
       resultDiv.className = "alert alert-warning";
       resultDiv.role = "alert";
