@@ -188,22 +188,13 @@ function fillBoard() {
 
     squares[i].appendChild(product);
 
-    //hover effect to show product name
+    //  show product name and description
 
     product.title = productArray[i].name;
-    product.addEventListener("mouseover", function () {
-      const productName = product.querySelector(".prod-name");
-      productName.innerText = productArray[i].name;
-      squares[i].classList.add(productName);
-    });
 
-    //hover out to remove product name
-    product.addEventListener("mouseout", function () {
-      const productName = squares[i].querySelector(".prod-name");
-      if (productName) {
-        squares[i].classList.remove(productName);
-      }
-    });
+    const productName = document.createElement("h6");
+    productName.innerText = productArray[i].name;
+    squares[i].appendChild(productName);
 
     // Adjusted value by 10% up or down randomly and place to each square
 
