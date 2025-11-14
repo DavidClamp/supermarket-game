@@ -18,7 +18,7 @@ const resultDiv = document.createElement("div");
 // put results into a dialog
 
 const resultDialog = document.createElement("dialog");
-const resultButton= document.createElement("button");
+const resultButton = document.createElement("button");
 
 let totalCorrect = 0;
 let totalWrong = 0;
@@ -113,14 +113,14 @@ fetch("https://fakestoreapi.com/products").then((res) => {
     if (productAPI && productAPI.length > 0) {
       productArray = productAPI;
     }
-    
+
     //shuffle the productArray
 
     productArray.sort(() => 0.5 - Math.random());
 
     // slice out products
 
-    productArray= productArray.slice(0,9)
+    productArray = productArray.slice(0, 9)
     //fill the board with products from API
 
     arrayBoard();
@@ -315,7 +315,7 @@ function fillBoard() {
         " / " +
         totalSquares;
 
-      
+
     });
   }
   //  End of fillBoard function
@@ -329,7 +329,7 @@ function countdown() {
     // Stop the timer
     clearInterval(timerId);
 
-    alert("You have completed the game before time is up!");
+    // alert("You have completed the game before time is up!");
     // Disable all buttons when game is completed
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
@@ -337,63 +337,63 @@ function countdown() {
 
     // Display final result
     if (totalCorrect === totalSquares) {
-//Results dialog 
+      //Results dialog 
 
 
-resultDialog.classList.add("dialog"); 
-// Restuls text
-resultDialog.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
-//button text
+      resultDialog.classList.add("dialog");
+      // Restuls text
+      resultDialog.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
+      //button text
 
-resultButton.innerText = "Return to game";
+      resultButton.innerText = "Return to game";
 
-// put button inside dialog
+      // put button inside dialog
 
- resultDialog.appendChild(resultButton);
+      resultDialog.appendChild(resultButton);
 
- // show dialog
-  document.body.appendChild(resultDialog);
- resultDialog.showModal()
+      // show dialog
+      document.body.appendChild(resultDialog);
+      resultDialog.showModal()
 
- // close dialog and return to game
- resultButton.addEventListener("click",() => {
-      resultDialog.close()
-      }) 
+      // close dialog and return to game
+      resultButton.addEventListener("click", () => {
+        resultDialog.close()
+      })
 
       resultDisplay.innerText =
         "Perfect Score! You got all " + totalCorrect + " correct!";
     } else {
- 
-//Results dialog 
+
+      //Results dialog 
 
 
-resultDialog.classList.add("dialog"); 
-// Restuls text
-resultDialog.innerText = "You got " +
+      resultDialog.classList.add("dialog");
+      // Restuls text
+      resultDialog.innerText = "You got " +
         totalCorrect +
         " correct and " +
         totalWrong +
         " wrong out of " +
         totalSquares +
         " products.";
-//button text
+      //button text
 
-resultButton.innerText = "Return to game";
+      resultButton.innerText = "Return to game";
 
-// put button inside dialog
+      // put button inside dialog
 
- resultDialog.appendChild(resultButton);
+      resultDialog.appendChild(resultButton);
 
- // show dialog
-  document.body.appendChild(resultDialog);
- resultDialog.showModal()
+      // show dialog
+      document.body.appendChild(resultDialog);
+      resultDialog.showModal()
 
- // close dialog and return to game
- resultButton.addEventListener("click",() => {
-      resultDialog.close()
+      // close dialog and return to game
+      resultButton.addEventListener("click", () => {
+        resultDialog.close()
       })
 
-     
+
       resultDisplay.innerText = "End of game,you got " +
         totalCorrect +
         " correct and " +
@@ -406,66 +406,61 @@ resultButton.innerText = "Return to game";
     return;
   }
 
-
-
   if (totalCorrect + totalWrong === totalSquares) {
     if (totalCorrect === totalSquares) {
-//Results dialog 
+      //Results dialog 
 
+      resultDialog.classList.add("dialog");
+      // Restuls text
+      resultDialog.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
+      //button text
 
-resultDialog.classList.add("dialog"); 
-// Restuls text
-resultDialog.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
-//button text
+      resultButton.innerText = "Return to game";
 
-resultButton.innerText = "Return to game";
+      // put button inside dialog
 
-// put button inside dialog
+      resultDialog.appendChild(resultButton);
 
- resultDialog.appendChild(resultButton);
+      // show dialog
+      document.body.appendChild(resultDialog);
+      resultDialog.showModal()
 
- // show dialog
-  document.body.appendChild(resultDialog);
- resultDialog.showModal()
-
- // close dialog and return to game
- resultButton.addEventListener("click",() => {
-      resultDialog.close()
+      // close dialog and return to game
+      resultButton.addEventListener("click", () => {
+        resultDialog.close()
       })
-     
-      resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
 
+      resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
 
     } else {
 
-    //Results dialog 
+      //Results dialog 
 
-
-resultDialog.classList.add("dialog"); 
-// Restuls text
-resultDialog.innerText = "Game Over! You got " + totalCorrect +
+      resultDialog.classList.add("dialog");
+      // Restuls text
+      resultDialog.innerText = "Game Over! You got " + totalCorrect +
         " correct and " +
         totalWrong +
         " wrong out of " +
         totalSquares +
         " products.";
-//button text
+      //button text
 
-resultButton.innerText = "Return to game";
+      resultButton.innerText = "Return to game";
 
-// put button inside dialog
+      // put button inside dialog
 
- resultDialog.appendChild(resultButton);
+      resultDialog.appendChild(resultButton);
 
- // show dialog
-  document.body.appendChild(resultDialog);
- resultDialog.showModal()
+      // show dialog
+      document.body.appendChild(resultDialog);
+      resultDialog.showModal()
 
- // close dialog and return to game
- resultButton.addEventListener("click",() => {
-      resultDialog.close()
+      // close dialog and return to game
+      resultButton.addEventListener("click", () => {
+        resultDialog.close()
       })
-            resultDisplay.innerText = "Game Over! You got " + totalCorrect +
+      resultDisplay.innerText = "Game Over! You got " + totalCorrect +
         " correct and " +
         totalWrong +
         " wrong out of " +
@@ -485,32 +480,31 @@ resultButton.innerText = "Return to game";
     });
     //Results dialog 
 
-
-resultDialog.classList.add("dialog"); 
-// Restuls text
-resultDialog.innerText = "Time's up! You got " +
+    resultDialog.classList.add("dialog");
+    // Restuls text
+    resultDialog.innerText = "Time's up! You got " +
       totalCorrect +
       " correct and " +
       totalWrong +
       " wrong out of " +
       totalSquares +
       " products.";
-//button text
+    //button text
 
-resultButton.innerText = "Return to game";
+    resultButton.innerText = "Return to game";
 
-// put button inside dialog
+    // put button inside dialog
 
- resultDialog.appendChild(resultButton);
+    resultDialog.appendChild(resultButton);
 
- // show dialog
-  document.body.appendChild(resultDialog);
- resultDialog.showModal()
+    // show dialog
+    document.body.appendChild(resultDialog);
+    resultDialog.showModal()
 
- // close dialog and return to game
- resultButton.addEventListener("click",() => {
+    // close dialog and return to game
+    resultButton.addEventListener("click", () => {
       resultDialog.close()
-      })
+    })
 
     resultDisplay.innerText =
       "Time's up! You got " +
