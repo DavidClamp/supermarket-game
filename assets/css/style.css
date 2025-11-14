@@ -1,9 +1,6 @@
 /* Google fonts import */
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Macondo&display=swap'); */
 
-
-
-
 /* background image */
 
 body {
@@ -21,7 +18,6 @@ body {
   background-color: rgb(247, 244, 241);
   text-align: center;
 }
-
 
 /* start button */
 #start {
