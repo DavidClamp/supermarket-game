@@ -390,18 +390,51 @@ function countdown() {
       resultDisplay.innerText =
         "Perfect Score! You got all " + totalCorrect + " correct!";
     } else {
-const resultDialog = document.createElement("dialog")
+ const resultDialog = document.createElement("dialog")
+ const resultButton= document.createElement("button");
 resultDialog.classList.add("dialog"); 
+
+// Restuls text
+
 resultDialog.innerText = "your results are.....";
- document.body.appendChild(resultDialog);
-      resultDialog.showModal();
+
+//button text
+
+resultButton.innerText = "Return to game";
+
+// put button inside dialog
+
+ resultDialog.appendChild(resultButton);
+
+ // show dialog
+  document.body.appendChild(resultDialog);
+ resultDialog.showModal()
+
+ resultButton.addEventListener("click",() => {
+      resultDialog.close()
+      })
+
+//       //return to game
+//       resultDialog.createElement("button");
+// modalCLoseButton.innerText = "Return to game";
+//       resultDialog.addEventListener("click",() => {
+//         resultDialog.classList.remove("open")
+// //       })
+// resultDiv.innerText = "";
+//   resultDiv.className = "";
+// resultDialog.createElement("button");
+// modalCLoseButton.innerText = "Return to game";
+// //     higherButton.classList.add("btn", "btn-primary", "m-2");
+//     squares[i].appendChild(higherButton);
+  // higher button event listener
+    // higherButton.addEventListener("click", function () {
+    //   if (
+    //     adjValue.innerText.includes("higher") &&
+    //     adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))
+    //   ) {
+
     
-    //   const higherButton = document.createElement("button");
-    // higherButton.innerText = "Higher";
-    // higherButton.classList.add("btn", "btn-primary", "m-2");    // squares[i].appendChild(higherButton);
-      
-     
-      //  resultDiv = document.createElement("div");
+       //  resultDiv = document.createElement("div");
       resultDiv.className = "alert alert-warning";
       resultDiv.role = "alert";
 
