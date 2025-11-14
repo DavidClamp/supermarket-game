@@ -6,8 +6,6 @@ const resultDisplay = document.getElementById("result");
 
 const timeDisplay = document.getElementById("time-left");
 
-
-
 // Get start button
 const startButton = document.getElementById("start");
 
@@ -153,7 +151,6 @@ startButton.addEventListener("click", function () {
 
   // clear result elements
 
-
   resultDiv.innerText = "";
   resultDiv.className = "";
   resultDisplay.innerText = "";
@@ -206,7 +203,6 @@ function fillBoard() {
     squares[i].appendChild(adjValue);
 
     // choose one of two buttons to indicate if value is higher or lower
-
 
     const higherButton = document.createElement("button");
     higherButton.innerText = "Higher";
@@ -306,7 +302,6 @@ function fillBoard() {
         " / " +
         totalSquares;
 
-
     });
   }
   //  End of fillBoard function
@@ -320,7 +315,6 @@ function countdown() {
     // Stop the timer
     clearInterval(timerId);
 
-    // alert("You have completed the game before time is up!");
     // Disable all buttons when game is completed
     squares.forEach((square) => {
       square.style.pointerEvents = "none";
@@ -328,8 +322,8 @@ function countdown() {
 
     // Display final result
     if (totalCorrect === totalSquares) {
-      //Results dialog 
 
+      //Results dialog 
 
       resultDialog.classList.add("dialog");
       // Restuls text
@@ -357,7 +351,6 @@ function countdown() {
 
       //Results dialog 
 
-
       resultDialog.classList.add("dialog");
       // Restuls text
       resultDialog.innerText = "You got " +
@@ -383,7 +376,6 @@ function countdown() {
       resultButton.addEventListener("click", () => {
         resultDialog.close()
       })
-
 
       resultDisplay.innerText = "End of game,you got " +
         totalCorrect +
