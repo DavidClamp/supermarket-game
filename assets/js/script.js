@@ -410,6 +410,7 @@ resultButton.innerText = "Return to game";
   document.body.appendChild(resultDialog);
  resultDialog.showModal()
 
+ // close dialog and return to game
  resultButton.addEventListener("click",() => {
       resultDialog.close()
       })
