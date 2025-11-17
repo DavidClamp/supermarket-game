@@ -342,6 +342,8 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
+          // refresh page
+    location.reload();
         resultDialog.close()
       })
 
@@ -374,6 +376,8 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
+          // refresh page
+    location.reload();
         resultDialog.close()
       })
 
@@ -410,7 +414,12 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
+    // refresh page
+    location.reload();
         resultDialog.close()
+       
+
+
       })
 
       resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
@@ -441,6 +450,8 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
+          // refresh page
+    location.reload();
         resultDialog.close()
       })
       resultDisplay.innerText = "Game Over! You got " + totalCorrect +
@@ -486,6 +497,8 @@ function countdown() {
 
     // close dialog and return to game
     resultButton.addEventListener("click", () => {
+        // refresh page
+    location.reload();
       resultDialog.close()
     })
 
