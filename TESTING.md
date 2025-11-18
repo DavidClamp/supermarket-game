@@ -29,7 +29,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| assets | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/css/style.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://davidclamp.github.io/supermarket-game) | ![screenshot](documentation/validation/css-assets-style.png) |  |
+| assets | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/css/style.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://davidclamp.github.io/supermarket-game) | ![screenshot](documentation/testing/style-css-jigsaw-validator-test.png) |  |
 
 
 ### JavaScript

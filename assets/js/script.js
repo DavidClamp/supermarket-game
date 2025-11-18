@@ -118,7 +118,7 @@ fetch("https://fakestoreapi.com/products").then((res) => {
 
     // slice out products
 
-    productArray = productArray.slice(0, 9)
+    productArray = productArray.slice(0, 9);
     //fill the board with products from API
 
     arrayBoard();
@@ -217,7 +217,7 @@ function fillBoard() {
     // indicate if they are correct or not
 
     // higher button event listener
-    higherButton.addEventListener("click", function () {
+    higherButton.addEventListener("click", ()  => {
       if (
         adjValue.innerText.includes("higher") &&
         adjValue.innerText.includes((productArray[i].value * 1.1).toFixed(2))
@@ -261,7 +261,7 @@ function fillBoard() {
     });
 
     //lower button event listener
-    lowerButton.addEventListener("click", function () {
+    lowerButton.addEventListener("click", () => {
       if (
         adjValue.innerText.includes("lower") &&
         adjValue.innerText.includes((productArray[i].value * 0.9).toFixed(2))
@@ -338,14 +338,14 @@ function countdown() {
 
       // show dialog
       document.body.appendChild(resultDialog);
-      resultDialog.showModal()
+      resultDialog.showModal();
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
         // refresh page
         location.reload();
-        resultDialog.close()
-      })
+        resultDialog.close();
+      });
 
       resultDisplay.innerText =
         "Perfect Score! You got all " + totalCorrect + " correct!";
@@ -372,14 +372,14 @@ function countdown() {
 
       // show dialog
       document.body.appendChild(resultDialog);
-      resultDialog.showModal()
+      resultDialog.showModal();
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
         // refresh page
         location.reload();
-        resultDialog.close()
-      })
+        resultDialog.close();
+      });
 
       resultDisplay.innerText = "End of game,you got " +
         totalCorrect +
@@ -418,7 +418,7 @@ function countdown() {
         location.reload();
         resultDialog.close();
 
-      })
+      });
 
       resultDisplay.innerText = "Perfect Score! You got all " + totalCorrect + " correct!";
 
@@ -444,14 +444,14 @@ function countdown() {
 
       // show dialog
       document.body.appendChild(resultDialog);
-      resultDialog.showModal()
+      resultDialog.showModal();
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
         // refresh page
         location.reload();
-        resultDialog.close()
-      })
+        resultDialog.close();
+      });
       resultDisplay.innerText = "Game Over! You got " + totalCorrect +
         " correct and " +
         totalWrong +
@@ -491,14 +491,14 @@ function countdown() {
 
     // show dialog
     document.body.appendChild(resultDialog);
-    resultDialog.showModal()
+    resultDialog.showModal();
 
     // close dialog and return to game
     resultButton.addEventListener("click", () => {
       // refresh page
       location.reload();
-      resultDialog.close()
-    })
+      resultDialog.close();
+    });
 
     resultDisplay.innerText =
       "Time's up! You got " +
