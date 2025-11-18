@@ -44,59 +44,25 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 ## Responsiveness
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is to test the following 3 sizes:
-
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of your results, to "prove" that you've actually tested them.
-
-Using the [amiresponsive](http://ami.responsivedesign.is) mockup images (*or similar*) does not meet the requirements. Consider using some of the built-in device sizes from the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well. It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project to check for responsiveness issues.
 
-| Page | Mobile | Tablet | Desktop | Notes |
-| --- | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/desktop-home.png) | Works as expected |
-| Game | ![screenshot](documentation/responsiveness/mobile-game.png) | ![screenshot](documentation/responsiveness/tablet-game.png) | ![screenshot](documentation/responsiveness/desktop-game.png) | Works as expected |
-| 404 | ![screenshot](documentation/responsiveness/mobile-404.png) | ![screenshot](documentation/responsiveness/tablet-404.png) | ![screenshot](documentation/responsiveness/desktop-404.png) | Works as expected |
+| Page | Mobile | Tablet | Laptop | Desktop | Notes |
+| --- | --- | --- | --- | --- | ---|
+| Game| ![screenshot](documentation/testing/mobile-screenshot.png) | ![screenshot](documentation/testing/tablet-screenshot.png) | ![screenshot](documentation/testing/laptop-screenshot.png) | ![screenshot](documentation/testing/tablet-screenshot.png) | Works as expected |
+| Game with backup array| ![screenshot](documentation/testing/mobile-backup-array-screen.png) | ![screenshot](documentation/testing/tablet-backup-array-screen.png) | ![screenshot](documentation/testing/laptop-backup-array-screen.png) | ![screenshot](documentation/testing/desktop-backup-array-screen.png) | Works as expected |
+| 404 | ![screenshot](documentation/testing/mobile-404-screenshot.png) | ![screenshot](documentation/testing/tablet-404-screenshot.png) | ![screenshot](documentation/testing/laptop-404-screenshot.png) | ![screenshot](documentation/testing/desktop-404-screenshot.png) | Works as expected |
 
 ## Browser Compatibility
 
-⚠️ INSTRUCTIONS ⚠️
 
-Use this space to discuss testing the live/deployed site on various browsers. Consider testing at least 3 different browsers, if available on your system. You DO NOT need to use all of the browsers below, just pick any 3 (minimum).
-
-Recommended browsers to consider:
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the browsers you've tested, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time. Some of these are paid services, but some are free. If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-⚠️ --- END --- ⚠️
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Page | Chrome | Firefox | Safari | Notes |
+| Page | Chrome | Firefox | Edge | Notes |
 | --- | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/safari-home.png) | Works as expected |
-| Game | ![screenshot](documentation/browsers/chrome-game.png) | ![screenshot](documentation/browsers/firefox-game.png) | ![screenshot](documentation/browsers/safari-game.png) | Works as expected |
-| 404 | ![screenshot](documentation/browsers/chrome-404.png) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/safari-404.png) | Works as expected |
+
+| Game | ![screenshot](documentation/testing/desktop-screenshot.png) | ![screenshot](documentation/testing/firefox-screenshot.png) | ![screenshot](documentation/testing/edge-screenshot.png) | Works as expected |
+| 404 | ![screenshot](documentation/testing/chrome-404-screenshot.png) | ![screenshot](documentation/testing/firefox-404-screenshot.png) | ![screenshot](documentation/testing/edge-404-screenshot.png) | Works as expected |
 
 ## Lighthouse Audit
 
@@ -150,17 +116,17 @@ Consider using the following format for manual test cases:
 Use the table below as a basic start, and expand on it using the logic above.
 
 ⚠️ --- END --- ⚠️
+
 | Feature | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-
-| Start Button | The Start button is easily identified and once pressed ("clicked")a 30-second countdown begins. | | || ![screenshot](documentation/features/operators.png) |
-| Higher or Lower Buttons | These buttons let the user choose whether the displayed product price is higher or lower than the correct value. |||| ![screenshot](documentation/features/equation.png) |
-| Header Section | Displays the Start button, timer, current score, and final score. |||| ![screenshot](documentation/features/submit-answer.png) |
-| Scores | Shows the total number of correct and incorrect answers the user has given.  |||| ![screenshot](documentation/features/scores.png) |
-| Game Grid | Displays a 3×3 grid of squares. Each square contains a product image, product description, and game buttons. ||||![screenshot](documentation/features/alerts.png) |
-|Product Description | When hovering over a product image in the grid, a description of the product appears. |||| ![screenshot](documentation/features/alerts.png) |
- Grid Colours | Square boundaries turn green for correct answers and red for incorrect answers. |||| ![screenshot](documentation/features/scores.png) |
-| Game Outcomes| Displays whether the user’s latest answer was correct or incorrect. |||| ![screenshot](documentation/features/alerts.png) |
+| Start Button | The Start button is easily identified and once pressed ("clicked")a 60-second countdown begins. | | |[screenshot](documentation/features/operators.png) |
+| Higher or Lower Buttons | These buttons let the user choose whether the displayed product price is higher or lower than the correct value. ||| ![screenshot](documentation/features/equation.png) |
+| Header Section | Displays the Start button, timer, current score, and final score. ||| ![screenshot](documentation/features/submit-answer.png) |
+| Scores | Shows the total number of correct and incorrect answers the user has given.  ||| ![screenshot](documentation/features/scores.png) |
+| Game Grid | Displays a 3×3 grid of squares. Each square contains a product image, product description, and game buttons. |||![screenshot](documentation/features/alerts.png) |
+|Product Description | When hovering over a product image in the grid, a description of the product appears. ||| ![screenshot](documentation/features/alerts.png) |
+ Grid Colours | Square boundaries turn green for correct answers and red for incorrect answers. ||| ![screenshot](documentation/features/scores.png) |
+| Game Outcomes| Displays whether the user’s latest answer was correct or incorrect. ||| ![screenshot](documentation/features/alerts.png) |
 | 404 Error Page | A custom 404 error page appears when the user navigates to a non-existent page, replacing the default GitHub Pages version. |||| ![screenshot](documentation/features/404.png) |
 
 
@@ -169,25 +135,27 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Page/Feature | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-| | Feature is expected to display buttons that are clear, large, and easy to select on all devices. | Verified button sizes and usability across multiple devices (mobile, tablet, desktop). | Buttons were accessible and easy to use on all tested devices. | ![screenshot](documentation/defensive/responsive.png) |
-| | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colors and fonts met accessibility standards. | ![screenshot](documentation/defensive/accessibility.png) |
-| | Feature is expected to have clear labels and instructions for user guidance. | Reviewed labels and instructions for clarity and ease of use. | Labels and instructions were clear and intuitive. | ![screenshot](documentation/defensive/labels-instructions.png) |
-| Score Tracker | Feature is expected to track the number of correct and incorrect equations. | Performed multiple calculations (correct and incorrect) and checked the score tracker. | Score tracker updated correctly for all tested scenarios. | ![screenshot](documentation/defensive/score-tracker.png) |
-| 404 Error Page | Feature is expected to display a 404 error page for non-existent pages. | Navigated to an invalid URL (e.g., `/test`) to test error handling. | A custom 404 error page was displayed as expected. | ![screenshot](documentation/defensive/404.png) |
-
+| Game Buttons | Feature is expected to display buttons that are clear, large, and easy to select on all devices. | Verified button sizes and usability across multiple devices (mobile, tablet, desktop). | Buttons were accessible and easy to use on all tested devices. | ![screenshot](documentation/defensive/responsive.png) |
+|Game Page | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colors and fonts met accessibility standards. | ![screenshot](documentation/defensive/accessibility.png) |
+|Score Tracker | Feature is expected to track the number of correct and incorrect equations. | Performed multiple calculations (correct and incorrect) and checked the score tracker. | Score tracker updated correctly for all tested scenarios. | ![screenshot](documentation/defensive/score-tracker.png) |
+|Game restart | Feature is allow user to start a new game after finishing.| Check that the 'return to game' button begins a new game afer current game has finished. Irrespective of the current game result outcome. | Game restarts correctly for all tested scenarios. | ![screenshot](documentation/defensive/score-tracker.png) |
+| 404 Error Page | Feature is expected to display a 404 error page for non-existent pages. Then allow user to return to game page | Navigated to an invalid URL (e.g., `/test`) to test error handling. In addition to testing the return page button| A custom 404 error page was displayed as expected. Then game page was returned when return button clicked | ![screenshot](documentation/defensive/404.png) |
+ 
 ## User Story Testing
 
 | Target | Expectation | Outcome | Screenshot|
-| --- | --- | --- |
-| As a user | I would like to hover over products | so that I can see a short product description. |
-| As a user | I would like the game to show me how to begin | so that I can start playing easily. |
-| As a user | I would like the game to show me the outcome instantly after selecting "higher" or "lower". | so that I see my progress in real time without waiting. |
-| As a user | I would like the game to challenge my knowledge of product prices. | so that I can test how well I know product values. |
-| As a user | I would like to see a list of current products available for sale. | so that I can decide if I'm interested to buy any. |
-| As a user | I would like the game to use high-contrast colors and accessible fonts | so that I can easily read and interact with it. |
-| As a user | I would like clear labels and instructions | so that I understand how to use the game without confusion. |
-| As a user | I would like the game to show me the final result. | so that I see how well I did and if I won anything. |
-| As a user | I would like to see a friendly 404 error page if I visit a non-existant page. | so that it's obvious that I've not reached the correct site. |
+| --- | --- | --- | --- |
+| As a user | I would like to see an image and a description of the products | so that I can see learn about the products that are available. |||
+| As a user | I would like the game to show me how to begin | so that I can start playing easily. |||
+| As a user | I would like the game to show me the outcome instantly after selecting "higher" or "lower". | so that I see my progress in real time without waiting. |||
+| As a user | I would like the game to challenge my knowledge of product prices. | so that I can test how well I know product values. |||
+| As a user | I would like to see a list of current products available for sale. | so that I can decide if I'm interested to buy any. |||
+| As a user | I would like the game to use high-contrast colors and accessible fonts | so that I can easily read and interact with it. |||
+| As a user | I would like the game to allow me to select any product in any order (not only sequentially) | so that I can interact the game with more freedom. |||
+| As a user | I would like clear labels and control buttons. | so that I understand how to use the game without confusion. |||
+| As a user | I would like the game to show me the final result. | so that I see how well I did and if I won anything. |||
+| As a user | If I start the game again, I would like to see a different selection of products. | so that I can callenge myself with a new set of products. |||
+| As a user | I would like to see a friendly 404 error page if I visit a non-existant page. | so that it's obvious that I've not reached the correct site. |||
 
 
 ## Automated and Manual Testing
