@@ -3,23 +3,10 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to convince the assessors that you have conducted enough manual testing to legitimately believe that the site works well. Essentially, in this part, you should go over all of your project's features, and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-⚠️ --- END --- ⚠️
 
 ## Code Validation
 
-⚠️ INSTRUCTIONS ⚠️
 
-Use the space below to discuss code validation for all of your own code files (*where applicable*). You are not required to validate external libraries/frameworks.
-
-**MANDATORY**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Where possible, always validate the live URL pages/files, not your local code using copy/paste. There could be subtle/hidden differences.
-
-⚠️ --- END --- ⚠️
 
 ### HTML
 
@@ -40,7 +27,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | [index.html](https://github.com/DavidClamp/supermarket-game/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/index.html) | ![screenshot](documentation/validation/html--index.png) | |
+| assets | [index.html](https://github.com/DavidClamp/supermarket-game/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/index.html) | ![screenshot](../boardwalk-games/assets/images/boardwalk-games/boardwalk-games/documentation/validation/) | |
 | | [404.html](https://github.com/DavidClamp/supermarket-game/blob/main/404.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/404.html) | ![HTML Validator results for the project's 404.html showing the checked URL https://davidclamp.github.io/supermarket-game/404.html and a summary panel reporting 0 errors and 0 warnings with a green success indicator; the validator header and results table are visible; neutral informative tone](documentation/validation/html--index.png) | |
 | | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/style.css) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/assets/style.css) | ![screenshot](documentation/validation/html--index.png) | |
 
