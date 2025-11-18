@@ -136,7 +136,6 @@ fetch("https://fakestoreapi.com/products").then((res) => {
 
   });
 
-  
 // Start button event listener
 startButton.addEventListener("click", function () {
 
@@ -343,8 +342,8 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
-          // refresh page
-    location.reload();
+        // refresh page
+        location.reload();
         resultDialog.close()
       })
 
@@ -377,8 +376,8 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
-          // refresh page
-    location.reload();
+        // refresh page
+        location.reload();
         resultDialog.close()
       })
 
@@ -415,10 +414,9 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
-    // refresh page
-    location.reload();
-        resultDialog.close();    
-
+        // refresh page
+        location.reload();
+        resultDialog.close();
 
       })
 
@@ -450,8 +448,8 @@ function countdown() {
 
       // close dialog and return to game
       resultButton.addEventListener("click", () => {
-          // refresh page
-    location.reload();
+        // refresh page
+        location.reload();
         resultDialog.close()
       })
       resultDisplay.innerText = "Game Over! You got " + totalCorrect +
@@ -497,8 +495,8 @@ function countdown() {
 
     // close dialog and return to game
     resultButton.addEventListener("click", () => {
-        // refresh page
-    location.reload();
+      // refresh page
+      location.reload();
       resultDialog.close()
     })
 

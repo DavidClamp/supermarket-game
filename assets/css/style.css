@@ -1,19 +1,17 @@
-/* Google fonts import */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Macondo&display=swap'); */
-
 /* background image */
 
 body {
 
   background-image: url("../images/questionmarksbackground.jpg");
-   background-size: cover;
- background-attachment: fixed;
+  background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
- font-family:  Sans-serif, Arial;  
+  font-family: Sans-serif, Arial;
 
 }
- /* background color for scoring section */
+
+/* background color for scoring section */
 .heading {
   background-color: rgb(247, 244, 241);
   text-align: center;
@@ -24,14 +22,14 @@ body {
 
   color: rgb(233, 20, 20);
   background-color: white;
- font-weight: bold;
+  font-weight: bold;
 }
 
 /* image styles */
 
 .square img {
-    /* object-fit: contain; */
-    height: 100px;    
+  /* object-fit: contain; */
+  height: 100px;
 }
 
 /*  square styles */
@@ -39,6 +37,6 @@ body {
 .square {
 
   text-align: center;
-   border: 1px solid black;
+  border: 1px solid black;
 
 }

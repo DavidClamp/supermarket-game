@@ -27,9 +27,9 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| assets | [index.html](https://github.com/DavidClamp/supermarket-game/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/index.html) | ![screenshot](../boardwalk-games/assets/images/boardwalk-games/boardwalk-games/documentation/validation/) | |
-| | [404.html](https://github.com/DavidClamp/supermarket-game/blob/main/404.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/404.html) | ![HTML Validator results for the project's 404.html showing the checked URL https://davidclamp.github.io/supermarket-game/404.html and a summary panel reporting 0 errors and 0 warnings with a green success indicator; the validator header and results table are visible; neutral informative tone](documentation/validation/html--index.png) | |
-| | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/style.css) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/assets/style.css) | ![screenshot](documentation/validation/html--index.png) | |
+| assets | [index.html](https://github.com/DavidClamp/supermarket-game/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/index.html) | ![screenshot](../supermarket-game/documentation/testing/index-html-validator-test.png) | |
+| | [404.html](https://github.com/DavidClamp/supermarket-game/blob/main/404.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/404.html) |![screenshot](../supermarket-game/documentation/testing/index-html-validator-test.png) | |
+| | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/style.css) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/assets/style.css) | ![screenshot](../supermarket-game/documentation/testing/style-css-validator-test.png) | |
 
 ### CSS
 
