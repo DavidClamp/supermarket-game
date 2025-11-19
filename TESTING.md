@@ -68,7 +68,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- |
-| Game | ![screenshot](documentation/lighthouse/lighthouse-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |  Performance score report is lower than expected. Largeley due to using a fake API.
+| Game |o ![screenshot](documentation/lighthouse/lighthouse-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |  Performance score report is lower than expected. Largeley due to using a fake API.
 | 404 | ![screenshot](documentation/lighthouse/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |
 
 ## Defensive Programming
@@ -78,7 +78,7 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Feature | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-|Game Page | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colors and fonts met accessibility standards. | ![screenshot](documentation/testing/game-grid.png) |
+|Game Page | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colours and fonts met accessibility standards. | ![screenshot](documentation/testing/game-grid.png) |
 | Start Button | The Start button is easily identified and once pressed ("clicked")a 60-second countdown begins. | Click start button | Game commenced and countdown from 60 seconds began |![screenshot](documentation/testing/game-start-button.png) |
 | Higher or Lower Buttons | These buttons let the user choose whether the displayed product price is higher or lower than the correct value. | Click high and low buttons| product squares display product price and users either correct or incorrect response| ![screenshot](documentation/testing/game-hl-buttons.png) |
 | Header Section | Displays the Start button, timer, current score, and final score. | Check initial game page| Page is loaded corectly| ![screenshot](documentation/testing/game-final-score-header.png) |
@@ -94,17 +94,16 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Target | Expectation | Outcome | Screenshot|
 | --- | --- | --- | --- |
-| As a user | I would like to see an image and a description of the products | so that I can see learn about the products that are available. |||
-| As a user | I would like the game to show me how to begin | so that I can start playing easily. |||
-| As a user | I would like the game to show me the outcome instantly after selecting "higher" or "lower". | so that I see my progress in real time without waiting. |||
-| As a user | I would like the game to challenge my knowledge of product prices. | so that I can test how well I know product values. |||
-| As a user | I would like to see a list of current products available for sale. | so that I can decide if I'm interested to buy any. |||
-| As a user | I would like the game to use high-contrast colors and accessible fonts | so that I can easily read and interact with it. |||
-| As a user | I would like the game to allow me to select any product in any order (not only sequentially) | so that I can interact the game with more freedom. |||
-| As a user | I would like clear labels and control buttons. | so that I understand how to use the game without confusion. |||
-| As a user | I would like the game to show me the final result. | so that I see how well I did and if I won anything. |||
-| As a user | If I start the game again, I would like to see a different selection of products. | so that I can callenge myself with a new set of products. |||
-| As a user | I would like to see a friendly 404 error page if I visit a non-existant page. | so that it's obvious that I've not reached the correct site. |||
+| As a user | I would like to see an image and a description of the products so that I can see learn about the products that are available. | Product images are shown in game squares.|![screenshot](documentation/testing/game-grid.png)|
+| As a user | I would like the game to show me how to begin  so that I can start playing easily. | Click on Start button|![screenshot](documentation/testing/game-start-button.png)|
+| As a user | I would like the game to show me the outcome instantly after selecting "higher" or "lower" so that I see my progress in real time without waiting. | See game header for score tracker|![screenshot](documentation/testing/game-running-total-header.png)|
+| As a user | I would like the game to challenge my knowledge of product prices so that I can test how well I know product values. | Final game results are shown header|![screenshot](documentation/testing/game-final-score-header.png)|
+| As a user | I would like to see a list of current products available for sale so that I can decide if I'm interested to buy any. | Grid of product images and descriptions shown to user. |![screenshot](documentation/testing/game-grid.png)|
+| As a user | I would like the game to use high-contrast colors and accessible fonts so that I can easily read and interact with it. |Colours and fonts met contrast accessibility standards. See Wave report|![screenshot](documentation/testing/wave-report.png)|
+| As a user | I would like the game to allow me to select any product in any order (not only sequentially) so that I can interact the game with more freedom. | Game squares can be selected at random and game works perfectly ||
+| As a user | I would like the game to show me the final result so that I see how well I did and if I won anything. | Final results are shown in game header and 'return to game' button.|![screenshot](documentation/testing/game-final-score-header.png)|
+| As a user | If I start the game again, I would like to see a different selection of products so that I can callenge myself with a new set of products. | The game fetches a different set of products from the API and loads randomly||
+| As a user | I would like to see a friendly 404 error page if I visit a non-existant page so that it's obvious that I've not reached the correct site. |  A custom 404 error page is displayed. Then game page returns when 'return button' clicked|![screenshot](documentation/testing/game-final-score-button.png)|
 
 
 ## Automated and Manual Testing
@@ -120,60 +119,11 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
 
 ## Bugs
 
-- I encountered a coding bug when trying to link my background image in CSS using a root-relative path while testing in Chrome Developer Tools. The image displayed correctly in Visual Studio Code but did not appear in Chrome. 
-
-The issue was resolved by....
-
-- The CSS hover function stopped working in Chrome Developer Tools after the software had been running for some time. This is a widely known problem in Chrome, where pseudo-classes such as :hover, :active, or :focus occasionally fail to work after prolonged sessions or multiple reloads.
-
-
-⚠️ INSTRUCTIONS ⚠️
-
-Nobody likes bugs,... except the assessors! Projects seem more suspicious if a student doesn't properly track their bugs. If you're about to submit your project without any bugs listed below, you should ask yourself why you're doing this course in the first place, if you're able to build this entire application without running into any bugs. The best thing you can do for any project is to document your bugs! Not only does it show the true stages of development, but think of it as breadcrumbs for yourself in the future, should you encounter the same/similar bug again, it acts as a gentle reminder on what you did to fix the bug.
-
-If/when you encounter bugs during the development stages of your project, you should document them here, ideally with a screenshot explaining what the issue was, and what you did to fix the bug.
-
-Alternatively, an improved way to manage bugs is to use the built-in **[Issues](https://www.github.com/DavidClamp/supermarket-game/issues)** tracker on your GitHub repository. This can be found at the top of your repository, the tab called "Issues".
-
-If using the Issues tracker for bug management, you can simplify the documentation process for testing. Issues allow you to directly paste screenshots into the issue page without having to first save the screenshot locally. You can add labels to your issues (e.g. `bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s). Once you've solved the issue/bug, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following examples below.
-
-⚠️ --- END --- ⚠️
-
-### Fixed Bugs
-
-[![GitHub issue custom search](https://img.shields.io/github/issues-search/DavidClamp/supermarket-game?query=is%3Aissue%20is%3Aclosed%20label%3Abug&label=Fixed%20Bugs&color=green)](https://www.github.com/DavidClamp/supermarket-game/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
-
-I've used [GitHub Issues](https://www.github.com/DavidClamp/supermarket-game/issues) to track and manage bugs and issues during the development stages of my project.
-
-All previously closed/fixed bugs can be tracked [here](https://www.github.com/DavidClamp/supermarket-game/issues?q=is%3Aissue+is%3Aclosed+label%3Abug).
-
-![screenshot](documentation/bugs/gh-issues-closed.png)
-
-### Unfixed Bugs
-
-⚠️ INSTRUCTIONS ⚠️
-
-You will need to mention any unfixed bugs and why they are not fixed upon submission of your project. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. Where possible, you must fix all outstanding bugs, unless outside of your control.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here! It's better to be honest and list them, because if it's not documented and an assessor finds the issue, they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-⚠️ --- END --- ⚠️
-
-[![GitHub issue custom search](https://img.shields.io/github/issues-search/DavidClamp/supermarket-game?query=is%3Aissue%2Bis%3Aopen%2Blabel%3Abug&label=Unfixed%20Bugs&color=red)](https://www.github.com/DavidClamp/supermarket-game/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
-
-Any remaining open issues can be tracked [here](https://www.github.com/DavidClamp/supermarket-game/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
-
-![screenshot](documentation/bugs/gh-issues-open.png)
-
 ### Known Issues
 
 | Issue | Screenshot |
 | --- | --- |
-| The project is designed to be responsive from `375px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute. | ![screenshot](documentation/issues/poor-responsiveness.png) |
-| When validating HTML with a semantic `<section>` element, the validator warns about lacking a header `h2-h6`. This is acceptable. | ![screenshot](documentation/issues/section-header.png) |
+| When validating HTML with a semantic `<section>` element, the validator warns about lacking a header `h2-h6`. This is acceptable. | ![screenshot](documentation/testing/wave-heading-report.png) |
 
-> [!IMPORTANT]  
+
 > There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
-
