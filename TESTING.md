@@ -35,9 +35,9 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
-| Directory | File | URL | Screenshot | Notes |
-| --- | --- | --- | --- | --- |
-| assets | [script.js](https://github.com/DavidClamp/supermarket-game/blob/main/assets/js/script.js) |  | ![screenshot](documentation/testing/script-js-jshint-test.png) |Two warnings were raised regarding potentially confusing variable semantics. I’ve noted these, but upon review the intent of the code is unambiguous and the existing structure remains readable. |
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| assets | [script.js](https://github.com/DavidClamp/supermarket-game/blob/main/assets/js/script.js) |![screenshot](documentation/testing/script-js-jshint-test.png) |Two warnings were raised regarding potentially confusing variable semantics. I’ve noted these, but upon review the intent of the code is unambiguous and the existing structure remains readable. |
 
 
 ## Responsiveness
@@ -58,7 +58,6 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Page | Chrome | Firefox | Edge | Notes |
 | --- | --- | --- | --- | --- |
-
 | Game | ![screenshot](documentation/testing/desktop-screenshot.png) | ![screenshot](documentation/firefox/firefox-screenshot.png) | ![screenshot](documentation/edgebrowser/edge-screenshot.png) | Works as expected |
 | 404 | ![screenshot](documentation/testing/chrome-404-screenshot.png) | ![screenshot](documentation/firefox/firefox-404-screenshot.png) | ![screenshot](documentation/edgebrowser/edge-404-screenshot.png) | Works as expected |
 
@@ -67,9 +66,9 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
 | Page | Mobile | Desktop | Notes |
-| --- | --- | --- |
-| Game |o ![screenshot](documentation/lighthouse/lighthouse-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |  Performance score report is lower than expected. Largeley due to using a fake API.
-| 404 | ![screenshot](documentation/lighthouse/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |
+| --- | --- | --- | --- |
+| Game |![screenshot](documentation/lighthouse/lighthouse-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |  Performance score report is lower than expected. Largeley due to using a fake API.
+| 404 | ![screenshot](documentation/lighthouse/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) ||
 
 ## Defensive Programming
 
