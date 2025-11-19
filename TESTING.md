@@ -7,12 +7,10 @@
 ## Code Validation
 
 
-
 ### HTML
 
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
-
 
 
 | Directory | File | URL | Screenshot | Notes |
@@ -21,8 +19,8 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 |assets | [404.html](https://github.com/DavidClamp/supermarket-game/blob/main/404.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/404.html) |![screenshot](documentation/testing/index-html-validator-test.png) | |
 |assets | [style.css](https://github.com/DavidClamp/supermarket-game/blob/main/assets/style.css) | [HTML Validator](https://validator.w3.org/nu/?doc=https://davidclamp.github.io/supermarket-game/assets/style.css) | ![screenshot](documentation/testing/style-css-validator-test.png) | |
 
-### CSS
 
+### CSS
 
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
@@ -52,8 +50,8 @@ I've tested my deployed project to check for responsiveness issues.
 | Game with backup array| ![screenshot](documentation/testing/mobile-backup-array-screen.png) | ![screenshot](documentation/testing/tablet-backup-array-screen.png) | ![screenshot](documentation/testing/laptop-backup-array-screen.png) | ![screenshot](documentation/testing/desktop-backup-array-screen.png) | Works as expected |
 | 404 | ![screenshot](documentation/testing/mobile-404-screenshot.png) | ![screenshot](documentation/testing/tablet-404-screenshot.png) | ![screenshot](documentation/testing/laptop-404-screenshot.png) | ![screenshot](documentation/testing/desktop-404-screenshot.png) | Works as expected |
 
-## Browser Compatibility
 
+## Browser Compatibility
 
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
@@ -61,28 +59,17 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Page | Chrome | Firefox | Edge | Notes |
 | --- | --- | --- | --- | --- |
 
-| Game | ![screenshot](documentation/testing/desktop-screenshot.png) | ![screenshot](documentation/testing/firefox-screenshot.png) | ![screenshot](documentation/testing/edge-screenshot.png) | Works as expected |
-| 404 | ![screenshot](documentation/testing/chrome-404-screenshot.png) | ![screenshot](documentation/testing/firefox-404-screenshot.png) | ![screenshot](documentation/testing/edge-404-screenshot.png) | Works as expected |
+| Game | ![screenshot](documentation/testing/desktop-screenshot.png) | ![screenshot](documentation/firefox/firefox-screenshot.png) | ![screenshot](documentation/edgebrowser/edge-screenshot.png) | Works as expected |
+| 404 | ![screenshot](documentation/testing/chrome-404-screenshot.png) | ![screenshot](documentation/firefox/firefox-404-screenshot.png) | ![screenshot](documentation/edgebrowser/edge-404-screenshot.png) | Works as expected |
 
 ## Lighthouse Audit
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports. Avoid testing the local version (Gitpod/VSCode/etc.), as this can have knock-on effects for performance. If you don't have "Lighthouse" in your Developer Tools, it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Unless your project is a single-page application (SPA), you should test Lighthouse Audit results for all of your pages, for both *mobile* and *desktop*.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
-| Page | Mobile | Desktop |
+| Page | Mobile | Desktop | Notes |
 | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/mobile-home.png) | ![screenshot](documentation/lighthouse/desktop-home.png) |
-| Game | ![screenshot](documentation/lighthouse/mobile-game.png) | ![screenshot](documentation/lighthouse/desktop-game.png) |
-| 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
+| Game | ![screenshot](documentation/lighthouse/lighthouse-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |  Performance score report is lower than expected. Largeley due to using a fake API.
+| 404 | ![screenshot](documentation/lighthouse/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) |
 
 ## Defensive Programming
 
