@@ -73,60 +73,22 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-⚠️ INSTRUCTIONS ⚠️
-
-Defensive programming (defensive design) is extremely important! When building projects that accept user inputs or forms, you should always test the level of security for each form field. Examples of this could include (but not limited to):
-
-All Projects:
-
-- Users cannot submit an empty form (add the `required` attribute)
-- Users must enter valid field types (ensure the correct input `type=""` is used)
-- Users cannot brute-force a URL to navigate to a restricted pages
-
-
-You'll want to test all functionality on your application, whether it's a standard form, or CRUD functionality, for data manipulation on a database. Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser). You should include any manual tests performed, and the expected results/outcome.
-
-Testing should be replicable (can someone else replicate the same outcome?). Ideally, tests cases should focus on each individual section of every page on the website. Each test case should be specific, objective, and step-wise replicable.
-
-Instead of adding a general overview saying that everything works fine, consider documenting tests on each element of the page (eg. button clicks, input box validation, navigation links, etc.) by testing them in their "happy flow", their "bad/exception flow", mentioning the expected and observed results, and drawing a parallel between them where applicable.
-
-Consider using the following format for manual test cases:
-
-- Expected Outcome / Test Performed / Result Received / Fixes Implemented
-
-- **Expected**: "Feature is expected to do X when the user does Y."
-- **Testing**: "Tested the feature by doing Y."
-- (either) **Result**: "The feature behaved as expected, and it did Y."
-- (or) **Result**: "The feature did not respond to A, B, or C."
-- **Fix**: "I did Z to the code because something was missing."
-
-Use the table below as a basic start, and expand on it using the logic above.
-
-⚠️ --- END --- ⚠️
-
-| Feature | Expectation | Test | Result | Screenshot |
-| --- | --- | --- | --- | --- |
-| Start Button | The Start button is easily identified and once pressed ("clicked")a 60-second countdown begins. | | |[screenshot](documentation/features/operators.png) |
-| Higher or Lower Buttons | These buttons let the user choose whether the displayed product price is higher or lower than the correct value. ||| ![screenshot](documentation/features/equation.png) |
-| Header Section | Displays the Start button, timer, current score, and final score. ||| ![screenshot](documentation/features/submit-answer.png) |
-| Scores | Shows the total number of correct and incorrect answers the user has given.  ||| ![screenshot](documentation/features/scores.png) |
-| Game Grid | Displays a 3×3 grid of squares. Each square contains a product image, product description, and game buttons. |||![screenshot](documentation/features/alerts.png) |
-|Product Description | When hovering over a product image in the grid, a description of the product appears. ||| ![screenshot](documentation/features/alerts.png) |
- Grid Colours | Square boundaries turn green for correct answers and red for incorrect answers. ||| ![screenshot](documentation/features/scores.png) |
-| Game Outcomes| Displays whether the user’s latest answer was correct or incorrect. ||| ![screenshot](documentation/features/alerts.png) |
-| 404 Error Page | A custom 404 error page appears when the user navigates to a non-existent page, replacing the default GitHub Pages version. |||| ![screenshot](documentation/features/404.png) |
-
-
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page/Feature | Expectation | Test | Result | Screenshot |
+| Feature | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-| Game Buttons | Feature is expected to display buttons that are clear, large, and easy to select on all devices. | Verified button sizes and usability across multiple devices (mobile, tablet, desktop). | Buttons were accessible and easy to use on all tested devices. | ![screenshot](documentation/defensive/responsive.png) |
-|Game Page | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colors and fonts met accessibility standards. | ![screenshot](documentation/defensive/accessibility.png) |
-|Score Tracker | Feature is expected to track the number of correct and incorrect equations. | Performed multiple calculations (correct and incorrect) and checked the score tracker. | Score tracker updated correctly for all tested scenarios. | ![screenshot](documentation/defensive/score-tracker.png) |
-|Game restart | Feature is allow user to start a new game after finishing.| Check that the 'return to game' button begins a new game afer current game has finished. Irrespective of the current game result outcome. | Game restarts correctly for all tested scenarios. | ![screenshot](documentation/defensive/score-tracker.png) |
-| 404 Error Page | Feature is expected to display a 404 error page for non-existent pages. Then allow user to return to game page | Navigated to an invalid URL (e.g., `/test`) to test error handling. In addition to testing the return page button| A custom 404 error page was displayed as expected. Then game page was returned when return button clicked | ![screenshot](documentation/defensive/404.png) |
+|Game Page | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colors and fonts met accessibility standards. | ![screenshot](documentation/testing/game-grid.png) |
+| Start Button | The Start button is easily identified and once pressed ("clicked")a 60-second countdown begins. | Click start button | Game commenced and countdown from 60 seconds began |![screenshot](documentation/testing/game-start-button.png) |
+| Higher or Lower Buttons | These buttons let the user choose whether the displayed product price is higher or lower than the correct value. | Click high and low buttons| product squares display product price and users either correct or incorrect response| ![screenshot](documentation/testing/game-hl-buttons.png) |
+| Header Section | Displays the Start button, timer, current score, and final score. | Check initial game page| Page is loaded corectly| ![screenshot](documentation/testing/game-final-score-header.png) |
+| Score Tracker | Feature is expected to track the number of correct and incorrect equations. | Performed multiple calculations (correct and incorrect) and checked the score tracker. | Score tracker updated correctly for all tested scenarios. | ![screenshot](documentation/testing/game-running-total-header.png) |
+| Final Score | Shows the total number of correct and incorrect answers the user has given.  | Play game and check final result| final results are correct | ![screenshot](documentation/testing/game-final-score-header.png) |
+| Game squares | Squares contain a product image, product description, and game buttons. | Check squares content across all devices| Squares display correct information|![screenshot](documentation/testing/game-grid.png) |
+ Square Colours | Square boundaries turn yellow for correct answers and red for incorrect answers. | Click game buttons and check the colour of boundary of the squres | Boundary of squares change to correct colour| ![screenshot](documentation/testing/game-boundaries.png) |
+ |Game restart | Feature is allow user to start a new game after finishing.| Check that the 'return to game' button begins a new game afer current game has finished. Irrespective of the current game result outcome. | Game restarts correctly for all tested scenarios. ||![screenshot](documentation/testing/game-final-score-button.png) |
+| 404 Error Page | Feature is expected to display a 404 error page for non-existent pages. Then allow user to return to game page | Navigated to an invalid URL (e.g., `/test`) to test error handling. In addition to testing the return page button| A custom 404 error page was displayed as expected. Then game page was returned when return button clicked |![screenshot](documentation/testing/chrome-404-screenshot.png) |
+
  
 ## User Story Testing
 
